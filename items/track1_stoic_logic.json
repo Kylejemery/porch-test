@@ -203,6 +203,33 @@
     "status": "draft"
   },
   {
+    "id": "T1-008b",
+    "track": "stoic_logic",
+    "prompt": "Diogenes Laertius gives this example at VII 78. Consider: \"'It is both day and night' is false; it is day; therefore it is not night.\" Is this valid in Stoic logic? Is it a syllogism in the Stoic sense?",
+    "gold_answer": "It is conclusive (valid), but the Stoics did not count it as syllogistic. Diogenes Laertius gives it as an example of an argument that is conclusive in the specific sense: it draws its conclusion, but not by syllogism. The major premise asserts that a conjunction is false rather than negating the conjunction, so it is not a third indemonstrable and cannot be reduced to one.",
+    "rubric": [
+      "States that the argument is valid (conclusive)",
+      "States that the Stoics did not count it as syllogistic",
+      "Explains that saying a conjunction 'is false' differs from negating it, so the third indemonstrable does not apply",
+      "Does not simply call it a third indemonstrable"
+    ],
+    "exact": {
+      "indemonstrable": null,
+      "verdict": "valid_nonsyllogistic"
+    },
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 78 (tr. Hicks 1925)",
+        "status": "ledger"
+      }
+    ],
+    "ledger_ref": "S008",
+    "lean_ref": "Stoic/Tests.lean: S008_not_derivable; Stoic/Sugihara.lean",
+    "difficulty": 3,
+    "status": "draft",
+    "notes": "Cued variant of T1-008: prefixes the prompt with the Diogenes Laertius citation to test whether models correctly report Diogenes's valid-but-not-syllogistic classification when the source is named."
+  },
+  {
     "id": "T1-009",
     "track": "stoic_logic",
     "prompt": "Show how a Stoic would analyze this argument into indemonstrables: \"If Dion is walking and Dion is talking, then Dion is awake; Dion is not awake; Dion is walking; therefore Dion is not talking.\"",
