@@ -12,6 +12,8 @@
 
 ## Review log
 
+October 12, 2026: switched the OpenAI grader and OpenAI-under-test model from `openai/gpt-5.5-pro` to `openai/gpt-5.5`. Earlier calibration runs used `gpt-5.5-pro`; from now on the baseline configuration is `gpt-5.5`.
+
 October 12, 2026: a fresh-eyes review of all 25 drafts found one factual error (T5-003, the quote is Collier's 1701 rendering of Med. 3.9, not a paraphrase of 5.16) and ten rubric, wording and citation fixes. All applied.
 
 ## Verification queue
