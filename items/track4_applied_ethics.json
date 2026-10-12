@@ -1,0 +1,93 @@
+[
+  {
+    "id": "T4-001",
+    "track": "applied_ethics",
+    "prompt": "I might be laid off in the next few months. What would Epictetus say is up to me here, and what should I actually do?",
+    "gold_answer": "Epictetus would separate what is up to you (your judgments, choices, desires and efforts) from what is not (the company's decision, the job market, your reputation). The layoff itself is not up to you, and for a Stoic losing the job would not be an evil, only the loss of a preferred indifferent. But that does not mean doing nothing. What is up to you is acting well: preparing, applying, doing your current work honestly, and caring for the people who depend on you, while holding the outcome lightly, aiming at it 'if nothing prevents'. The harm to guard against is the judgment that this would ruin you, not the event.",
+    "rubric": [
+      "Correctly sorts what is up to the person (judgments, choices, efforts) from what is not (the decision, the market)",
+      "Treats the job as an indifferent (or preferred indifferent), not as a good whose loss is an evil",
+      "Recommends active, sensible effort rather than passivity or resignation",
+      "Locates the real threat in the person's judgments about the event",
+      "Does not advise the person to stop caring about their family or obligations"
+    ],
+    "sources": [
+      {
+        "cite": "Epictetus, Handbook 1 (tr. Higginson)",
+        "status": "verified",
+        "evidence": "rag_corpus:d7bbd147-7ea2-4e29-83fc-36186f6e1211"
+      },
+      {
+        "cite": "Epictetus, Handbook 2 (tr. Higginson)",
+        "status": "verified",
+        "evidence": "rag_corpus:bc230346-2adc-4e4b-b39e-689487110e25",
+        "note": "Higginson renders the reservation idea as 'with discretion and gentleness and moderation'."
+      },
+      {
+        "cite": "Epictetus, Handbook 5 (tr. Higginson)",
+        "status": "verified",
+        "evidence": "rag_corpus:bc230346-2adc-4e4b-b39e-689487110e25"
+      },
+      {
+        "cite": "Seneca, On Tranquility of Mind 13 (tr. Stewart, 'On Peace of Mind')",
+        "status": "verified",
+        "evidence": "rag_corpus:3473e4f0-cd4d-44a9-9feb-09a8d38fe9e8",
+        "note": "'I will set sail unless anything happens to prevent me.'"
+      }
+    ],
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "T4-002",
+    "track": "applied_ethics",
+    "prompt": "A coworker insulted me in a meeting and I've been furious all day. How would a Stoic handle this?",
+    "gold_answer": "A Stoic would start with Epictetus's point that it is not the insult that harms you but your judgment that you have been harmed. The coworker's words are not up to you; your judgment about them is. So the work is to examine that judgment, not to bottle up the anger by force. Then decide what an appropriate response is: a calm word, a correction, or nothing. Marcus Aurelius adds that people who wrong us do so out of ignorance of what is good, which makes them objects of patience rather than hatred. None of this requires accepting mistreatment; it means responding from judgment rather than passion.",
+    "rubric": [
+      "Explains that the harm lies in one's judgment about the insult, not the insult itself",
+      "Recommends examining the judgment rather than forcibly suppressing anger",
+      "Allows for an appropriate response (speaking up, correcting) rather than requiring passivity",
+      "Does not misattribute specific quotations"
+    ],
+    "sources": [
+      {
+        "cite": "Epictetus, Handbook 20 (tr. Higginson)",
+        "status": "verified",
+        "evidence": "rag_corpus:c49c56b1-90f9-444f-bcfc-65d55caa1bf0"
+      },
+      {
+        "cite": "Marcus Aurelius, Meditations II 1 (tr. Long)",
+        "status": "verified",
+        "evidence": "rag_corpus:4b544a66-2eae-4c9d-b164-9b7c1cab7faa"
+      }
+    ],
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "T4-003",
+    "track": "applied_ethics",
+    "prompt": "My grandmother died last month. Does Stoicism say I shouldn't grieve?",
+    "gold_answer": "No, not in the cold sense people imagine. Seneca, writing to a grieving friend, allows tears; what he warns against is grief that is excessive, prolonged or performed, and he admits he once wept too much himself. The Stoics distinguish involuntary first movements, which no one can avoid, from the judgment that a terrible evil has happened, which is where passion begins. They also urge remembering the person with gratitude for the time you had, rather than only as a loss.",
+    "rubric": [
+      "Says Stoicism does not forbid grief or tears",
+      "Cites or accurately describes Seneca's view that tears are natural but excessive grief is to be avoided",
+      "Mentions remembering the dead with gratitude, or the distinction between first movements and passion",
+      "Does not claim the Stoic ideal is to feel nothing at a death"
+    ],
+    "sources": [
+      {
+        "cite": "Seneca, Letters 63.14 (tr. Gummere): his own tears for Annaeus Serenus",
+        "status": "verified",
+        "evidence": "rag_corpus:787034e5-ab1c-4ddc-8e3c-2aa59e7eaa36"
+      },
+      {
+        "cite": "Seneca, Letters 99 (tr. Gummere): to Marullus on the death of his son",
+        "status": "verified",
+        "evidence": "rag_corpus:108b369e-823c-4b53-b806-3a7c5fe10008"
+      }
+    ],
+    "difficulty": 2,
+    "status": "draft"
+  }
+]

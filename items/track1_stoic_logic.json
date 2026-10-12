@@ -1,0 +1,278 @@
+[
+  {
+    "id": "T1-001",
+    "track": "stoic_logic",
+    "prompt": "In Stoic logic, consider this argument: \"If Dion walks, Dion is in motion; Dion is walking; therefore Dion is in motion.\" Which of Chrysippus's indemonstrables is this, if any, and is it valid?",
+    "gold_answer": "It is the first indemonstrable: if the first, the second; the first; therefore the second. It is valid. Diogenes Laertius uses this very example to illustrate a syllogistic argument.",
+    "rubric": [
+      "Identifies it as the first indemonstrable",
+      "States that it is valid",
+      "Gives the form correctly: a conditional, its antecedent, therefore its consequent"
+    ],
+    "exact": {
+      "indemonstrable": 1,
+      "verdict": "valid"
+    },
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 78, 80 (tr. Hicks 1925)",
+        "status": "ledger"
+      }
+    ],
+    "ledger_ref": "S001",
+    "lean_ref": "Stoic/Indemonstrables.lean: first_derivable",
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "T1-002",
+    "track": "stoic_logic",
+    "prompt": "A Stoic gives this argument: \"If it is day, it is light; it is not light; therefore it is not day.\" Which indemonstrable is it, and is it valid?",
+    "gold_answer": "It is the second indemonstrable: a conditional, the contradictory of its consequent, and as conclusion the contradictory of its antecedent. It is valid. (In modern terms this is modus tollens.)",
+    "rubric": [
+      "Identifies it as the second indemonstrable",
+      "States that it is valid",
+      "Explains the minor premise as the contradictory of the consequent and the conclusion as the contradictory of the antecedent"
+    ],
+    "exact": {
+      "indemonstrable": 2,
+      "verdict": "valid"
+    },
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 80 (tr. Hicks 1925)",
+        "status": "ledger"
+      }
+    ],
+    "ledger_ref": "S002",
+    "lean_ref": "Stoic/Indemonstrables.lean: second_derivable",
+    "difficulty": 1,
+    "status": "draft",
+    "notes": "Uses 'it is not light' rather than Hicks's 'it is night', which is a contrary, not the contradictory (see ledger S002 notes)."
+  },
+  {
+    "id": "T1-003",
+    "track": "stoic_logic",
+    "prompt": "\"It is not the case that Plato is both dead and alive; Plato is dead; therefore Plato is not alive.\" In Chrysippus's system, which indemonstrable is this, and is it valid?",
+    "gold_answer": "It is the third indemonstrable: a negated conjunction, one of the conjuncts, and as conclusion the contradictory of the other conjunct. It is valid. The example is the one Diogenes Laertius gives.",
+    "rubric": [
+      "Identifies it as the third indemonstrable",
+      "States that it is valid",
+      "Describes the major premise as a negated conjunction (not both), not as a disjunction"
+    ],
+    "exact": {
+      "indemonstrable": 3,
+      "verdict": "valid"
+    },
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 80 (tr. Hicks 1925)",
+        "status": "ledger"
+      }
+    ],
+    "ledger_ref": "S003",
+    "lean_ref": "Stoic/Indemonstrables.lean: third_derivable",
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "T1-004",
+    "track": "stoic_logic",
+    "prompt": "\"Either it is day or it is night; it is day; therefore it is not night.\" Classify this argument in Stoic logic. Would it still be valid if \"either... or\" were read the way modern logic usually reads \"or\"?",
+    "gold_answer": "It is the fourth indemonstrable: a disjunction, one disjunct, and as conclusion the contradictory of the other. It is valid for the Stoics because their disjunction is exclusive: exactly one disjunct is true. Under the inclusive 'or' of modern logic, it would be invalid, since both disjuncts could be true.",
+    "rubric": [
+      "Identifies it as the fourth indemonstrable",
+      "States that it is valid in Stoic logic",
+      "Explains that Stoic disjunction is exclusive (exactly one disjunct true)",
+      "States that under an inclusive reading of 'or' the argument would be invalid"
+    ],
+    "exact": {
+      "indemonstrable": 4,
+      "verdict": "valid"
+    },
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 81 (tr. Hicks 1925)",
+        "status": "ledger"
+      }
+    ],
+    "ledger_ref": "S004",
+    "lean_ref": "Stoic/Indemonstrables.lean: fourth_derivable",
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T1-005",
+    "track": "stoic_logic",
+    "prompt": "\"Either it is day or it is night; it is not night; therefore it is day.\" Which Stoic indemonstrable is this?",
+    "gold_answer": "The fifth indemonstrable: a disjunction, the contradictory of one disjunct, and as conclusion the other disjunct. It is valid.",
+    "rubric": [
+      "Identifies it as the fifth indemonstrable",
+      "States that it is valid",
+      "Does not confuse it with the fourth indemonstrable (which affirms a disjunct and denies the other)"
+    ],
+    "exact": {
+      "indemonstrable": 5,
+      "verdict": "valid"
+    },
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 81 (tr. Hicks 1925)",
+        "status": "ledger"
+      }
+    ],
+    "ledger_ref": "S005",
+    "lean_ref": "Stoic/Indemonstrables.lean: fifth_derivable",
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "T1-006",
+    "track": "stoic_logic",
+    "prompt": "Is this a valid Stoic syllogism? \"If Dion is a horse, he is an animal; Dion is not a horse; therefore Dion is not an animal.\"",
+    "gold_answer": "No. It is invalid. It resembles a syllogism (it looks like a second indemonstrable) but it denies the antecedent rather than the consequent. Diogenes Laertius gives this exact example of an argument that plausibly resembles a syllogistic one but is not cogent.",
+    "rubric": [
+      "States that the argument is invalid",
+      "Identifies the error as denying the antecedent (or equivalent explanation)",
+      "Does not classify it as any of the five indemonstrables"
+    ],
+    "exact": {
+      "indemonstrable": null,
+      "verdict": "invalid"
+    },
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 78 (tr. Hicks 1925)",
+        "status": "ledger"
+      }
+    ],
+    "ledger_ref": "S007",
+    "lean_ref": "Stoic/Tests.lean: S006, S007 checks (rejected forms invalid)",
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "T1-007",
+    "track": "stoic_logic",
+    "prompt": "A Stoic teacher says: \"If it is day, it is light; it is day; therefore Dion walks.\" Is this argument conclusive? Answer using the Stoics' own test for a conclusive argument.",
+    "gold_answer": "It is not conclusive. By the Stoic test, an argument is inconclusive when the contradictory of its conclusion is compatible with the conjunction of its premises. Here it can be day and light while Dion is not walking, so the premises do not exclude the denial of the conclusion. Diogenes Laertius gives this example.",
+    "rubric": [
+      "States that the argument is not conclusive (invalid)",
+      "States the Stoic criterion: the contradictory of the conclusion must conflict with (be incompatible with) the conjunction of the premises",
+      "Applies the criterion to this case: day and light are compatible with Dion not walking"
+    ],
+    "exact": {
+      "indemonstrable": null,
+      "verdict": "invalid"
+    },
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 77 (tr. Hicks 1925)",
+        "status": "ledger"
+      }
+    ],
+    "ledger_ref": "S006",
+    "lean_ref": "Stoic/Tests.lean: S006, S007 checks (rejected forms invalid)",
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T1-008",
+    "track": "stoic_logic",
+    "prompt": "Consider: \"'It is both day and night' is false; it is day; therefore it is not night.\" Is this valid in Stoic logic? Is it a syllogism in the Stoic sense?",
+    "gold_answer": "It is conclusive (valid), but the Stoics did not count it as syllogistic. Diogenes Laertius gives it as an example of an argument that is conclusive in the specific sense: it draws its conclusion, but not by syllogism. The major premise asserts that a conjunction is false rather than negating the conjunction, so it is not a third indemonstrable and cannot be reduced to one.",
+    "rubric": [
+      "States that the argument is valid (conclusive)",
+      "States that the Stoics did not count it as syllogistic",
+      "Explains that saying a conjunction 'is false' differs from negating it, so the third indemonstrable does not apply",
+      "Does not simply call it a third indemonstrable"
+    ],
+    "exact": {
+      "indemonstrable": null,
+      "verdict": "valid_nonsyllogistic"
+    },
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 78 (tr. Hicks 1925)",
+        "status": "ledger"
+      }
+    ],
+    "ledger_ref": "S008",
+    "lean_ref": "Stoic/Tests.lean: S008_not_derivable; Stoic/Sugihara.lean",
+    "difficulty": 3,
+    "status": "draft"
+  },
+  {
+    "id": "T1-009",
+    "track": "stoic_logic",
+    "prompt": "Show how a Stoic would analyze this argument into indemonstrables: \"If Dion is walking and Dion is talking, then Dion is awake; Dion is not awake; Dion is walking; therefore Dion is not talking.\"",
+    "gold_answer": "Two steps. First, from 'if walking and talking, then awake' and 'not awake', a second indemonstrable gives 'not both walking and talking'. Second, from 'not both walking and talking' and 'walking', a third indemonstrable gives 'not talking'. The argument is valid and reduces to a second indemonstrable followed by a third.",
+    "rubric": [
+      "Uses a second indemonstrable on the conditional and 'not awake' to reach 'not both walking and talking'",
+      "Uses a third indemonstrable on that result and 'walking' to reach 'not talking'",
+      "States that the argument is valid",
+      "Notes that the intermediate conclusion is implicit in the argument (Sextus: 'potentially contained') or that chaining the steps relies on a thema or the synthetic theorem"
+    ],
+    "exact": {
+      "verdict": "valid",
+      "analysis": [
+        2,
+        3
+      ]
+    },
+    "sources": [
+      {
+        "cite": "Sextus Empiricus, as reported in Mates, Stoic Logic (Mode 2 summary)",
+        "status": "ledger"
+      },
+      {
+        "cite": "Sextus Empiricus, Against the Logicians II (= M VIII) 235 to 236 (tr. Bury 1935)",
+        "status": "verified",
+        "evidence": "research_sources:ca2d7557-ef76-49c7-a3d7-bee6c0b78b32 at M VIII 235; passes research_source_contains with attribution and locator",
+        "note": "Sextus analyzes exactly this form: a second indemonstrable, then a third, with the intermediate conclusion 'potentially contained' in the argument."
+      }
+    ],
+    "ledger_ref": "S013",
+    "lean_ref": null,
+    "difficulty": 2,
+    "status": "draft",
+    "notes": "Ledger S013 confidence was low because it rested on a Mode 2 summary. The primary text (M VIII 235 to 236) now confirms the analysis directly. Lean ref pending: S013 is checked in the harness, not by a named theorem."
+  },
+  {
+    "id": "T1-010",
+    "track": "stoic_logic",
+    "prompt": "In modern logic, \"If it is day, it is light; it is day; Dion is walking; therefore it is light\" is valid, because adding a premise never destroys validity. Did the Stoics agree?",
+    "gold_answer": "According to Sextus Empiricus, the Stoics classed arguments with a superfluous premise as invalid ('redundant' arguments), so they would reject this one even though it is valid by modern standards. That makes Stoic validity non-monotonic. The evidence is thinner than for the indemonstrables: it comes mainly from Sextus, and scholars have debated how the doctrine should be understood.",
+    "rubric": [
+      "States that the Stoics (per Sextus) counted arguments with a superfluous premise as invalid",
+      "Identifies 'Dion is walking' as the superfluous premise",
+      "Notes that this departs from modern logic, where adding premises preserves validity (monotonicity)",
+      "Acknowledges that the evidence is limited or debated rather than presenting it as certain"
+    ],
+    "exact": {
+      "verdict": "invalid"
+    },
+    "sources": [
+      {
+        "cite": "Sextus Empiricus, as reported in Mates, Stoic Logic (Mode 2 summary)",
+        "status": "ledger"
+      },
+      {
+        "cite": "Sextus Empiricus, Outlines of Pyrrhonism II 146 to 147 (tr. Bury 1933)",
+        "status": "verified",
+        "evidence": "research_sources:937d0561-1290-422a-a887-81a8678dbfcc at PH II 147; passes research_source_contains with attribution and locator",
+        "note": "Sextus's own example is this argument: 'If it is day, it is light; but in fact it is day and Dion also is walking; therefore it is light.' He attributes the classification to 'the Dialecticians', glossed as the Stoics."
+      },
+      {
+        "cite": "Sextus Empiricus, Against the Logicians II (= M VIII) 431 (tr. Bury 1935)",
+        "status": "verified",
+        "evidence": "research_sources:ca2d7557-ef76-49c7-a3d7-bee6c0b78b32 at M VIII 431; passes research_source_contains with attribution and locator",
+        "note": "Example uses 'and also virtue benefits' as the superfluous premise."
+      }
+    ],
+    "ledger_ref": "S016",
+    "lean_ref": "Stoic/Indemonstrables.lean: redundant_not_derivable; Stoic/Tests.lean: S016_not_derivable",
+    "difficulty": 3,
+    "status": "draft"
+  }
+]

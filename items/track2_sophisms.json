@@ -1,0 +1,80 @@
+[
+  {
+    "id": "T2-001",
+    "track": "sophisms",
+    "prompt": "Explain the Sorites (the heap) as the Stoics knew it, and how Chrysippus responded to it.",
+    "gold_answer": "The Sorites chains small steps: if two is few, three is few; if three is few, four is few; and so on, so that if two is few, ten (or any number) is few. Each step seems undeniable, yet the conclusion seems false. Chrysippus's response, as Cicero reports it, was not to find a flaw in the form but to stop: when questioned step by step, he would 'rest' or fall silent before reaching the doubtful cases, withholding assent. The problem lies in assent to the premises, not in the logic of the chain.",
+    "rubric": [
+      "Describes the stepwise structure of the argument correctly",
+      "Reports Chrysippus's response as resting or falling silent (withholding assent) before the doubtful cases",
+      "Locates the difficulty in assent to the premises rather than in an invalid form",
+      "Does not attribute a modern solution (such as fuzzy logic or supervaluation) to Chrysippus as his own view without flagging it as a modern interpretation"
+    ],
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 82 (tr. Hicks 1925)",
+        "status": "ledger"
+      },
+      {
+        "cite": "Cicero, Academica II (Lucullus) ch. XXIX, sections 92 to 94 (tr. Yonge 1856)",
+        "status": "ledger"
+      }
+    ],
+    "ledger_ref": "S018",
+    "lean_ref": "Stoic/Tests.lean: Sorites chain (three links) valid",
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T2-002",
+    "track": "sophisms",
+    "prompt": "\"If anyone is here, he is not in Rhodes; someone is here; therefore no one is in Rhodes.\" This looks like a first indemonstrable. Is it a valid Stoic syllogism?",
+    "gold_answer": "No. This is the Stoic 'Nobody' argument, listed by Diogenes Laertius among the insoluble arguments, and it is a sophism. It only looks like a first indemonstrable. The major premise mixes an indefinite clause ('anyone') with a definite one, and the argument trades on that: the indefinite 'anyone' in the premise does not license the universal 'no one' in the conclusion. Its fault is an equivocation that propositional form cannot capture.",
+    "rubric": [
+      "States that the argument is not a valid syllogism",
+      "Identifies it as the 'Nobody' (Outis) sophism or otherwise recognizes it as a known Stoic sophism",
+      "Locates the fault in the indefinite expressions ('anyone', 'someone', 'no one'), not in the first indemonstrable's form",
+      "Does not classify it as a first indemonstrable"
+    ],
+    "exact": {
+      "verdict": "invalid"
+    },
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 82 (tr. Hicks 1925)",
+        "status": "ledger"
+      }
+    ],
+    "ledger_ref": "S019",
+    "lean_ref": null,
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T2-003",
+    "track": "sophisms",
+    "prompt": "\"What you have not lost, you have. You have not lost horns. Therefore you have horns.\" What is wrong with this argument?",
+    "gold_answer": "This is the Horned argument, one of the classic sophisms the Stoics discussed. The first premise is only true of things you once had: 'what you have not lost, you have' quietly presupposes possession. Read that way, 'you have not lost horns' does not fit the premise, because you never had horns to lose. Read the other way, the first premise is simply false. Either way the conclusion does not follow from true premises.",
+    "rubric": [
+      "Identifies the hidden presupposition in the first premise (that you once had the thing)",
+      "Explains that the argument fails on either reading: the major premise is false, or the minor premise does not fit it",
+      "Does not claim the argument has a valid form with all premises true"
+    ],
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 187 (tr. Hicks 1925)",
+        "status": "verified",
+        "evidence": "rag_corpus:d105f03c-16f8-46a3-8c9e-0809c0c524db",
+        "note": "Listed among Chrysippus's arguments: 'If you never lost something, you have it still; but you never lost horns, ergo you have horns.' Others attribute this to Eubulides."
+      },
+      {
+        "cite": "Diogenes Laertius VII 82 (lists the Horned among insoluble arguments)",
+        "status": "ledger"
+      }
+    ],
+    "ledger_ref": null,
+    "lean_ref": null,
+    "difficulty": 1,
+    "status": "draft"
+  }
+]

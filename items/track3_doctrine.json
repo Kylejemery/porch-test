@@ -1,0 +1,119 @@
+[
+  {
+    "id": "T3-001",
+    "track": "doctrine",
+    "prompt": "Did the Stoics teach that we should suppress all emotion?",
+    "gold_answer": "No. The Stoics aimed at freedom from the passions (pathe), which they understood as excessive impulses resting on false judgments about what is good or bad. They did not aim at feeling nothing. The sage has good feelings (eupatheiai): joy, caution and wishing, which are rational counterparts of pleasure, fear and desire (there is no good counterpart of distress). Seneca also allows for involuntary first movements, such as a start of fear, which are not yet passions because no assent has been given.",
+    "rubric": [
+      "Says no: the goal is freedom from passions, not from all feeling",
+      "Explains passions as resting on false judgments (or excessive impulses), not as feelings in general",
+      "Mentions the good feelings (eupatheiai) or names at least two of them (joy, caution, wishing)",
+      "Does not equate Stoicism with emotional suppression or 'not caring'"
+    ],
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 110 to 111 (tr. Hicks 1925): passion defined; passions are judgments",
+        "status": "verified",
+        "evidence": "rag_corpus:b5719c02-ab31-4275-944b-d8597e5b6c1b"
+      },
+      {
+        "cite": "Diogenes Laertius VII 116 (tr. Hicks 1925): the good feelings (wishing, caution, joy)",
+        "status": "verified",
+        "evidence": "rag_corpus:a766991d-4141-4378-b921-d449d047cf50"
+      },
+      {
+        "cite": "Seneca, On Anger II 2 to 4 (tr. Stewart): first movements are not yet anger",
+        "status": "verified",
+        "evidence": "rag_corpus:b3e0a8c3-c364-4cda-afc8-7a3b4606e610; rag_corpus:f4855b39-03ba-46dd-9a50-9d7d5fb5861a"
+      }
+    ],
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "T3-002",
+    "track": "doctrine",
+    "prompt": "According to the Stoics, is health a good thing?",
+    "gold_answer": "Not in the strict sense. For the Stoics only virtue (and what participates in it, such as virtuous actions) is good and only vice is bad. Health is an indifferent: it does not make a life happy or unhappy. But it is a preferred indifferent, with value that makes it reasonable to select it over sickness when nothing else bears on the choice. So the Stoic answer is that health is worth choosing, but it is not a good.",
+    "rubric": [
+      "States that only virtue is good (and only vice bad) in the strict sense",
+      "Classifies health as an indifferent",
+      "Explains that it is a preferred indifferent, with value that makes it reasonable to select",
+      "Does not say the Stoics thought health worthless or to be ignored"
+    ],
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 94 (tr. Hicks 1925): virtue and what partakes in it",
+        "status": "verified",
+        "evidence": "rag_corpus:b7638063-3a3c-40cc-b242-c10292e7c5cc"
+      },
+      {
+        "cite": "Diogenes Laertius VII 101 to 102 (tr. Hicks 1925): health among the indifferents",
+        "status": "verified",
+        "evidence": "rag_corpus:f796fb00-33da-4e38-96ff-084da75b85d7"
+      },
+      {
+        "cite": "Cicero, On Ends III (tr. Yonge): preferred and rejected things, health among things preferred",
+        "status": "verified",
+        "evidence": "rag_corpus:cba75980-dbe4-4907-9d18-968bc13237cb; rag_corpus:951ea011-b5d9-4989-9d6f-147029f59b62",
+        "note": "Corpus chunks carry no section locator; III 50 to 57 assigned by us from the content."
+      }
+    ],
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "T3-003",
+    "track": "doctrine",
+    "prompt": "What is oikeiosis in Stoic thought, and why does it matter for their ethics?",
+    "gold_answer": "Oikeiosis is usually translated as appropriation or familiarization. The Stoics held that an animal's first impulse is toward preserving itself, because nature makes it 'at home' with its own constitution, not toward pleasure (against the Epicureans). As reason develops, a human being comes to value order and virtue above the things first sought, which grounds Stoic ethics in nature. The Stoics also describe a widening attachment to others, starting from parents' natural love for their children and extending to fellow citizens and humanity. Whether the personal and social sides are one continuous process is debated by scholars.",
+    "rubric": [
+      "Defines oikeiosis as appropriation, familiarization or making something one's own",
+      "States that the first impulse is toward self preservation, not pleasure",
+      "Explains the extension of concern to others (for example from family to humanity, or Hierocles' circles), or how reason comes to value virtue above the first objects of impulse",
+      "Connects it to the Stoic grounding of ethics in nature"
+    ],
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 85 (tr. Hicks 1925): first impulse to self-preservation, citing Chrysippus, On Ends I",
+        "status": "verified",
+        "evidence": "rag_corpus:cb38aee8-3775-4638-96e0-1881d8d23f42"
+      },
+      {
+        "cite": "Cicero, On Ends III 16 (tr. Yonge): as soon as an animal is born it is moved to preserve itself",
+        "status": "verified",
+        "evidence": "rag_corpus:951ea011-b5d9-4989-9d6f-147029f59b62",
+        "note": "Locator assigned by us; corpus chunk has none."
+      },
+      {
+        "cite": "Cicero, On Ends III 62 (tr. Yonge): love of offspring as the starting point of human society",
+        "status": "verified",
+        "evidence": "rag_corpus:5f95a562-4151-434f-ae3e-0da55c848d36",
+        "note": "Locator assigned by us; corpus chunk has none."
+      }
+    ],
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T3-004",
+    "track": "doctrine",
+    "prompt": "If the Stoics believed everything happens by fate, how could Chrysippus say we are responsible for our actions?",
+    "gold_answer": "Chrysippus distinguished kinds of causes. An external impression is an auxiliary and proximate cause that sets things going, but how we respond depends on our own nature and character, the perfect and principal cause. His image is the cylinder (Cicero pairs it with a spinning top): you push it to start it rolling, but it rolls the way it does because of its own shape. In the same way, impressions start our responses, but our assent comes from us, so we are responsible for it even within a fated world. This is a compatibilist position, and whether it succeeds was disputed in antiquity and still is.",
+    "rubric": [
+      "Explains the distinction between the external (proximate, auxiliary) cause and the agent's own nature or assent (principal cause)",
+      "Gives the cylinder (or spinning top) analogy correctly",
+      "Locates responsibility in assent",
+      "Notes that the success of the position was or is disputed, rather than presenting it as settled"
+    ],
+    "sources": [
+      {
+        "cite": "Cicero, On Fate 42 to 43 (tr. Yonge, ch. 19): the cylinder and the top",
+        "status": "verified",
+        "evidence": "rag_corpus:111dd661-92c4-4cd1-a617-b020c50575e0"
+      }
+    ],
+    "difficulty": 2,
+    "status": "draft"
+  }
+]
