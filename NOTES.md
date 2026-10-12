@@ -4,7 +4,7 @@
 
 1. **Name:** The Porch Test.
 2. **Runner:** Inspect (`inspect-ai`), the UK AI Security Institute's open eval framework.
-3. **Location:** `~/Arete/porch-test`, beside the Themata Project.
+3. **Location:** `C:\Users\kjemery\porch-test`.
 4. **Track 1 rests on the Themata ledger.** Items cite ledger ids (`S001` and so on) so the logic track inherits the ledger's verified passages instead of citing from memory.
 5. **Themata findings stay out of the public set.** Guardrail 5 of the Themata Project says no public claims before specialist review. So no item's gold answer depends on the project's own results (for example that the first thema is required, or that contraction is needed). T5-005 only states what is uncontroversial.
 6. **Contrary versus contradictory.** T1-002 uses "it is not light" instead of Hicks's "it is night", because Hicks's example uses a contrary where the definition requires the contradictory (ledger S002 notes).

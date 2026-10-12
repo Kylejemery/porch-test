@@ -47,7 +47,7 @@ Each criterion is scored:
 | 1 | Partly met, or met but stated with an error that matters less than the point. |
 | 0 | Missing, wrong, or contradicted elsewhere in the answer. |
 
-A criterion that the answer meets in one place and contradicts in another scores 0. Hedging both ways is not a pass.
+Score the answer's final position. A clearly marked self-correction (where the answer flags an earlier statement as mistaken and settles on a different final position) is not a contradiction. A criterion that the answer leaves unresolved, or that it asserts in one place and contradicts in another without settling, scores 0. Hedging both ways is not a pass.
 
 Item score = points earned / (2 × number of criteria).
 

@@ -242,9 +242,9 @@
     "id": "T1-010",
     "track": "stoic_logic",
     "prompt": "In modern logic, \"If it is day, it is light; it is day; Dion is walking; therefore it is light\" is valid, because adding a premise never destroys validity. Did the Stoics agree?",
-    "gold_answer": "According to Sextus Empiricus, the Stoics classed arguments with a superfluous premise as invalid ('redundant' arguments), so they would reject this one even though it is valid by modern standards. That makes Stoic validity non-monotonic. The evidence is thinner than for the indemonstrables: it comes mainly from Sextus, and scholars have debated how the doctrine should be understood.",
+    "gold_answer": "According to Sextus Empiricus, the Stoics classed arguments with a superfluous premise as invalid ('redundant' arguments), so they would reject this one even though it is valid by modern standards. Sextus's own word for them is 'inconclusive' (asyntaktos), not merely 'non-syllogistic', and scholars note the tension this creates with the Stoic conditional test of validity (DL 7.77), by which adding a true premise to a valid argument should preserve conclusiveness. That makes Stoic validity non-monotonic. The evidence is thinner than for the indemonstrables: it comes mainly from Sextus, and scholars have debated how the doctrine should be understood.",
     "rubric": [
-      "States that the Stoics (per Sextus) counted arguments with a superfluous premise as invalid",
+      "States that, per Sextus, the Stoics counted arguments with a superfluous premise as inconclusive (invalid), not merely as non-syllogistic",
       "Identifies 'Dion is walking' as the superfluous premise",
       "Notes that this departs from modern logic, where adding premises preserves validity (monotonicity)",
       "Acknowledges that the evidence is limited or debated rather than presenting it as certain"

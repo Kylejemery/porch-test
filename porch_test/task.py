@@ -91,7 +91,11 @@ Scale for each criterion:
 2 = met clearly
 1 = partly met, or met with a minor error
 0 = missing, wrong, or contradicted elsewhere in the answer
-An answer that meets a criterion in one place and contradicts it in another scores 0.
+Score the answer's final position. A clearly marked self-correction (where the
+answer flags an earlier statement as mistaken and settles on a different final
+position) is not a contradiction. Leaving the matter unresolved, or asserting
+both sides without settling, is a contradiction and scores 0 on any affected
+criterion.
 Do not reward length, tone or formatting.
 
 {exact_block}ANSWER TO GRADE:
@@ -101,11 +105,32 @@ Respond with JSON only, in this shape:
 {{"criteria": [{{"n": 1, "score": 0, "reason": "one sentence"}}, ...]{exact_shape}}}
 """
 
-EXACT_BLOCK = """Also extract what the answer commits to for these fields. Use the same
-value types as shown; use null if the answer does not commit to a value:
+EXACT_BLOCK = """Also extract what the answer commits to for these fields. Each
+field must take exactly one allowed value, from this list; use null if the
+answer does not commit to a value. Do not invent new values.
 {fields}
 
 """
+
+EXACT_FIELD_SPECS: dict[str, str] = {
+    "indemonstrable": "one of 1, 2, 3, 4, 5, or null",
+    "verdict": 'exactly one of "valid", "invalid", or "valid_nonsyllogistic"',
+    "attested": 'exactly one of true, false, "paraphrase", or "loose_translation"',
+    "locator": 'a short string such as "Med. 3.9"',
+    "analysis": "a list of indemonstrable numbers in order, for example [2, 3]",
+}
+
+
+def _normalize(v: Any) -> Any:
+    """Normalize case and whitespace for comparison. Strings are lowercased and
+    their internal whitespace is collapsed. Lists and dicts recurse."""
+    if isinstance(v, str):
+        return " ".join(v.strip().split()).lower()
+    if isinstance(v, list):
+        return [_normalize(x) for x in v]
+    if isinstance(v, dict):
+        return {k: _normalize(val) for k, val in v.items()}
+    return v
 
 
 def build_judge_prompt(state: TaskState, target: Target) -> str:
@@ -113,7 +138,14 @@ def build_judge_prompt(state: TaskState, target: Target) -> str:
     rubric = "\n".join(f"{n}. {c}" for n, c in enumerate(md["rubric"], start=1))
     exact = md.get("exact")
     if exact:
-        fields = "\n".join(f"- {k}: example value {json.dumps(v)}" for k, v in exact.items())
+        lines: list[str] = []
+        for k, v in exact.items():
+            spec = EXACT_FIELD_SPECS.get(k)
+            if spec is None:
+                lines.append(f"- {k}: example value {json.dumps(v)}")
+            else:
+                lines.append(f"- {k}: {spec}")
+        fields = "\n".join(lines)
         exact_block = EXACT_BLOCK.format(fields=fields)
         exact_shape = ', "extracted": {' + ", ".join(f'"{k}": ...' for k in exact) + "}"
     else:
@@ -157,15 +189,46 @@ def rubric_judge(judge: str | None = None):
                 metadata={"judge_raw": result.completion, "parse_failed": True},
             )
 
-        scores = {int(c["n"]): int(c["score"]) for c in parsed["criteria"] if "n" in c}
-        points = sum(max(0, min(2, scores.get(i, 0))) for i in range(1, n + 1))
+        try:
+            scores = {
+                int(c["n"]): int(c["score"])
+                for c in parsed["criteria"]
+                if isinstance(c, dict) and "n" in c and "score" in c
+            }
+        except (TypeError, ValueError):
+            return Score(
+                value=0.0,
+                answer=state.output.completion,
+                explanation="Judge criterion id or score was not an integer; rescore this sample.",
+                metadata={"judge_raw": result.completion, "parse_failed": True},
+            )
+
+        if set(scores.keys()) != set(range(1, n + 1)):
+            got = sorted(scores.keys())
+            return Score(
+                value=0.0,
+                answer=state.output.completion,
+                explanation=(
+                    f"Judge returned criterion ids {got} but rubric has 1..{n}; "
+                    "rescore this sample."
+                ),
+                metadata={
+                    "judge_raw": result.completion,
+                    "parse_failed": True,
+                    "criteria": parsed.get("criteria"),
+                },
+            )
+
+        points = sum(max(0, min(2, scores[i])) for i in range(1, n + 1))
         value = points / (2 * n)
 
         exact = state.metadata.get("exact")
         exact_match = None
         if exact:
             extracted = parsed.get("extracted", {}) or {}
-            exact_match = {k: extracted.get(k) == v for k, v in exact.items()}
+            exact_match = {
+                k: _normalize(extracted.get(k)) == _normalize(v) for k, v in exact.items()
+            }
 
         explanation = "\n".join(
             f"{c.get('n')}: {c.get('score')} - {c.get('reason', '')}" for c in parsed["criteria"]
