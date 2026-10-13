@@ -56,3 +56,28 @@ Full transcripts and per-criterion judge reasons: `review/t1-008.md`.
 - n = 5 per cell; stderrs on the means are not negligible and these runs are a calibration probe, not a final result.
 - Graders differ by setup (GPT when Claude is under test, Claude when GPT is), so cued-vs-uncued deltas are confounded with the grader. A same-grader rerun is needed before leaning on the Claude +0.300 delta.
 - The judge has not yet been calibrated against Kyle's blind grades (see RUBRIC_SPEC.md §6.4). Cohen's kappa unknown.
+
+### Supporting runs
+
+Earlier runs with the retired `openai/gpt-5.5-pro` configuration show the same failure, so F1 is not a `gpt-5.5` artifact.
+
+| key | item | model under test | grader | per-epoch | log |
+| --- | --- | --- | --- | --- | --- |
+| A' | T1-008 | anthropic/claude-sonnet-5-5 | openai/gpt-5.5-pro | 0.25, 0.25, 0.25, 0.25, 0.25 | `logs/2026-10-12T20-06-51-00-00_porch-test_6jK8MQyWemxp7RitNdWu43.eval` |
+| B' | T1-008 | openai/gpt-5.5-pro | anthropic/claude-sonnet-5-5 | 0.25, 0.25, 0.25, 0.125, 0.25 | `logs/2026-10-12T20-08-34-00-00_porch-test_QBtkk6xjGJqunGTcbFVV2T.eval` |
+
+T1-008 also scored 0.25 in both earlier cross-track pilots (log `U6gNtygFVEToSLAR87E92b` with Claude under test and `gpt-5.5-pro` grader, and log `goZfAWgGjzQf7UL6T5eZRa` with the same setup after the judge-prompt fixes). Six independent single-item runs plus two pilots, five configurations in all, all land at 0.25 ± a single criterion.
+
+### Evidence for the gold answer
+
+**Diogenes Laertius, Lives of Eminent Philosophers VII 7.78** (tr. R. D. Hicks, 1925; ledger `S008`, corpus `f9d254ff-01b0-4b37-b98d-9d71132839a9`):
+
+> Of conclusive some are denoted by the common name of the whole class, "conclusive proper," others are called syllogistic. The syllogistic are such as either do not admit of, or are reducible to such as do not admit of, immediate proof in respect of one or more of the premisses; e.g. "If Dion walks, then Dion is in motion; but Dion is walking, therefore Dion is in motion." Conclusive specifically are those which draw conclusions, but not by syllogism; e.g. the statement "It is both day and night" is false: "now it is day; therefore it is not night."
+
+DL puts this very argument on the "conclusive but not syllogistic" side of the line. **Mates** (ledger S008 notes, chunk `78c91994-ccd2-47ac-9eb9-17201baa0783`) reads it the same way: the premise says a conjunction "is false" rather than negating it, and "the Stoics distinguished between the negation of a proposition and the assertion that a proposition is false." Collapsing those two is exactly what the models under test do.
+
+**Lean backing.** The Themata Project represents "'p' is false" as its own operator (`saidFalse` in `Stoic/Syntax.lean`), semantically a negation but syntactically distinct, so no indemonstrable applies to it:
+
+- `Stoic/Tests.lean`: `S008_not_derivable (P : Params) (T : Theory) : ¬ Derives P T [] ⟨[saidFalse (conj p₀ p₁), p₀], neg p₁⟩`.
+- `Stoic/Tests.lean` also carries `#guard` checks that this argument is valid under the DL 7.77 criterion.
+- `Stoic/Sugihara.lean` carries the semantic framing for the operator.
