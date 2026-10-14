@@ -1,6 +1,6 @@
 # The Porch Test: Rubric Specification
 
-Version 0.1, drafted October 12, 2026. Status: draft for Kyle's review.
+Version 0.2, October 14, 2026 (0.1 drafted October 12). Status: draft for Kyle's review.
 
 This file defines how every item in The Porch Test is written and scored. If an item and this spec disagree, the spec wins and the item gets fixed.
 
@@ -68,8 +68,8 @@ This follows the Themata guardrail: no citation from model recall alone. An item
 1. **Exact checks first.** Where an item has an `exact` block, those fields are checked by code, not by a judge. Track 1 relies on this most.
 2. **Judge model for the rest.** The judge sees the prompt, the gold answer, the rubric and the response. It returns, for each criterion, a score and one sentence of reasoning, as JSON. It never sees which model wrote the response.
 3. **The judge is not one of the models under test** in the same run, or, if it must be, we report that and rerun with a second judge.
-4. **Human calibration.** Kyle blind grades a random 20% of responses, stratified by track, without seeing the judge's scores. We report Cohen's kappa between Kyle and the judge for each track, on the per criterion scores.
-5. **Rubric repair rule.** If kappa for a track falls below 0.6, we do not publish that track. We read the disagreements, rewrite the criteria that caused them, and rerun.
+4. **Human calibration.** Kyle blind grades a random 20% of responses, stratified by track, without seeing the judge's scores. For each track and overall, on the per criterion scores, we report exact agreement, Cohen's kappa, quadratic-weighted kappa and Gwet's AC1. Kappa is reported but not used alone, because it collapses toward zero when nearly every score is the same (round 1: 88% agreement on doctrine gave kappa 0.00 and AC1 0.87).
+5. **Rubric repair rule.** A track is judged on its own only when it has at least 20 calibrated criterion scores. It is published only if exact agreement is 80% or more and AC1 is 0.6 or more. A track below 20 is not published on calibration grounds yet: we read every disagreement, rewrite the criteria that caused them, and grade more of it in the next round. In every case, each disagreement is read and classed as a grading miss, a judge miss, or a rubric fault, and rubric faults are fixed before the next round.
 
 ## 7. Contamination
 

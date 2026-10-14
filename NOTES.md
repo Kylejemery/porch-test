@@ -16,6 +16,8 @@ October 12, 2026: switched the OpenAI grader and OpenAI-under-test model from `o
 
 October 12, 2026: a fresh-eyes review of all 25 drafts found one factual error (T5-003, the quote is Collier's 1701 rendering of Med. 3.9, not a paraphrase of 5.16) and ten rubric, wording and citation fixes. All applied.
 
+October 14, 2026: calibration round 1 scored (38 criteria, 10 items, Kyle against the gpt-5.5 judge). Exact agreement 92.1%, kappa 0.690, weighted kappa 0.817, AC1 0.91. Three disagreements: T3-004 row 13 was a grading miss by Kyle (the answer calls character the proximate cause; the judge's 1 is right). T1-005 row 32 and T4-001 row 35 were rubric faults, fixed: T1-005 criterion 2 now accepts commitment to validity by classing the argument as an indemonstrable, and T4-001 criterion 2 now judges the substance (losing the job is not an evil) whether or not the word "indifferent" is used. Round 1 scores are left unchanged as the record. Per-track kappa was 0 or undefined for doctrine, ethics and honesty because almost every score was 2, so RUBRIC_SPEC 6.4 to 6.5 now report AC1 and set a 20-score minimum per track. Kyle used no 1s in 38 scores; in round 2, check every 2 for a secondary error. Tracks 3 to 5 sit at the ceiling, which confirms they need harder items.
+
 ## Verification queue
 
 October 12, 2026: 27 sources verified by read-only queries against the Arete Supabase project (`rag_corpus`, `research_sources`). Each verified source carries its chunk or source id in `evidence`. 22 of 25 items now have every source verified.

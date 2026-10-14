@@ -108,7 +108,7 @@
     "gold_answer": "The fifth indemonstrable: a disjunction, the contradictory of one disjunct, and as conclusion the other disjunct. It is valid.",
     "rubric": [
       "Identifies it as the fifth indemonstrable",
-      "States that it is valid",
+      "Commits to its validity, explicitly or by classifying it as an indemonstrable (every indemonstrable is valid)",
       "Does not confuse it with the fourth indemonstrable (which affirms a disjunct and denies the other)"
     ],
     "exact": {

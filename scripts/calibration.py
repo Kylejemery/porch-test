@@ -28,6 +28,7 @@ OUT_DIR = ROOT / "calibration"
 SHEET = OUT_DIR / "round1_grading.xlsx"
 KEY = OUT_DIR / "round1_judge_key.csv"
 REPORT = OUT_DIR / "round1_report.md"
+MIN_TRACK_N = 20
 README = OUT_DIR / "README.md"
 SEED = 20261012
 
@@ -131,11 +132,21 @@ def export() -> None:
     print(f"Judge key: {KEY}")
 
 
-def _stats(pairs: list[tuple[int, int]]) -> tuple[str, str, str]:
+def _ac1(pairs: list[tuple[int, int]], q: int = 3) -> float:
+    """Gwet's AC1 for two raters. Unlike kappa it stays stable when nearly
+    every score falls in one category (the prevalence problem)."""
+    n = len(pairs)
+    pa = sum(a == b for a, b in pairs) / n
+    pi = [(sum(a == c for a, _ in pairs) + sum(b == c for _, b in pairs)) / (2 * n) for c in range(q)]
+    pe = sum(p * (1 - p) for p in pi) / (q - 1)
+    return (pa - pe) / (1 - pe)
+
+
+def _stats(pairs: list[tuple[int, int]]) -> tuple[str, str, str, str]:
     from sklearn.metrics import cohen_kappa_score
 
     if not pairs:
-        return "n/a", "n/a", "n/a"
+        return "n/a", "n/a", "n/a", "n/a"
     k, j = zip(*pairs)
     agree = sum(a == b for a, b in pairs) / len(pairs)
 
@@ -145,7 +156,7 @@ def _stats(pairs: list[tuple[int, int]]) -> tuple[str, str, str]:
             return "undefined"
         return f"{cohen_kappa_score(k, j, labels=[0, 1, 2], weights=weights):.3f}"
 
-    return f"{agree:.1%}", kappa(None), kappa("quadratic")
+    return f"{agree:.1%}", kappa(None), kappa("quadratic"), f"{_ac1(pairs):.3f}"
 
 
 def score() -> None:
@@ -187,11 +198,17 @@ def score() -> None:
     if blank:
         lines.append(f"Unscored rows, left out: {', '.join(map(str, blank))}.")
     lines += ["", "## Agreement", "",
-              "| Scope | n | Exact agreement | Cohen's kappa | Quadratic-weighted kappa |",
-              "| --- | --- | --- | --- | --- |"]
+              "| Scope | n | Exact agreement | Cohen's kappa | Quadratic-weighted kappa | Gwet's AC1 |",
+              "| --- | --- | --- | --- | --- | --- |"]
     lines.append(f"| Overall | {len(overall)} | " + " | ".join(_stats(overall)) + " |")
     for track in sorted(by_track):
         lines.append(f"| {track} | {len(by_track[track])} | " + " | ".join(_stats(by_track[track])) + " |")
+
+    lines += ["", f"Publication rule (RUBRIC_SPEC 6.5): a track is judged on its own only with at least {MIN_TRACK_N} "
+              "scored criteria; it then needs exact agreement of 80% or more and AC1 of 0.6 or more."]
+    small = [t for t in sorted(by_track) if len(by_track[t]) < MIN_TRACK_N]
+    if small:
+        lines.append(f"Below the minimum this round: {', '.join(small)}. Read their disagreements instead.")
 
     disagreements = [r for r in joined if r["kyle_score"] != r["judge_score"]]
     lines += ["", f"## Disagreements ({len(disagreements)})", ""]
