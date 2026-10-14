@@ -3,12 +3,12 @@
     "id": "T2-001",
     "track": "sophisms",
     "prompt": "Explain the Sorites (the heap) as the Stoics knew it, and how Chrysippus responded to it.",
-    "gold_answer": "The Sorites chains small steps: if two is few, three is few; if three is few, four is few; and so on, so that if two is few, ten (or any number) is few. Each step seems undeniable, yet the conclusion seems false. Chrysippus's response, as Cicero reports it, was not to find a flaw in the form but to stop: when questioned step by step, he would 'rest' or fall silent before reaching the doubtful cases, withholding assent. The problem lies in assent to the premises, not in the logic of the chain.",
+    "gold_answer": "The Sorites leads by small steps from an obvious truth to an obvious falsehood. In the Stoic form (Diogenes Laertius VII 82) each step denies a conjunction: it is not the case that two is few and three is not, and so on up to ten; but two is few, so ten is few. Chrysippus did not claim to solve it or to fault the form, and the Stoics listed it among the insoluble arguments. Questioned step by step, he would rest or fall silent while the answers were still clear, before the doubtful cases, withholding assent so that he never assented to an evident falsehood (Cicero, Academica II 92 to 94). Whether this implies a sharp but unknowable cutoff is disputed: Williamson reads Stoic bivalence as committing Chrysippus to one, while Bobzien argues that some borderline steps express no proposition and so have no truth value.",
     "rubric": [
-      "Describes the stepwise structure of the argument correctly",
+      "Describes the stepwise structure of the argument correctly (as conditionals or, as in Diogenes Laertius VII 82, as denied conjunctions)",
       "Reports Chrysippus's response as resting or falling silent (withholding assent) before the doubtful cases",
-      "Locates the difficulty in assent to the premises rather than in an invalid form",
-      "Does not attribute a modern solution (such as fuzzy logic or supervaluation) to Chrysippus as his own view without flagging it as a modern interpretation"
+      "Locates the difficulty in assent rather than in an invalid form, and does not claim Chrysippus solved the paradox",
+      "Does not present a modern account (epistemicism, fuzzy logic, supervaluation) as Chrysippus's settled view without flagging it as a disputed interpretation"
     ],
     "sources": [
       {
@@ -18,12 +18,18 @@
       {
         "cite": "Cicero, Academica II (Lucullus) ch. XXIX, sections 92 to 94 (tr. Yonge 1856)",
         "status": "ledger"
+      },
+      {
+        "cite": "Bobzien, 'Chrysippus and the Epistemic Theory of Vagueness', Proceedings of the Aristotelian Society 102 (2002), pp. 217 to 238, esp. 218 n. 7, 219, 222, 238; reports and rejects Williamson, Vagueness (1994), ch. 1",
+        "status": "to_verify",
+        "note": "Full text is in Papers/Ingested (JSTOR copy) but not yet in research_sources. Load it, then set status to verified with evidence research_sources:<id>."
       }
     ],
     "ledger_ref": "S018",
     "lean_ref": "Stoic/Tests.lean: Sorites chain (three links) valid",
     "difficulty": 2,
-    "status": "draft"
+    "status": "draft",
+    "notes": "Revised October 14, 2026 after calibration round 1: step form per DL VII 82 (denied conjunctions), no claim that Chrysippus solved it (Bobzien 2002, p. 218 n. 7), and the cutoff question presented as disputed. Criterion 4 now also covers epistemicism."
   },
   {
     "id": "T2-002",
