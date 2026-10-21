@@ -1,0 +1,795 @@
+[
+  {
+    "id": "T1-010b",
+    "track": "stoic_logic",
+    "prompt": "Sextus Empiricus uses this example at Outlines of Pyrrhonism II 147. In modern logic, \"If it is day, it is light; it is day; Dion is walking; therefore it is light\" is valid, because adding a premise never destroys validity. Did the Stoics agree?",
+    "gold_answer": "According to Sextus Empiricus, the Stoics classed arguments with a superfluous premise as invalid ('redundant' arguments), so they would reject this one even though it is valid by modern standards. Sextus's own word for them is 'inconclusive' (asyntaktos), not merely 'non-syllogistic', and scholars note the tension this creates with the Stoic conditional test of validity (DL 7.77), by which adding a true premise to a valid argument should preserve conclusiveness. That makes Stoic validity non-monotonic. The evidence is thinner than for the indemonstrables: it comes mainly from Sextus, and scholars have debated how the doctrine should be understood.",
+    "rubric": [
+      "States that, per Sextus, the Stoics counted arguments with a superfluous premise as inconclusive (invalid), not merely as non-syllogistic",
+      "Identifies 'Dion is walking' as the superfluous premise",
+      "Notes that this departs from modern logic, where adding premises preserves validity (monotonicity)",
+      "Acknowledges that the evidence is limited or debated rather than presenting it as certain"
+    ],
+    "exact": {
+      "verdict": "invalid"
+    },
+    "sources": [
+      {
+        "cite": "Sextus Empiricus, Outlines of Pyrrhonism II 146 to 147 (tr. Bury 1933)",
+        "status": "verified",
+        "evidence": "research_sources:937d0561-1290-422a-a887-81a8678dbfcc at PH II 147; passes research_source_contains with attribution and locator"
+      },
+      {
+        "cite": "Sextus Empiricus, Against the Logicians II (= M VIII) 431 (tr. Bury 1935)",
+        "status": "verified",
+        "evidence": "research_sources:ca2d7557-ef76-49c7-a3d7-bee6c0b78b32 at M VIII 431; passes research_source_contains with attribution and locator"
+      }
+    ],
+    "ledger_ref": "S016",
+    "lean_ref": "Stoic/Indemonstrables.lean: redundant_not_derivable; Stoic/Tests.lean: S016_not_derivable",
+    "difficulty": 3,
+    "status": "draft",
+    "notes": "Cued variant of T1-010 (same prompt with the source named), paired for the cue effect measured in F1."
+  },
+  {
+    "id": "T1-011",
+    "track": "stoic_logic",
+    "prompt": "\"If it is day, it is day; it is day; therefore it is day.\" Would the Stoics count this as a valid syllogism, or is it too circular to count?",
+    "gold_answer": "The Stoics counted it as valid. It has the form of the first indemonstrable (if the first, the second; the first; therefore the second), with the antecedent and consequent happening to be the same proposition. The later sources call arguments of this shape 'duplicated' (diphoroumenoi), and Cicero reports that Chrysippus could not refuse 'If it shines, it shines; but it does shine; therefore it does shine', since the connection compels assent to the conclusion once the premises are granted. Circularity is a defect of usefulness, not of validity: the argument proves nothing new, but it cannot have true premises and a false conclusion.",
+    "rubric": [
+      "States that the argument is valid",
+      "Identifies it as a first indemonstrable (or a 'duplicated' argument reducible to one)",
+      "Distinguishes being uninformative or circular from being invalid",
+      "Does not claim the Stoics rejected it as a fallacy"
+    ],
+    "exact": {
+      "indemonstrable": 1,
+      "verdict": "valid"
+    },
+    "sources": [
+      {
+        "cite": "Cicero, Academica II (Lucullus) 96 (tr. Yonge 1856): 'If it shines, it shines; but it does shine, therefore it does shine'",
+        "status": "ledger",
+        "note": "Ledger S009. Corpus chunk df555ec8-e886-440d-9d99-b7376a22b63a. Locator assigned from content; the Cicero chunks carry none."
+      },
+      {
+        "cite": "Zeller, The Stoics, Epicureans and Sceptics, ch. V n. 239 (tr. Reichel): the 'duplicated' and 'indifferently concluding' arguments, citing Alexander",
+        "status": "verified",
+        "evidence": "rag_corpus:8e7bb081-9d8b-481f-b3ac-57183751efa5",
+        "note": "Zeller reports Alexander of Aphrodisias; Alexander's own text is not in the corpus."
+      }
+    ],
+    "ledger_ref": "S009",
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T1-012",
+    "track": "stoic_logic",
+    "prompt": "\"It is day; therefore it is light.\" Antipater of Tarsus is said to have accepted arguments like this, with only one premise. Was that the standard Stoic view?",
+    "gold_answer": "No, it was Antipater's departure from it, and it was disputed. The standard Stoic account of an argument requires at least two premises and a conclusion, so 'It is day; therefore it is light' is incomplete on that view: the conditional 'If it is day, it is light' has been left unstated, and once it is supplied the argument is an ordinary first indemonstrable. Sextus reports that some rejected single-premise arguments while Antipater did not, and uses the disagreement against the dialecticians. Zeller judged the innovation 'of very doubtful worth'. So the honest answer is that single-premise arguments were a minority position inside the school, attested mainly through Sextus and Alexander.",
+    "rubric": [
+      "States that single-premise arguments were Antipater's position, not the general Stoic doctrine, and that it was disputed",
+      "Explains that the standard account requires at least two premises (the conditional being left unstated here)",
+      "Notes that the evidence comes through later reports (Sextus, Alexander) rather than Antipater's own words",
+      "Does not present single-premise arguments as accepted Stoic logic without qualification"
+    ],
+    "sources": [
+      {
+        "cite": "Sextus Empiricus, Outlines of Pyrrhonism II 167 (tr. Bury 1933): 'they deserve no more credence than does Antipater who does not reject such arguments'",
+        "status": "verified",
+        "evidence": "research_sources:937d0561-1290-422a-a887-81a8678dbfcc at PH II 167 (a proofread page); passes research_source_contains with attribution and locator"
+      },
+      {
+        "cite": "Zeller, The Stoics, Epicureans and Sceptics, ch. V text and n. 245 (tr. Reichel): Antipater's single-premise inferences, with the examples 'It is day, therefore it is light' and 'You breathe, therefore you live'",
+        "status": "verified",
+        "evidence": "rag_corpus:8026da9e-bbf9-4a39-b1e7-d2ca5604b7ca; rag_corpus:73ca2320-47fc-4eed-b9b0-fc8ad0d060e4"
+      }
+    ],
+    "ledger_ref": "S014",
+    "difficulty": 3,
+    "status": "draft",
+    "notes": "Ledger S014 carries the verdict 'disputed'. The item asks about the status of the doctrine, not whether the argument is valid, so no exact verdict is set."
+  },
+  {
+    "id": "T2-004",
+    "track": "sophisms",
+    "prompt": "How did the Stoic logicians define a sophism, and what kinds did they distinguish?",
+    "gold_answer": "Sextus reports the dialecticians' definition: a sophism is a plausible argument cunningly framed to induce acceptance of its conclusion, where that conclusion is either false, or resembles something false, or is non-evident, or is otherwise unacceptable. He gives an example of each kind. The false: 'Nobody offers one a predicate to drink; but to drink absinth is a predicate; therefore nobody offers one absinth to drink.' The resembling-false: an argument concluding that it is not absurd for a doctor, as a doctor, to murder. The non-evident: an argument whose premises change truth value as it is asked, concluding that the stars are even in number. The unacceptable: solecistic arguments whose conclusions are ungrammatical. The dialecticians also offered a solution for each kind. Sextus is a hostile witness, and he reports this to argue that dialectic is useless for exposing sophisms.",
+    "rubric": [
+      "Gives the definition: a plausible argument contrived to make one accept a conclusion that is false, resembles the false, is non-evident, or is unacceptable",
+      "Names at least two of the four kinds",
+      "Gives a correct example for at least one kind",
+      "Attributes the report to Sextus Empiricus, or otherwise notes that it comes from a hostile source rather than a Stoic handbook"
+    ],
+    "sources": [
+      {
+        "cite": "Sextus Empiricus, Outlines of Pyrrhonism II 229 to 231 (tr. Bury 1933)",
+        "status": "verified",
+        "evidence": "research_sources:937d0561-1290-422a-a887-81a8678dbfcc at PH II 229 to 231; passes research_source_contains with attribution and locator",
+        "note": "Outside the proofread pages; the definition and the four examples were checked against the stored text."
+      }
+    ],
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T2-005",
+    "track": "sophisms",
+    "prompt": "\"Nobody offers one a predicate to drink; but 'to drink absinth' is a predicate; therefore nobody offers one absinth to drink.\" How did the Stoics solve this?",
+    "gold_answer": "By pointing out that one thing is established by the premises and another inferred in the conclusion. The premises establish that a predicate is not drunk and that 'to drink absinth' is a predicate. What follows is that nobody drinks the predicate 'to drink absinth', which is true. The conclusion drawn instead is that nobody drinks absinth, the thing, which is false and does not follow. The sophism trades on the Stoic distinction between a sayable (lekton), here a predicate, and the bodily thing the words refer to. Sextus lists it as a sophism of the first kind, one whose conclusion is false.",
+    "rubric": [
+      "Locates the fault in the slide from the predicate (a sayable) to the thing (absinth)",
+      "States what the premises do license: nobody drinks the predicate 'to drink absinth'",
+      "Places the error in the inference to the conclusion, not in the premises",
+      "Does not say the premises are false"
+    ],
+    "sources": [
+      {
+        "cite": "Sextus Empiricus, Outlines of Pyrrhonism II 230 and 232 (tr. Bury 1933)",
+        "status": "verified",
+        "evidence": "research_sources:937d0561-1290-422a-a887-81a8678dbfcc at PH II 230 and 232; passes research_source_contains with attribution and locator",
+        "note": "Outside the proofread pages."
+      },
+      {
+        "cite": "Diogenes Laertius VII 63 to 64 (tr. Hicks 1925): predicates as defective sayables",
+        "status": "verified",
+        "evidence": "rag_corpus:c572fc1b-0fbb-4c1e-8f46-37b5ac420b62"
+      }
+    ],
+    "difficulty": 3,
+    "status": "draft"
+  },
+  {
+    "id": "T2-006",
+    "track": "sophisms",
+    "prompt": "\"If anyone is here, he is not in Rhodes; but there is someone here; therefore there is not anyone in Rhodes.\" This looks like a first indemonstrable. Is it?",
+    "gold_answer": "No. Diogenes Laertius lists it among the insoluble arguments under the name 'the Nobody', and defines it by its structure: a major premise made of an indefinite clause ('if anyone is here') and a definite one ('he is not in Rhodes'), then a minor premise and a conclusion. It has the surface shape of 'if the first, the second; the first; therefore the second', but the conclusion is not the consequent of the major premise. What the premises license is that the particular person who is here is not in Rhodes; the conclusion asserts that no one at all is in Rhodes. The move from an indefinite 'anyone' to a universal 'not anyone' is the sophistry, and it cannot be captured by propositional forms, which is why it counts as a sophism rather than an invalid syllogism of a known mood.",
+    "rubric": [
+      "States that it is not a valid first indemonstrable",
+      "Identifies the shift from the indefinite ('anyone', 'someone') to the universal ('not anyone') as the fault, or the mismatch between the consequent and the conclusion",
+      "Notes that the Stoics listed it among the insolubles (sophisms) rather than treating it as a syllogism",
+      "Does not accept the conclusion as following"
+    ],
+    "exact": {
+      "verdict": "invalid"
+    },
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 82 (tr. Hicks 1925): the Nobody argument",
+        "status": "ledger",
+        "note": "Ledger S019. Corpus chunk e624f24d-83d0-4efd-98d3-19457ace3554."
+      },
+      {
+        "cite": "Susanne Bobzien, Chrysippus and the Epistemic Theory of Vagueness (2002), pp. 220 to 221: the Stoics allowed sophisms to contain sentences to which no proposition corresponds",
+        "status": "verified",
+        "evidence": "research_sources:a4130c36-02a0-4878-8cbe-8ed451683a1c at p. 221",
+        "note": "Used only for the general point that Stoic sophism analysis goes beyond propositional form."
+      }
+    ],
+    "ledger_ref": "S019",
+    "difficulty": 3,
+    "status": "draft"
+  },
+  {
+    "id": "T2-006b",
+    "track": "sophisms",
+    "prompt": "Diogenes Laertius lists this at VII 82 as the Nobody argument. \"If anyone is here, he is not in Rhodes; but there is someone here; therefore there is not anyone in Rhodes.\" This looks like a first indemonstrable. Is it?",
+    "gold_answer": "No. Diogenes Laertius lists it among the insoluble arguments under the name 'the Nobody', and defines it by its structure: a major premise made of an indefinite clause ('if anyone is here') and a definite one ('he is not in Rhodes'), then a minor premise and a conclusion. It has the surface shape of 'if the first, the second; the first; therefore the second', but the conclusion is not the consequent of the major premise. What the premises license is that the particular person who is here is not in Rhodes; the conclusion asserts that no one at all is in Rhodes. The move from an indefinite 'anyone' to a universal 'not anyone' is the sophistry, and it cannot be captured by propositional forms, which is why it counts as a sophism rather than an invalid syllogism of a known mood.",
+    "rubric": [
+      "States that it is not a valid first indemonstrable",
+      "Identifies the shift from the indefinite ('anyone', 'someone') to the universal ('not anyone') as the fault, or the mismatch between the consequent and the conclusion",
+      "Notes that the Stoics listed it among the insolubles (sophisms) rather than treating it as a syllogism",
+      "Does not accept the conclusion as following"
+    ],
+    "exact": {
+      "verdict": "invalid"
+    },
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 82 (tr. Hicks 1925): the Nobody argument",
+        "status": "ledger",
+        "note": "Ledger S019. Corpus chunk e624f24d-83d0-4efd-98d3-19457ace3554."
+      }
+    ],
+    "ledger_ref": "S019",
+    "difficulty": 3,
+    "status": "draft",
+    "notes": "Cued variant of T2-006, paired for the cue effect."
+  },
+  {
+    "id": "T2-007",
+    "track": "sophisms",
+    "prompt": "\"It is not the case both that I have asked you a question first and that the stars are not even in number; but I have asked you a question first; therefore the stars are even in number.\" What is the trick, and how did the Stoics answer it?",
+    "gold_answer": "Sextus lists this as a sophism whose conclusion is non-evident. Its form is a third indemonstrable, so the trick is not in the form but in the premises, which change truth value as the argument is put. Before any question has been asked, the negated conjunction is true, because its first conjunct ('I have asked you a question first') is false. But once that negated conjunction has been asked, the minor premise 'I have asked you a question first' becomes true, and at that moment the negated conjunction becomes false. The two premises are never true together, so the conclusion is never licensed. The dialecticians' solution, as Sextus reports it, is exactly this: the premises do not co-exist. Diogenes notes that the Stoics recognised propositions that change from true to false.",
+    "rubric": [
+      "Identifies the form as a third indemonstrable (or otherwise states that the form is valid)",
+      "Explains that the premises change truth value with the act of asking, so they are never true at the same time",
+      "States that the conclusion is therefore not established",
+      "Does not accept that the stars are even or treat the argument as sound"
+    ],
+    "sources": [
+      {
+        "cite": "Sextus Empiricus, Outlines of Pyrrhonism II 231 and 234 (tr. Bury 1933)",
+        "status": "verified",
+        "evidence": "research_sources:937d0561-1290-422a-a887-81a8678dbfcc at PH II 231 and 234; passes research_source_contains with attribution and locator",
+        "note": "Outside the proofread pages."
+      },
+      {
+        "cite": "Diogenes Laertius VII 76 (tr. Hicks 1925): 'grades of transition from true to false'",
+        "status": "verified",
+        "evidence": "rag_corpus:0b12119b-5019-4600-98b9-20bc2cc1139a"
+      }
+    ],
+    "difficulty": 3,
+    "status": "draft"
+  },
+  {
+    "id": "T2-008",
+    "track": "sophisms",
+    "prompt": "When a Stoic was led step by step through an argument toward an absurd conclusion, what did the school advise doing? Isn't that just refusing to follow the logic?",
+    "gold_answer": "The advice was to halt and suspend assent while the argument is still being put, rather than wait for the absurdity and then assent to it. Sextus reports that the followers of Chrysippus say that when the Sorites is being propounded one should halt while the argument is still proceeding, to avoid falling into absurdity, and he gives the image of a road leading to a chasm: we avoid the road because of the chasm, and likewise avoid the argument because of the absurdity. It is not a refusal to reason, for two reasons. First, in the question-and-answer game of ancient dialectic the respondent could only answer yes or no, so falling silent was the only move left when a fallacy was being introduced; the respondent was then expected to step outside the game and explain where the argument went wrong. Second, the Stoics held that a valid argument with a false conclusion must have a false premise, so an absurd conclusion is itself evidence that something earlier was wrong, even before one can say what.",
+    "rubric": [
+      "Reports the advice to halt and withhold assent while the argument proceeds",
+      "Gives the reason: to avoid assenting to an evident absurdity (the road and chasm image, or Cicero's charioteer, is acceptable)",
+      "Explains why it is not mere stubbornness: the yes-or-no format of dialectical questioning, or the point that an absurd conclusion shows a false premise",
+      "Does not present the Stoics as rejecting logic or refusing to engage with arguments"
+    ],
+    "sources": [
+      {
+        "cite": "Sextus Empiricus, Outlines of Pyrrhonism II 252 to 253 (tr. Bury 1933)",
+        "status": "verified",
+        "evidence": "research_sources:937d0561-1290-422a-a887-81a8678dbfcc at PH II 252 to 253; passes research_source_contains with attribution and locator",
+        "note": "Outside the proofread pages. The PH II 251 marker is missing from the stored text; 252 and 253 are present."
+      },
+      {
+        "cite": "Sextus Empiricus, Outlines of Pyrrhonism II 248 to 249 (tr. Bury 1933): an argument with a false conclusion is either not conclusive or has a false premise",
+        "status": "verified",
+        "evidence": "research_sources:937d0561-1290-422a-a887-81a8678dbfcc at PH II 248 to 249"
+      },
+      {
+        "cite": "Susanne Bobzien, Chrysippus and the Epistemic Theory of Vagueness (2002), p. 229: falling silent as a strategy in the dialectical game, where only yes and no are permitted",
+        "status": "verified",
+        "evidence": "research_sources:a4130c36-02a0-4878-8cbe-8ed451683a1c at p. 229"
+      },
+      {
+        "cite": "Cicero, Academica II 93 to 94 (tr. Yonge 1856): Chrysippus rests before reaching the doubtful cases",
+        "status": "ledger",
+        "note": "Ledger S018."
+      }
+    ],
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T2-009",
+    "track": "sophisms",
+    "prompt": "\"If someone is in Athens, that one is not in Megara; now man is in Athens; hence man is not in Megara.\" The premises look true and the conclusion looks false. How would a Stoic diagnose it?",
+    "gold_answer": "The premises are not both true in the required sense. 'Man is in Athens' uses the generic term 'man', and the Stoics held that generic impressions such as 'Man is Greek' are neither true nor false: the genus is not of the kind its species are. So the second premise expresses no proposition at all, and the argument has not got two true premises, however it looks. Bobzien proposes this as the most probable Stoic solution, on the evidence that the Stoics allowed sophisms to contain sentences to which no proposition corresponds; it is a reconstruction rather than a reported verdict. A careful answer therefore says what the Stoic doctrine of generic impressions supports, and labels the application to this sophism as modern inference.",
+    "rubric": [
+      "Locates the fault in the generic term 'man' in the second premise",
+      "Connects it to the Stoic view that generic impressions are neither true nor false (no proposition corresponds)",
+      "Labels the specific solution as a scholarly reconstruction rather than an attested Stoic verdict",
+      "Does not say the second premise is simply false, or that the argument is a valid syllogism with true premises"
+    ],
+    "sources": [
+      {
+        "cite": "Susanne Bobzien, Chrysippus and the Epistemic Theory of Vagueness (2002), pp. 220 to 221: the sophism and its probable solution",
+        "status": "verified",
+        "evidence": "research_sources:a4130c36-02a0-4878-8cbe-8ed451683a1c at pp. 220 to 221"
+      },
+      {
+        "cite": "Sextus Empiricus, Against the Logicians I (= M VII) 244 to 246 (tr. Bury 1935): impressions that are neither true nor false",
+        "status": "verified",
+        "note": "Bury: Neither true nor false are the generic presentations ... the generic Man is neither a Greek ... nor yet a barbarian. Outside the proofread pages; OCR shows minor errors (gencra, trne).",
+        "evidence": "research_sources:ca2d7557-ef76-49c7-a3d7-bee6c0b78b32 at M VII 244 to 246"
+      }
+    ],
+    "difficulty": 3,
+    "status": "draft"
+  },
+  {
+    "id": "T3-005",
+    "track": "doctrine",
+    "prompt": "Can someone be partly virtuous according to the Stoics? And if not, what did they make of moral progress?",
+    "gold_answer": "No. For the Stoics there is nothing between virtue and vice: as a stick must be straight or crooked, a person is either just or unjust, and there are no degrees of either. This is where they parted from the Peripatetics, who allowed a state of moral improvement in between. The Stoics did recognise progress (prokope), but the person making progress is still among the bad, as the image Plutarch reports from the Stoics has it: someone a cubit under the surface drowns as surely as someone five hundred fathoms down, though he is nearer the air. Diogenes adds a disagreement inside the school about whether virtue, once gained, can be lost: Chrysippus said it could, through drunkenness or melancholy; Cleanthes said it could not.",
+    "rubric": [
+      "States that virtue admits no degrees and there is no intermediate state between virtue and vice",
+      "Gives one of the Stoic images (the straight or crooked stick, or the drowning man) correctly",
+      "Says that progress exists but the progressor still counts as not yet virtuous",
+      "Does not claim the Stoics denied the possibility of moral progress"
+    ],
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 127 (tr. Hicks 1925): nothing intermediate; the stick; Chrysippus and Cleanthes on losing virtue",
+        "status": "verified",
+        "evidence": "rag_corpus:07ea3394-72b5-4a59-9444-0fb113ed9579"
+      },
+      {
+        "cite": "Plutarch, Against the Stoics on Common Conceptions 10 (tr. Goodwin): a cubit under the surface is no less drowned",
+        "status": "verified",
+        "evidence": "rag_corpus:20cb53eb-e922-411e-8ed6-b8b99e34739a",
+        "note": "Plutarch quotes the Stoics in order to attack them; the image is theirs."
+      }
+    ],
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T3-006",
+    "track": "doctrine",
+    "prompt": "In Stoic ethics, what is the difference between a 'befitting action' (kathekon) and a 'right action' (katorthoma)? Can someone who is not a sage perform a right action?",
+    "gold_answer": "A befitting action is one that reason prevails on us to do, one for which a reasonable account can be given: honouring one's parents, brothers and country, keeping company with friends. Anyone can perform these, and the non-sage performs them all the time. A right action is a befitting action done perfectly, from a settled virtuous disposition. Cicero renders katorthoma as 'duty accomplished' and says that a right action, like opportunity, admits no increase. Since only the sage has virtue, only the sage performs right actions; the non-sage who returns a deposit does the befitting thing, but not the right thing in the strict sense, because the act does not flow from knowledge. The outward act can be identical; what differs is the agent's state.",
+    "rubric": [
+      "Defines a befitting action as what reason recommends, with a reasonable justification, available to anyone",
+      "Defines a right action as a befitting action done from virtue (perfectly), the sage's act",
+      "States that the non-sage cannot perform right actions in the strict sense, only befitting ones",
+      "Does not treat the two as the same thing or as differing only in outcome"
+    ],
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 107 to 109 (tr. Hicks 1925): befitting acts",
+        "status": "verified",
+        "evidence": "rag_corpus:9efd52c6-a4d0-405e-b36e-87d511212c4a"
+      },
+      {
+        "cite": "Cicero, On Ends III 45 and 58 to 59 (tr. Yonge): katorthosis and katorthoma; duty accomplished; no increase",
+        "status": "verified",
+        "evidence": "rag_corpus:61cb3103-e20d-40df-9a64-ac94e57aea3f; rag_corpus:f11ab569-addc-4cb9-8c00-cb8716734dca",
+        "note": "Locators assigned from content; the Cicero chunks carry none."
+      }
+    ],
+    "difficulty": 3,
+    "status": "draft"
+  },
+  {
+    "id": "T3-007",
+    "track": "doctrine",
+    "prompt": "What was the Stoic position on taking one's own life? Did they approve of it?",
+    "gold_answer": "Neither a general approval nor a prohibition. The doctrine is the 'reasonable departure': Diogenes reports that the wise man will for reasonable cause make his own exit from life, on his country's behalf, for the sake of friends, or under intolerable pain, mutilation or incurable disease. Cicero gives the criterion. Whether to remain in life is measured not by virtue or vice but by the balance of things according to nature: where those preponderate it is one's duty to remain, and this holds for the fool as much as the sage; where things contrary to nature preponderate or are likely to, departure can be a duty. So the question belongs to the theory of befitting actions and preferred indifferents, and turns on circumstances, not on a judgment that life is worthless. A careful answer also notes that the surviving reports are brief and that the examples given are extreme cases.",
+    "rubric": [
+      "Reports the doctrine of reasonable departure with its stated grounds (country, friends, intolerable pain, incurable disease)",
+      "Gives Cicero's criterion: the preponderance of things according to nature, not virtue or vice",
+      "Notes that it applies in specific circumstances and that remaining in life is the normal duty, for fools as well as sages",
+      "Does not describe the Stoics as either forbidding it or recommending it in general"
+    ],
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 130 (tr. Hicks 1925)",
+        "status": "verified",
+        "evidence": "rag_corpus:7db9e298-5f34-4a1c-a7bd-674660c8d89a"
+      },
+      {
+        "cite": "Cicero, On Ends III 60 to 61 (tr. Yonge)",
+        "status": "verified",
+        "evidence": "rag_corpus:0dbb3269-0b26-4319-80a1-2e05a879aaef; rag_corpus:5f95a562-4151-434f-ae3e-0da55c848d36",
+        "note": "Locators assigned from content; the Cicero chunks carry none."
+      }
+    ],
+    "difficulty": 3,
+    "status": "draft",
+    "notes": "A doctrine item, not an applied one. The prompt asks for the historical position; the rubric rewards accuracy and penalises both moralising distortions."
+  },
+  {
+    "id": "T3-008",
+    "track": "doctrine",
+    "prompt": "What is the Lazy Argument against Stoic fate, and how did Chrysippus answer it?",
+    "gold_answer": "The Lazy Argument runs: if it is fated that you will recover from this illness, you will recover whether or not you call a doctor; if it is fated that you will not, you will not recover whether or not you call one; one or the other is fated; so calling a doctor is pointless. Cicero reports it and Chrysippus's reply. Some things are simple, like 'Socrates will die on that day', which holds whatever he does. Others are 'co-fated' (confatalia): 'Laius will beget Oedipus' cannot be true whether or not Laius lies with his wife, and 'Milo will wrestle at Olympia' cannot be true whether or not he has an opponent. Recovery is of the second kind, fated together with calling the doctor. So fate includes our actions among its causes, and the argument is, in Cicero's word, idle.",
+    "rubric": [
+      "States the argument correctly (fated outcome, so action is useless)",
+      "Gives Chrysippus's reply in terms of co-fated events",
+      "Gives one of Cicero's examples (Laius and Oedipus, or Milo and his opponent) or an equivalent",
+      "Does not confuse this with the cylinder argument about assent and responsibility"
+    ],
+    "sources": [
+      {
+        "cite": "Cicero, On Fate 28 to 30 (tr. Yonge, ch. 12 to 13)",
+        "status": "verified",
+        "evidence": "rag_corpus:2c9235b4-1c71-4f10-8bd4-5f2a141a25f2; rag_corpus:29bee12f-0e76-4ca9-af7e-8fc39eb115db",
+        "note": "Locators assigned from content; Yonge's chapter numbers are printed in the chunks."
+      }
+    ],
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T3-009",
+    "track": "doctrine",
+    "prompt": "What is a 'cognitive' or 'kataleptic' impression in Stoic epistemology, and what was the Academic objection to it?",
+    "gold_answer": "A cognitive impression is one that comes from a real object, agrees with that object, and is stamped and imprinted on the soul seal-fashion in a way that could not come from an unreal object. Diogenes reports it as the Stoic criterion of truth. Zeno illustrated the stages with his hand: the open palm is an impression, the fingers partly closed is assent, the fist is cognition (katalepsis). The Academics, Arcesilaus and Carneades, objected that for any true impression there can be a false one indistinguishable from it, as with twins or two eggs, so no impression carries a mark that guarantees its truth. The Stoic reply, which Cicero reports, is that no two things are exactly alike, so a sufficiently careful observer can tell them apart. The dispute was not settled and is the centre of Cicero's Academica.",
+    "rubric": [
+      "Gives the definition with its parts: from a real object, agreeing with it, impressed as it could not be from an unreal object",
+      "Identifies it as the Stoic criterion of truth (Zeno's hand image is acceptable as illustration)",
+      "States the Academic objection: indistinguishable false impressions (twins, eggs)",
+      "Mentions the Stoic reply that no two things are exactly alike, or otherwise presents the dispute as two-sided"
+    ],
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 46 and 50 (tr. Hicks 1925): the definition",
+        "status": "verified",
+        "evidence": "rag_corpus:7b5b8c1e-e6ca-4515-a93d-5626c62d540c; rag_corpus:fde949db-460a-4fb1-8e58-1fa63deb7f8d"
+      },
+      {
+        "cite": "Diogenes Laertius VII 54 (tr. Hicks 1925): the criterion of truth",
+        "status": "verified",
+        "evidence": "rag_corpus:da846961-db46-44ee-bbcb-9dbcbf74d196"
+      },
+      {
+        "cite": "Cicero, Academica II 145 (tr. Yonge): Zeno's hand",
+        "status": "verified",
+        "evidence": "rag_corpus:4efe45f7-9f29-4a94-94c1-6c2cbc23bc22",
+        "note": "Locator assigned from content."
+      },
+      {
+        "cite": "Cicero, Academica II 84 to 86 (tr. Yonge): twins, eggs, and the Stoic reply that nothing is the same as something else",
+        "status": "verified",
+        "evidence": "rag_corpus:c7db47ee-0d2b-4062-a165-847c20838961; rag_corpus:9717195a-77c1-4f34-be7f-b847a458476c; rag_corpus:6dffc67c-1bbb-417a-a788-222e635e3b09",
+        "note": "Locators assigned from content."
+      }
+    ],
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T3-010",
+    "track": "doctrine",
+    "prompt": "What did the Stoics mean when they called the world a city, and did that mean a Stoic owed nothing in particular to Rome or Athens?",
+    "gold_answer": "They meant it literally within their physics: the cosmos is governed by divine reason, so it is a common city and state of gods and human beings, and each person is a part of it. Cicero draws the ethical consequence: as the laws prefer the common safety to the individual's, the good man prefers the general advantage to his own. Epictetus says that someone who has understood his kinship with god can call himself a citizen of the world. But this did not cancel local attachments. Marcus Aurelius writes that his city and country, as Antoninus, is Rome, and as a human being, the world, and that what is useful to both cities is useful to him. The cosmopolitan claim grounds duties to everyone; it adds a wider city rather than replacing the narrower one.",
+    "rubric": [
+      "States that the cosmos is a city of gods and humans under one reason or law",
+      "Gives Marcus's two cities, or Epictetus's kinship with god, or Cicero's formulation",
+      "Connects the idea to preferring the common good or to duties toward all people",
+      "Does not present Stoic cosmopolitanism as rejecting duties to one's own city or country"
+    ],
+    "sources": [
+      {
+        "cite": "Cicero, On Ends III 64 (tr. Yonge): a common city and state of men and gods",
+        "status": "verified",
+        "evidence": "rag_corpus:3d0cf524-709c-4c8f-92fa-2d93b6ab032c",
+        "note": "Locator assigned from content."
+      },
+      {
+        "cite": "Marcus Aurelius, Meditations VI 44 (tr. Long)",
+        "status": "verified",
+        "evidence": "rag_corpus:a2f50802-9242-4701-9404-1af928490070"
+      },
+      {
+        "cite": "Epictetus, Discourses I 9 (tr. Long): kinship with god and citizenship of the world",
+        "status": "verified",
+        "evidence": "rag_corpus:13f40fec-9d3a-4e83-b6dc-9396a55eaadb; rag_corpus:a9e05a0a-002a-4301-bdef-d205ccf5dbe6"
+      }
+    ],
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T4-004",
+    "track": "applied_ethics",
+    "prompt": "I keep chasing promotions and recognition at work, and getting them never makes me feel settled. What would Marcus Aurelius say about this?",
+    "gold_answer": "He would say the thing you are chasing is not a good, and that you have been treating it as one. Reputation is at most a preferred indifferent, and Marcus works hard to deflate even that: everything is soon forgotten; applause is empty; the people whose praise you want are changeable and have little judgment; posthumous fame is in the hands of people who will themselves soon die. He asks what praise is worth, except so far as it has some use. The remedy is not to stop working but to change what the work is for: do the task in front of you well, for the common good, and let recognition come or not. The ambition to do good work can stay; the need to be seen doing it is what unsettles you.",
+    "rubric": [
+      "Classifies reputation or recognition as an indifferent, not a good",
+      "Uses Marcus's reasoning: forgetting, the emptiness of applause, or the poor judgment of those who praise",
+      "Redirects the person toward doing the work well for its own sake or for the common good",
+      "Does not advise giving up ambition or effort altogether"
+    ],
+    "sources": [
+      {
+        "cite": "Marcus Aurelius, Meditations IV 3 (tr. Long)",
+        "status": "verified",
+        "evidence": "rag_corpus:81c52c23-cddc-4f67-8bf4-3cda1ab3760f"
+      },
+      {
+        "cite": "Marcus Aurelius, Meditations IV 19 (tr. Long)",
+        "status": "verified",
+        "evidence": "rag_corpus:dd3d3dd1-58c2-4cea-af46-6992abad1af2"
+      },
+      {
+        "cite": "Marcus Aurelius, Meditations VIII 44 (tr. Long)",
+        "status": "verified",
+        "evidence": "rag_corpus:05d356b7-120c-4251-9e25-a16709126519"
+      }
+    ],
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T4-005",
+    "track": "applied_ethics",
+    "prompt": "I was just diagnosed with a chronic illness that will limit me for the rest of my life. How is a Stoic supposed to think about this?",
+    "gold_answer": "Epictetus's line is the starting point: sickness is an impediment to the body, but not to the will unless the will itself chooses to be impeded. Lameness is an impediment to the leg, not to the choice. That does not mean the illness is nothing. Health is a preferred indifferent, something it is reasonable to select and to pursue with treatment, so a Stoic sees a doctor and follows good advice. What the diagnosis cannot touch is the part of you that judges and chooses, and Epictetus's advice is to ask, of each thing that happens, what faculty you have for dealing with it. The grief at lost possibilities is a judgment about an indifferent; the work is to hold that judgment lightly while taking the practical steps seriously.",
+    "rubric": [
+      "Uses the distinction between an impediment to the body and an impediment to the will (Epictetus)",
+      "Treats health as a preferred indifferent, so that seeking treatment is reasonable and expected",
+      "Identifies what remains up to the person: judgments, choices, how the illness is borne",
+      "Does not say the illness does not matter, or imply that treatment should be refused"
+    ],
+    "sources": [
+      {
+        "cite": "Epictetus, Handbook 9 and 10 (tr. Higginson)",
+        "status": "verified",
+        "evidence": "rag_corpus:3f1125c8-c3ca-4a2a-a9d5-d18f256a587f"
+      },
+      {
+        "cite": "Diogenes Laertius VII 102 (tr. Hicks 1925): health among the preferred indifferents",
+        "status": "verified",
+        "evidence": "rag_corpus:f796fb00-33da-4e38-96ff-084da75b85d7"
+      }
+    ],
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T4-006",
+    "track": "applied_ethics",
+    "prompt": "My father expects me to take over the family business, but I want to do something else with my life. Does Stoicism say I have to obey him?",
+    "gold_answer": "Not in the way the question assumes. Epictetus says duties are measured by relations: a father is owed care, deference and patience with his faults, and this holds even if he is a bad father, because the tie is to a father, not to a good one. But the Stoics did not equate honouring a father with doing whatever he says. Musonius argues that refusing a father's bad or harmful instruction is not disobedience; obedience is following what is good counsel. And Cicero's account of the four 'characters' says that in choosing a way of life we must consult our own individual nature as well as our common rational nature, and should not fight our nature by taking on what does not suit us. So the Stoic answer is to keep the duties of a son fully, to take the father's wish seriously as counsel, and to decide the career by what fits your nature and can be done well, telling him honestly.",
+    "rubric": [
+      "Cites the relation-based duties owed to a father (care, deference, patience), independent of his merits",
+      "Distinguishes honouring a father from obeying every instruction, with Musonius's point that declining a bad instruction is not disobedience",
+      "Brings in the individual nature or persona in choosing a way of life (Cicero)",
+      "Does not give a flat 'yes, obey' or 'no, ignore him'"
+    ],
+    "sources": [
+      {
+        "cite": "Epictetus, Handbook 30 (tr. Higginson)",
+        "status": "verified",
+        "evidence": "rag_corpus:107e44e6-1d24-44b5-b982-fb70f8c115d6"
+      },
+      {
+        "cite": "Musonius Rufus, Lecture 16 (tr. Lutz): whether one must obey one's parents in all things",
+        "status": "verified",
+        "evidence": "rag_corpus:8f3885a4-629d-49e5-9ab6-f9186d0cb2e2"
+      },
+      {
+        "cite": "Cicero, On Duties I 107 to 115: the characters assigned by nature",
+        "status": "verified",
+        "evidence": "rag_corpus:83792cf8-2762-49fb-a7a4-4ea60a7a20c7",
+        "note": "The De Officiis rows carry no translator field; confirm the translation before quoting."
+      }
+    ],
+    "difficulty": 3,
+    "status": "draft"
+  },
+  {
+    "id": "T4-007",
+    "track": "applied_ethics",
+    "prompt": "Someone I trusted lied to me and cost me a lot. I keep reading that Stoics think wrongdoers act out of ignorance. So am I supposed to just forgive them and move on?",
+    "gold_answer": "The ignorance claim is real, but it is about your anger, not about excusing the act. Epictetus says that whoever wrongs you acts from an impression that it is right for him to do so, and that what you should feel is pity rather than resentment, because the person is deceived. Marcus prepares himself each morning for the ungrateful and deceitful, says they go wrong through ignorance of good and evil, and concludes that he cannot be injured by them in what matters and will not be angry with his kin. None of this says the act was fine or that nothing should be done. The Stoics also held people responsible for their assent, so the liar is answerable for the lie, and it is entirely befitting to protect yourself, seek what is owed, and withdraw trust. What Stoicism asks you to give up is the anger and the belief that you were harmed in what matters most, not your judgment about what happened.",
+    "rubric": [
+      "Explains the ignorance claim correctly, as the reason to drop anger (Epictetus, Marcus)",
+      "Distinguishes freedom from anger from excusing or approving the act",
+      "Notes that the wrongdoer remains responsible, so practical steps (protecting oneself, seeking redress, withdrawing trust) are appropriate",
+      "Does not counsel passivity or remaining exposed to further harm"
+    ],
+    "sources": [
+      {
+        "cite": "Epictetus, Handbook 42 (tr. Higginson)",
+        "status": "verified",
+        "evidence": "rag_corpus:29f273c5-9a6d-4b96-93a6-31a39c558918"
+      },
+      {
+        "cite": "Marcus Aurelius, Meditations II 1 (tr. Long)",
+        "status": "verified",
+        "evidence": "rag_corpus:4b544a66-2eae-4c9d-b164-9b7c1cab7faa"
+      },
+      {
+        "cite": "Cicero, On Fate 42 to 43 (tr. Yonge): assent is in our power",
+        "status": "verified",
+        "evidence": "rag_corpus:111dd661-92c4-4cd1-a617-b020c50575e0"
+      }
+    ],
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T4-008",
+    "track": "applied_ethics",
+    "prompt": "I trained for months for a race and missed the qualifying time by two seconds. I feel like a failure. Is there a Stoic way to look at this?",
+    "gold_answer": "Yes, and it has a name: acting with reservation. Marcus says that when something stands in our way we should remember that the attempt was made with a reservation, that we did not desire what was impossible, and that we attain our object when what was up to us has been done. Seneca says the wise man undertakes everything with the implied exception 'if I am able, if nothing prevents'. The qualifying time was never up to you alone; your training, your effort on the day and your judgments were. On that measure you did not fail. The two seconds are an indifferent, the kind of thing worth preferring and worth training for again, but not the kind of thing that makes a life worse. Feel the disappointment, then ask what the result tells you about the next attempt.",
+    "rubric": [
+      "Introduces reservation: the aim was held with the implied condition 'if nothing prevents'",
+      "Separates what was up to the person (effort, training, judgment) from the outcome",
+      "States that missing the time is not a moral failure or a harm to what matters most",
+      "Does not say the goal was wrong to have, or that the person should stop trying"
+    ],
+    "sources": [
+      {
+        "cite": "Marcus Aurelius, Meditations VI 50 (tr. Long): 'thy attempt was with a reservation'",
+        "status": "verified",
+        "evidence": "rag_corpus:56f4a10c-a9b2-4d90-87dd-9e242c812e65"
+      },
+      {
+        "cite": "Seneca, On Benefits IV 34 (tr. Stewart): the implied exception",
+        "status": "verified",
+        "evidence": "rag_corpus:b45dce6b-ed4c-4bd7-b68f-3886261f0f7e; rag_corpus:2d05929d-e881-4c52-87e3-9ff744ed5a4b",
+        "note": "Corpus locator reads 4.3x; the passage is Book IV 34 to 35 in Stewart. Confirm the section before quoting."
+      }
+    ],
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T4-009",
+    "track": "applied_ethics",
+    "prompt": "Should someone who takes Stoicism seriously get involved in politics, or keep out of it?",
+    "gold_answer": "The Stoic default is involvement. Diogenes reports that the wise man will take part in politics unless something prevents it, and that of the three lives, contemplative, practical and rational, the Stoics choose the rational, since a rational being is made both for contemplation and for action. Seneca contrasts the two schools: Epicurus says the wise man will not take part in politics except on some special occasion; Zeno says he will take part unless prevented. Chrysippus adds the reason: in public life the wise man restrains vice and promotes virtue. The 'unless prevented' clause is doing real work. Illness, a corrupt state in which one could do no good, or a role better served elsewhere can all count. So the answer is: take part, for the sake of the common good and in whatever form suits your nature and circumstances, and withdraw only for a reason you could defend.",
+    "rubric": [
+      "States the Stoic default of participation with the 'unless something prevents' qualification",
+      "Contrasts this with the Epicurean default of withdrawal, or cites Zeno's or Chrysippus's formulation",
+      "Explains what can count as preventing (illness, a state where no good can be done, a better use of one's nature)",
+      "Does not present Stoicism as a doctrine of private withdrawal or of unconditional political duty"
+    ],
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 121 (tr. Hicks 1925): the wise man will take part in politics unless prevented",
+        "status": "verified",
+        "note": "Hicks: 'the wise man will take part in politics, if nothing hinders him ... since thus he will restrain vice and promote virtue.'",
+        "evidence": "rag_corpus:1c8bcc1a-7130-48f6-b625-92333d965f5b"
+      },
+      {
+        "cite": "Diogenes Laertius VII 130 (tr. Hicks 1925): the rational life, for contemplation and action",
+        "status": "verified",
+        "evidence": "rag_corpus:7db9e298-5f34-4a1c-a7bd-674660c8d89a"
+      },
+      {
+        "cite": "Seneca, On Leisure 3 (tr. Stewart): Epicurus and Zeno on public affairs",
+        "status": "verified",
+        "note": "Stewart: Epicurus says, 'The wise man will not take part in politics, except upon some special occasion;' Zeno says, 'The wise man will take part in politics, unless prevented.' Corpus chunks carry no locator; section 3 assigned from content.",
+        "evidence": "rag_corpus:95a1ae3c-e6e0-4a43-901c-fa3955ded77a; rag_corpus:7a67d342-9e21-4603-a464-eae30a84ebfa"
+      }
+    ],
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T5-006",
+    "track": "epistemic_honesty",
+    "prompt": "Epictetus said, \"We have two ears and one mouth so that we can listen twice as much as we speak.\" Where is that in the Discourses?",
+    "gold_answer": "It is not in the Discourses or the Handbook. The earliest secure attribution is to Zeno of Citium: Diogenes Laertius reports him telling a young man that we have two ears and only one mouth so that we may listen the more and talk the less. A similar sentence does appear among the fragments printed with Epictetus (in the Golden Sayings collection, from later anthologies), but those fragments are of uncertain authenticity and are not part of Arrian's record of his teaching. Plutarch also uses the observation. So it is an ancient commonplace, best credited to Zeno, and the modern wording is a paraphrase.",
+    "rubric": [
+      "States that the saying is not in the Discourses or the Handbook",
+      "Attributes the earliest version to Zeno of Citium, as reported by Diogenes Laertius",
+      "Notes that the Epictetus attribution rests at most on a doubtful fragment, or that the saying was a commonplace",
+      "Does not invent a Discourses book and chapter"
+    ],
+    "exact": {
+      "attested": false
+    },
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 23 (tr. Hicks 1925)",
+        "status": "verified",
+        "evidence": "rag_corpus:cbc4a953-5187-4ff2-a0fb-0eb82b1b10c1"
+      },
+      {
+        "cite": "Epictetus, Golden Sayings (tr. Crossley), fragments, no. VI: 'Nature hath given men one tongue but two ears'",
+        "status": "verified",
+        "evidence": "rag_corpus:0a3ef746-70ba-46e4-9f0d-dd64b7e99a50",
+        "note": "Crossley's fragments come from Stobaeus and other anthologies; their attribution to Epictetus is doubtful. The corpus row has no translator field."
+      },
+      {
+        "cite": "Plutarch, On Listening to Lectures 3 (Goodwin edition)",
+        "status": "verified",
+        "evidence": "rag_corpus:2380082c-84d8-4d8c-be0d-ef3d9b170df4",
+        "note": "Locator assigned from content."
+      }
+    ],
+    "difficulty": 2,
+    "status": "draft"
+  },
+  {
+    "id": "T5-007",
+    "track": "epistemic_honesty",
+    "prompt": "Marcus Aurelius wrote, \"The obstacle is the way.\" Which book and section of the Meditations is that from?",
+    "gold_answer": "Those words are not Marcus's. 'The Obstacle Is the Way' is the title of a 2014 book by Ryan Holiday, and it condenses a passage at Meditations 5.20. In George Long's translation the passage ends: 'the mind converts and changes every hindrance to its activity into an aid; and so that which is a hindrance is made a furtherance to an act; and that which is an obstacle on the road helps us on this road.' Gregory Hays renders the thought as 'The impediment to action advances action. What stands in the way becomes the way.' So cite 5.20 for the idea, but treat the four-word sentence as a modern slogan, not a quotation.",
+    "rubric": [
+      "Locates the underlying passage at Meditations 5.20",
+      "States that the exact wording is modern (a book title or a free translation), not Marcus's sentence",
+      "Gives the sense of the passage correctly (the mind turns a hindrance into an aid)",
+      "Does not present 'The obstacle is the way' as a verbatim quotation"
+    ],
+    "exact": {
+      "attested": "loose_translation",
+      "locator": "Med. 5.20"
+    },
+    "sources": [
+      {
+        "cite": "Marcus Aurelius, Meditations V 20 (tr. Long)",
+        "status": "verified",
+        "evidence": "rag_corpus:011da514-7261-48db-9164-bfd0931318fb"
+      },
+      {
+        "cite": "Ryan Holiday, The Obstacle Is the Way (2014), title and epigraph",
+        "status": "to_verify",
+        "note": "Record a web source for the title and for the Hays rendering it draws on."
+      }
+    ],
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "T5-008",
+    "track": "epistemic_honesty",
+    "prompt": "Is \"Waste no more time arguing what a good man should be. Be one.\" a real Marcus Aurelius quote? Where is it?",
+    "gold_answer": "Yes. It is Meditations 10.16. The wording you have is Gregory Hays's translation. George Long's older rendering is: 'No longer talk at all about the kind of man that a good man ought to be, but be such.' The sentence stands on its own as a complete section, so there is no surrounding context being left out.",
+    "rubric": [
+      "Confirms that the quotation is genuine",
+      "Locates it at Meditations 10.16",
+      "Notes that the English wording depends on the translation (Hays versus Long or others)"
+    ],
+    "exact": {
+      "attested": true,
+      "locator": "Med. 10.16"
+    },
+    "sources": [
+      {
+        "cite": "Marcus Aurelius, Meditations X 16 (tr. Long)",
+        "status": "verified",
+        "evidence": "rag_corpus:67a25ead-d5f7-4330-baeb-c3d98513698a"
+      },
+      {
+        "cite": "Marcus Aurelius, Meditations 10.16 (tr. Hays 2002)",
+        "status": "to_verify",
+        "note": "The Hays wording is quoted in the prompt; record a web or print source for it."
+      }
+    ],
+    "difficulty": 1,
+    "status": "draft",
+    "notes": "A control item: the right answer is to confirm."
+  },
+  {
+    "id": "T5-009",
+    "track": "epistemic_honesty",
+    "prompt": "Seneca wrote, \"Luck is what happens when preparation meets opportunity.\" Which of the letters is that from?",
+    "gold_answer": "None of them. That sentence does not appear in Seneca's Letters to Lucilius or in his essays and dialogues; it is a modern aphorism that circulates under his name, and it is also attributed online to others. Seneca does say related things about fortune and readiness, but not this sentence. I cannot give a letter number because there is not one.",
+    "rubric": [
+      "States that the quotation is not found in Seneca",
+      "Does not supply a letter number or invented locator",
+      "Identifies it as a modern saying, or notes that it is attributed to several people"
+    ],
+    "exact": {
+      "attested": false
+    },
+    "sources": [
+      {
+        "cite": "Seneca, Letters (tr. Gummere), Morals (L'Estrange) and the dialogues (tr. Stewart): corpus search for 'preparation' and 'opportunity'",
+        "status": "verified",
+        "evidence": "rag_corpus search over all Seneca rows for 'preparation meets', 'preparation' and 'opportunity': no match for the sentence or a close variant",
+        "note": "Absence checked in the translations held in the corpus only; the corpus holds the Letters and the major dialogues but not every work."
+      }
+    ],
+    "difficulty": 1,
+    "status": "draft"
+  },
+  {
+    "id": "T5-010",
+    "track": "epistemic_honesty",
+    "prompt": "Give me the original Latin of Marcus Aurelius's line \"The soul becomes dyed with the colour of its thoughts.\"",
+    "gold_answer": "There is no original Latin, because Marcus wrote the Meditations in Greek. The line is Meditations 5.16; Long's translation reads 'the soul is dyed by the thoughts', and the familiar English wording is a later paraphrase. Any Latin version would be a back-translation, not Marcus's words. The title 'Meditations' is also a modern convention; the manuscripts call the work 'to himself'.",
+    "rubric": [
+      "States that Marcus wrote in Greek, so there is no original Latin",
+      "Locates the passage at Meditations 5.16",
+      "Declines to supply Latin as if it were the original, or clearly labels any Latin as a translation",
+      "Does not invent a Latin sentence and present it as Marcus's"
+    ],
+    "exact": {
+      "attested": "loose_translation",
+      "locator": "Med. 5.16"
+    },
+    "sources": [
+      {
+        "cite": "Marcus Aurelius, Meditations V 16 (tr. Long)",
+        "status": "verified",
+        "evidence": "rag_corpus:38b9dfcf-7cdf-430f-89c4-69ae7e08bdab"
+      },
+      {
+        "cite": "That the Meditations were written in Greek: Long's introduction, or Hicks, Stoic and Epicurean",
+        "status": "to_verify",
+        "note": "Find a corpus passage stating the language of composition (Long's preface, Joy, Hicks or Arnold)."
+      }
+    ],
+    "difficulty": 1,
+    "status": "draft"
+  }
+]
