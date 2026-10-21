@@ -61,10 +61,10 @@ Full transcripts and per-criterion judge reasons: `review/t1-008.md`.
 
 Earlier runs with the retired `openai/gpt-5.5-pro` configuration show the same failure, so F1 is not a `gpt-5.5` artifact.
 
-| key | item | model under test | grader | per-epoch | log |
-| --- | --- | --- | --- | --- | --- |
-| A' | T1-008 | anthropic/claude-sonnet-5-5 | openai/gpt-5.5-pro | 0.25, 0.25, 0.25, 0.25, 0.25 | `logs/2026-10-12T20-06-51-00-00_porch-test_6jK8MQyWemxp7RitNdWu43.eval` |
-| B' | T1-008 | openai/gpt-5.5-pro | anthropic/claude-sonnet-5-5 | 0.25, 0.25, 0.25, 0.125, 0.25 | `logs/2026-10-12T20-08-34-00-00_porch-test_QBtkk6xjGJqunGTcbFVV2T.eval` |
+| key | item | model under test | grader | per-epoch | mean | log |
+| --- | --- | --- | --- | --- | --- | --- |
+| A' | T1-008 | anthropic/claude-sonnet-5-5 | openai/gpt-5.5-pro | 0.25, 0.25, 0.25, 0.25, 0.25 | 0.250 | `logs/2026-10-12T20-06-51-00-00_porch-test_6jK8MQyWemxp7RitNdWu43.eval` |
+| B' | T1-008 | openai/gpt-5.5-pro | anthropic/claude-sonnet-5-5 | 0.25, 0.25, 0.25, 0.125, 0.25 | 0.225 | `logs/2026-10-12T20-08-34-00-00_porch-test_QBtkk6xjGJqunGTcbFVV2T.eval` |
 
 T1-008 also scored 0.25 in both earlier cross-track pilots (log `U6gNtygFVEToSLAR87E92b` with Claude under test and `gpt-5.5-pro` grader, and log `goZfAWgGjzQf7UL6T5eZRa` with the same setup after the judge-prompt fixes). Every uncued run failed the same way: four single-item runs (A, B, A′, B′; 20 answers) and both cross-track pilots, each scoring 0.25 ± one criterion.
 
