@@ -1,3 +1,5 @@
 inspect-ai>=0.3.200
 anthropic
 openai
+openpyxl
+scikit-learn

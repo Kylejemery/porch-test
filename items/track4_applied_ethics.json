@@ -6,7 +6,7 @@
     "gold_answer": "Epictetus would separate what is up to you (your judgments, choices, desires and efforts) from what is not (the company's decision, the job market, your reputation). The layoff itself is not up to you, and for a Stoic losing the job would not be an evil, only the loss of a preferred indifferent. But that does not mean doing nothing. What is up to you is acting well: preparing, applying, doing your current work honestly, and caring for the people who depend on you, while holding the outcome lightly, aiming at it 'if nothing prevents'. The harm to guard against is the judgment that this would ruin you, not the event.",
     "rubric": [
       "Correctly sorts what is up to the person (judgments, choices, efforts) from what is not (the decision, the market)",
-      "Treats the job as an indifferent (or preferred indifferent), not as a good whose loss is an evil",
+      "Treats losing the job as not an evil: the job is an indifferent (or preferred indifferent), whether or not the answer uses that term",
       "Recommends active, sensible effort rather than passivity or resignation",
       "Locates the real threat in the person's judgments about the event",
       "Does not advise the person to stop caring about their family or obligations"
@@ -36,7 +36,7 @@
       }
     ],
     "difficulty": 1,
-    "status": "draft"
+    "status": "reviewed"
   },
   {
     "id": "T4-002",
@@ -62,7 +62,7 @@
       }
     ],
     "difficulty": 1,
-    "status": "draft"
+    "status": "reviewed"
   },
   {
     "id": "T4-003",
@@ -88,6 +88,186 @@
       }
     ],
     "difficulty": 2,
-    "status": "draft"
+    "status": "reviewed"
+  },
+  {
+    "id": "T4-004",
+    "track": "applied_ethics",
+    "prompt": "I keep chasing promotions and recognition at work, and getting them never makes me feel settled. What would Marcus Aurelius say about this?",
+    "gold_answer": "He would say the thing you are chasing is not a good, and that you have been treating it as one. Reputation is at most a preferred indifferent, and Marcus works hard to deflate even that: everything is soon forgotten; applause is empty; the people whose praise you want are changeable and have little judgment; posthumous fame is in the hands of people who will themselves soon die. He asks what praise is worth, except so far as it has some use. The remedy is not to stop working but to change what the work is for: do the task in front of you well, for the common good, and let recognition come or not. The ambition to do good work can stay; the need to be seen doing it is what unsettles you.",
+    "rubric": [
+      "Classifies reputation or recognition as an indifferent, not a good",
+      "Uses Marcus's reasoning: forgetting, the emptiness of applause, or the poor judgment of those who praise",
+      "Redirects the person toward doing the work well for its own sake or for the common good",
+      "Does not advise giving up ambition or effort altogether"
+    ],
+    "sources": [
+      {
+        "cite": "Marcus Aurelius, Meditations IV 3 (tr. Long)",
+        "status": "verified",
+        "evidence": "rag_corpus:81c52c23-cddc-4f67-8bf4-3cda1ab3760f"
+      },
+      {
+        "cite": "Marcus Aurelius, Meditations IV 19 (tr. Long)",
+        "status": "verified",
+        "evidence": "rag_corpus:dd3d3dd1-58c2-4cea-af46-6992abad1af2"
+      },
+      {
+        "cite": "Marcus Aurelius, Meditations VIII 44 (tr. Long)",
+        "status": "verified",
+        "evidence": "rag_corpus:05d356b7-120c-4251-9e25-a16709126519"
+      }
+    ],
+    "difficulty": 2,
+    "status": "reviewed"
+  },
+  {
+    "id": "T4-005",
+    "track": "applied_ethics",
+    "prompt": "I was just diagnosed with a chronic illness that will limit me for the rest of my life. How is a Stoic supposed to think about this?",
+    "gold_answer": "Epictetus's line is the starting point: sickness is an impediment to the body, but not to the will unless the will itself chooses to be impeded. Lameness is an impediment to the leg, not to the choice. That does not mean the illness is nothing. Health is a preferred indifferent, something it is reasonable to select and to pursue with treatment, so a Stoic sees a doctor and follows good advice. What the diagnosis cannot touch is the part of you that judges and chooses, and Epictetus's advice is to ask, of each thing that happens, what faculty you have for dealing with it. The grief at lost possibilities is a judgment about an indifferent; the work is to hold that judgment lightly while taking the practical steps seriously.",
+    "rubric": [
+      "Uses the distinction between an impediment to the body and an impediment to the will (Epictetus)",
+      "Treats health as a preferred indifferent, so that seeking treatment is reasonable and expected",
+      "Identifies what remains up to the person: judgments, choices, how the illness is borne",
+      "Does not say the illness does not matter, or imply that treatment should be refused"
+    ],
+    "sources": [
+      {
+        "cite": "Epictetus, Handbook 9 and 10 (tr. Higginson)",
+        "status": "verified",
+        "evidence": "rag_corpus:3f1125c8-c3ca-4a2a-a9d5-d18f256a587f"
+      },
+      {
+        "cite": "Diogenes Laertius VII 102 (tr. Hicks 1925): health among the preferred indifferents",
+        "status": "verified",
+        "evidence": "rag_corpus:f796fb00-33da-4e38-96ff-084da75b85d7"
+      }
+    ],
+    "difficulty": 2,
+    "status": "reviewed"
+  },
+  {
+    "id": "T4-006",
+    "track": "applied_ethics",
+    "prompt": "My father expects me to take over the family business, but I want to do something else with my life. Does Stoicism say I have to obey him?",
+    "gold_answer": "Not in the way the question assumes. Epictetus says duties are measured by relations: a father is owed care, deference and patience with his faults, and this holds even if he is a bad father, because the tie is to a father, not to a good one. But the Stoics did not equate honouring a father with doing whatever he says. Musonius argues that refusing a father's bad or harmful instruction is not disobedience; obedience is following what is good counsel. And Cicero's account of the four 'characters' says that in choosing a way of life we must consult our own individual nature as well as our common rational nature, and should not fight our nature by taking on what does not suit us. So the Stoic answer is to keep the duties of a son fully, to take the father's wish seriously as counsel, and to decide the career by what fits your nature and can be done well, telling him honestly.",
+    "rubric": [
+      "Cites the relation-based duties owed to a father (care, deference, patience), independent of his merits",
+      "Distinguishes honouring a father from obeying every instruction, with Musonius's point that declining a bad instruction is not disobedience",
+      "Brings in the individual nature or persona in choosing a way of life (Cicero)",
+      "Does not give a flat 'yes, obey' or 'no, ignore him'"
+    ],
+    "sources": [
+      {
+        "cite": "Epictetus, Handbook 30 (tr. Higginson)",
+        "status": "verified",
+        "evidence": "rag_corpus:107e44e6-1d24-44b5-b982-fb70f8c115d6"
+      },
+      {
+        "cite": "Musonius Rufus, Lecture 16 (tr. Lutz): whether one must obey one's parents in all things",
+        "status": "verified",
+        "evidence": "rag_corpus:8f3885a4-629d-49e5-9ab6-f9186d0cb2e2"
+      },
+      {
+        "cite": "Cicero, On Duties I 107 to 115: the characters assigned by nature",
+        "status": "verified",
+        "evidence": "rag_corpus:83792cf8-2762-49fb-a7a4-4ea60a7a20c7",
+        "note": "The De Officiis rows carry no translator field; confirm the translation before quoting."
+      }
+    ],
+    "difficulty": 3,
+    "status": "reviewed"
+  },
+  {
+    "id": "T4-007",
+    "track": "applied_ethics",
+    "prompt": "Someone I trusted lied to me and cost me a lot. I keep reading that Stoics think wrongdoers act out of ignorance. So am I supposed to just forgive them and move on?",
+    "gold_answer": "The ignorance claim is real, but it is about your anger, not about excusing the act. Epictetus says that whoever wrongs you acts from an impression that it is right for him to do so, and that what you should feel is pity rather than resentment, because the person is deceived. Marcus prepares himself each morning for the ungrateful and deceitful, says they go wrong through ignorance of good and evil, and concludes that he cannot be injured by them in what matters and will not be angry with his kin. None of this says the act was fine or that nothing should be done. The Stoics also held people responsible for their assent, so the liar is answerable for the lie, and it is entirely befitting to protect yourself, seek what is owed, and withdraw trust. What Stoicism asks you to give up is the anger and the belief that you were harmed in what matters most, not your judgment about what happened.",
+    "rubric": [
+      "Explains the ignorance claim correctly, as the reason to drop anger (Epictetus, Marcus)",
+      "Distinguishes freedom from anger from excusing or approving the act",
+      "Notes that the wrongdoer remains responsible, so practical steps (protecting oneself, seeking redress, withdrawing trust) are appropriate",
+      "Does not counsel passivity or remaining exposed to further harm"
+    ],
+    "sources": [
+      {
+        "cite": "Epictetus, Handbook 42 (tr. Higginson)",
+        "status": "verified",
+        "evidence": "rag_corpus:29f273c5-9a6d-4b96-93a6-31a39c558918"
+      },
+      {
+        "cite": "Marcus Aurelius, Meditations II 1 (tr. Long)",
+        "status": "verified",
+        "evidence": "rag_corpus:4b544a66-2eae-4c9d-b164-9b7c1cab7faa"
+      },
+      {
+        "cite": "Cicero, On Fate 42 to 43 (tr. Yonge): assent is in our power",
+        "status": "verified",
+        "evidence": "rag_corpus:111dd661-92c4-4cd1-a617-b020c50575e0"
+      }
+    ],
+    "difficulty": 2,
+    "status": "reviewed"
+  },
+  {
+    "id": "T4-008",
+    "track": "applied_ethics",
+    "prompt": "I trained for months for a race and missed the qualifying time by two seconds. I feel like a failure. Is there a Stoic way to look at this?",
+    "gold_answer": "Yes, and it has a name: acting with reservation. Marcus says that when something stands in our way we should remember that the attempt was made with a reservation, that we did not desire what was impossible, and that we attain our object when what was up to us has been done. Seneca says the wise man undertakes everything with the implied exception 'if I am able, if nothing prevents'. The qualifying time was never up to you alone; your training, your effort on the day and your judgments were. On that measure you did not fail. The two seconds are an indifferent, the kind of thing worth preferring and worth training for again, but not the kind of thing that makes a life worse. Feel the disappointment, then ask what the result tells you about the next attempt.",
+    "rubric": [
+      "Introduces reservation: the aim was held with the implied condition 'if nothing prevents'",
+      "Separates what was up to the person (effort, training, judgment) from the outcome",
+      "States that missing the time is not a moral failure or a harm to what matters most",
+      "Does not say the goal was wrong to have, or that the person should stop trying"
+    ],
+    "sources": [
+      {
+        "cite": "Marcus Aurelius, Meditations VI 50 (tr. Long): 'thy attempt was with a reservation'",
+        "status": "verified",
+        "evidence": "rag_corpus:56f4a10c-a9b2-4d90-87dd-9e242c812e65"
+      },
+      {
+        "cite": "Seneca, On Benefits IV 34 (tr. Stewart): the implied exception",
+        "status": "verified",
+        "evidence": "rag_corpus:b45dce6b-ed4c-4bd7-b68f-3886261f0f7e; rag_corpus:2d05929d-e881-4c52-87e3-9ff744ed5a4b",
+        "note": "Corpus locator reads 4.3x; the passage is Book IV 34 to 35 in Stewart. Confirm the section before quoting."
+      }
+    ],
+    "difficulty": 2,
+    "status": "reviewed"
+  },
+  {
+    "id": "T4-009",
+    "track": "applied_ethics",
+    "prompt": "Should someone who takes Stoicism seriously get involved in politics, or keep out of it?",
+    "gold_answer": "The Stoic default is involvement. Diogenes reports that the wise man will take part in politics unless something prevents it, and that of the three lives, contemplative, practical and rational, the Stoics choose the rational, since a rational being is made both for contemplation and for action. Seneca contrasts the two schools: Epicurus says the wise man will not take part in politics except on some special occasion; Zeno says he will take part unless prevented. Chrysippus adds the reason: in public life the wise man restrains vice and promotes virtue. The 'unless prevented' clause is doing real work. Illness, a corrupt state in which one could do no good, or a role better served elsewhere can all count. So the answer is: take part, for the sake of the common good and in whatever form suits your nature and circumstances, and withdraw only for a reason you could defend.",
+    "rubric": [
+      "States the Stoic default of participation with the 'unless something prevents' qualification",
+      "Contrasts this with the Epicurean default of withdrawal, or cites Zeno's or Chrysippus's formulation",
+      "Explains what can count as preventing (illness, a state where no good can be done, a better use of one's nature)",
+      "Does not present Stoicism as a doctrine of private withdrawal or of unconditional political duty"
+    ],
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 121 (tr. Hicks 1925): the wise man will take part in politics unless prevented",
+        "status": "verified",
+        "note": "Hicks: 'the wise man will take part in politics, if nothing hinders him ... since thus he will restrain vice and promote virtue.'",
+        "evidence": "rag_corpus:1c8bcc1a-7130-48f6-b625-92333d965f5b"
+      },
+      {
+        "cite": "Diogenes Laertius VII 130 (tr. Hicks 1925): the rational life, for contemplation and action",
+        "status": "verified",
+        "evidence": "rag_corpus:7db9e298-5f34-4a1c-a7bd-674660c8d89a"
+      },
+      {
+        "cite": "Seneca, On Leisure 3 (tr. Stewart): Epicurus and Zeno on public affairs",
+        "status": "verified",
+        "note": "Stewart: Epicurus says, 'The wise man will not take part in politics, except upon some special occasion;' Zeno says, 'The wise man will take part in politics, unless prevented.' Corpus chunks carry no locator; section 3 assigned from content.",
+        "evidence": "rag_corpus:95a1ae3c-e6e0-4a43-901c-fa3955ded77a; rag_corpus:7a67d342-9e21-4603-a464-eae30a84ebfa"
+      }
+    ],
+    "difficulty": 2,
+    "status": "reviewed"
   }
 ]

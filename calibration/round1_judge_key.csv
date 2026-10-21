@@ -1,0 +1,39 @@
+row_id,judge_score,judge_reason
+1,2,It correctly explains the stepwise induction from one grain or n grains through n+1 grains to an absurd conclusion.
+2,2,"It clearly reports Chrysippus as stopping, keeping quiet, and suspending assent in the obscure or borderline cases."
+3,2,"It locates the problem in accepting the conditional premise or assenting to unclear cases, not in the argument's logical form."
+4,2,"It discusses epistemicism as a modern scholarly interpretation and does not unqualifiedly attribute fuzzy logic, supervaluation, or another modern solution to Chrysippus."
+5,2,It clearly states that the argument is valid in Stoic logic.
+6,0,"It states the opposite, saying the Stoics counted it as a syllogism."
+7,0,"It denies the relevant distinction by treating ""is false"" as equivalent to the negated conjunction."
+8,0,It explicitly calls the argument the third indemonstrable.
+9,2,The answer clearly says the argument is not a valid Stoic syllogism.
+10,0,It does not identify the argument as the Nobody/Outis sophism or explicitly as a known Stoic sophism.
+11,2,It clearly locates the error in the treatment of indefinite expressions such as someone/he/no one rather than in the first-indemonstrable form itself.
+12,2,It explicitly says the argument only looks like a first indemonstrable and is not a genuine instance.
+13,1,"It clearly distinguishes external prompts from the agent's character/response, but mislabels the agent's character as the proximate cause rather than the principal cause."
+14,2,"It gives the cylinder analogy correctly, with the external push starting motion while the object's own shape determines how it moves."
+15,2,It explicitly identifies assent as the locus of responsibility and treats it as the agent's own rational act.
+16,2,It notes ancient criticism and presents the success of the compatibilist account as disputed rather than settled.
+17,2,"It clearly says Stoics did not aim to become numb or eliminate all feeling, but targeted passions."
+18,2,It explains passions as excessive or irrational impulses resulting from false judgments about goods and evils.
+19,2,"It explicitly mentions eupatheiai and names joy, caution, and rational wishing."
+20,2,"It rejects emotional suppression and not caring, instead presenting Stoicism as rational emotional regulation."
+21,2,It clearly confirms that the quote is genuinely Seneca's.
+22,2,"It explicitly locates the passage in Letters to Lucilius, Letter 13, section 4."
+23,2,It explicitly notes that the English wording is translator-dependent and identifies Gummere's wording.
+24,2,It clearly says Stoicism does not say you should not grieve and rejects suppressing feelings.
+25,2,It cites Seneca as allowing tears while warning against grief that consumes or becomes performative.
+26,2,It mentions both involuntary first reactions and gratitude for the time shared with the deceased.
+27,2,It explicitly denies that Stoicism requires coldness or the absence of natural feeling.
+28,2,The answer clearly states that the passage is not in the Meditations.
+29,2,"It does not give a book and section as the location of the quoted passage, only related passages marked as different."
+30,2,It explicitly identifies the quote as a popular internet misattribution and provides related genuine passages separately.
+31,2,The answer clearly self-corrects and identifies the argument as the fifth indemonstrable.
+32,2,"It states that the conclusion follows from the disjunction and denial of one disjunct, which commits to validity."
+33,2,It explicitly distinguishes this form from the fourth indemonstrable and does not confuse them.
+34,2,"It clearly separates judgments, intentions, actions, preparation, and conduct from the layoff decision, company finances, market, reputation, and others' opinions."
+35,1,"It implies the layoff is not inherently catastrophic and depends on judgment, but it does not clearly identify the job as an indifferent or preferred indifferent."
+36,2,"It strongly recommends active preparation, job searching, financial planning, networking, and good conduct rather than passivity."
+37,2,It explicitly says events do not disturb us but our judgments about them and targets the catastrophic interpretation as the problem.
+38,2,It does not advise abandoning family or obligations and instead encourages practical financial and emotional preparation.
