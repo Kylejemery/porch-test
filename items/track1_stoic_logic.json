@@ -22,7 +22,7 @@
     "ledger_ref": "S001",
     "lean_ref": "Stoic/Indemonstrables.lean: first_derivable",
     "difficulty": 1,
-    "status": "draft"
+    "status": "reviewed"
   },
   {
     "id": "T1-002",
@@ -47,7 +47,7 @@
     "ledger_ref": "S002",
     "lean_ref": "Stoic/Indemonstrables.lean: second_derivable",
     "difficulty": 1,
-    "status": "draft",
+    "status": "reviewed",
     "notes": "Uses 'it is not light' rather than Hicks's 'it is night', which is a contrary, not the contradictory (see ledger S002 notes)."
   },
   {
@@ -73,7 +73,7 @@
     "ledger_ref": "S003",
     "lean_ref": "Stoic/Indemonstrables.lean: third_derivable",
     "difficulty": 1,
-    "status": "draft"
+    "status": "reviewed"
   },
   {
     "id": "T1-004",
@@ -99,7 +99,7 @@
     "ledger_ref": "S004",
     "lean_ref": "Stoic/Indemonstrables.lean: fourth_derivable",
     "difficulty": 2,
-    "status": "draft"
+    "status": "reviewed"
   },
   {
     "id": "T1-005",
@@ -124,7 +124,7 @@
     "ledger_ref": "S005",
     "lean_ref": "Stoic/Indemonstrables.lean: fifth_derivable",
     "difficulty": 1,
-    "status": "draft"
+    "status": "reviewed"
   },
   {
     "id": "T1-006",
@@ -149,7 +149,7 @@
     "ledger_ref": "S007",
     "lean_ref": "Stoic/Tests.lean: S006, S007 checks (rejected forms invalid)",
     "difficulty": 1,
-    "status": "draft"
+    "status": "reviewed"
   },
   {
     "id": "T1-007",
@@ -174,18 +174,18 @@
     "ledger_ref": "S006",
     "lean_ref": "Stoic/Tests.lean: S006, S007 checks (rejected forms invalid)",
     "difficulty": 2,
-    "status": "draft"
+    "status": "reviewed"
   },
   {
     "id": "T1-008",
     "track": "stoic_logic",
     "prompt": "Consider: \"'It is both day and night' is false; it is day; therefore it is not night.\" Is this valid in Stoic logic? Is it a syllogism in the Stoic sense?",
-    "gold_answer": "It is conclusive (valid), but the Stoics did not count it as syllogistic. Diogenes Laertius gives it as an example of an argument that is conclusive in the specific sense: it draws its conclusion, but not by syllogism. The major premise asserts that a conjunction is false rather than negating the conjunction, so it is not a third indemonstrable and cannot be reduced to one.",
+    "gold_answer": "It is valid, but the Stoics did not count it as a syllogism. Diogenes Laertius (VII 78) gives it as an example of an argument that is conclusive in the specific sense: it draws its conclusion, but not by syllogism. The reason is form. The major premise says that a conjunction is false; a third indemonstrable begins with a negated conjunction ('not both'). The two are equivalent in content, but only the canonical form counts as a syllogism, so the argument is not a third indemonstrable. Bobzien classes arguments of this kind as subsyllogistic: they differ from the corresponding syllogism only in the wording of a premise.",
     "rubric": [
       "States that the argument is valid (conclusive)",
-      "States that the Stoics did not count it as syllogistic",
-      "Explains that saying a conjunction 'is false' differs from negating it, so the third indemonstrable does not apply",
-      "Does not simply call it a third indemonstrable"
+      "States that the Stoics did not count it as syllogistic (credit 'subsyllogistic' or 'conclusive in the specific sense')",
+      "Locates the difference in form, not content: 'is false that both' and 'not both' are equivalent, but only the negated conjunction has the canonical form of the third indemonstrable",
+      "Does not classify it as a third indemonstrable"
     ],
     "exact": {
       "indemonstrable": null,
@@ -195,6 +195,11 @@
       {
         "cite": "Diogenes Laertius VII 78 (tr. Hicks 1925)",
         "status": "ledger"
+      },
+      {
+        "cite": "Susanne Bobzien, 'Logic', in The Cambridge History of Hellenistic Philosophy (1999), section on arguments valid in the specific sense (subsyllogistic arguments), pp. 151-152",
+        "status": "to_verify",
+        "note": "Scanned PDF in Papers folder (Logic_Prt2); not yet loaded into research_sources. Backs criterion 3 and the term 'subsyllogistic'."
       }
     ],
     "ledger_ref": "S008",
@@ -226,7 +231,7 @@
     "ledger_ref": "S008",
     "lean_ref": "Stoic/Tests.lean: S008_not_derivable; Stoic/Sugihara.lean",
     "difficulty": 3,
-    "status": "draft",
+    "status": "reviewed",
     "notes": "Cued variant of T1-008: prefixes the prompt with the Diogenes Laertius citation to test whether models correctly report Diogenes's valid-but-not-syllogistic classification when the source is named."
   },
   {
@@ -262,7 +267,7 @@
     "ledger_ref": "S013",
     "lean_ref": null,
     "difficulty": 2,
-    "status": "draft",
+    "status": "reviewed",
     "notes": "Ledger S013 confidence was low because it rested on a Mode 2 summary. The primary text (M VIII 235 to 236) now confirms the analysis directly. Lean ref pending: S013 is checked in the harness, not by a named theorem."
   },
   {
@@ -300,6 +305,98 @@
     "ledger_ref": "S016",
     "lean_ref": "Stoic/Indemonstrables.lean: redundant_not_derivable; Stoic/Tests.lean: S016_not_derivable",
     "difficulty": 3,
-    "status": "draft"
+    "status": "reviewed"
+  },
+  {
+    "id": "T1-010b",
+    "track": "stoic_logic",
+    "prompt": "Sextus Empiricus uses this example at Outlines of Pyrrhonism II 147. In modern logic, \"If it is day, it is light; it is day; Dion is walking; therefore it is light\" is valid, because adding a premise never destroys validity. Did the Stoics agree?",
+    "gold_answer": "According to Sextus Empiricus, the Stoics classed arguments with a superfluous premise as invalid ('redundant' arguments), so they would reject this one even though it is valid by modern standards. Sextus's own word for them is 'inconclusive' (asyntaktos), not merely 'non-syllogistic', and scholars note the tension this creates with the Stoic conditional test of validity (DL 7.77), by which adding a true premise to a valid argument should preserve conclusiveness. That makes Stoic validity non-monotonic. The evidence is thinner than for the indemonstrables: it comes mainly from Sextus, and scholars have debated how the doctrine should be understood.",
+    "rubric": [
+      "States that, per Sextus, the Stoics counted arguments with a superfluous premise as inconclusive (invalid), not merely as non-syllogistic",
+      "Identifies 'Dion is walking' as the superfluous premise",
+      "Notes that this departs from modern logic, where adding premises preserves validity (monotonicity)",
+      "Acknowledges that the evidence is limited or debated rather than presenting it as certain"
+    ],
+    "exact": {
+      "verdict": "invalid"
+    },
+    "sources": [
+      {
+        "cite": "Sextus Empiricus, Outlines of Pyrrhonism II 146 to 147 (tr. Bury 1933)",
+        "status": "verified",
+        "evidence": "research_sources:937d0561-1290-422a-a887-81a8678dbfcc at PH II 147; passes research_source_contains with attribution and locator"
+      },
+      {
+        "cite": "Sextus Empiricus, Against the Logicians II (= M VIII) 431 (tr. Bury 1935)",
+        "status": "verified",
+        "evidence": "research_sources:ca2d7557-ef76-49c7-a3d7-bee6c0b78b32 at M VIII 431; passes research_source_contains with attribution and locator"
+      }
+    ],
+    "ledger_ref": "S016",
+    "lean_ref": "Stoic/Indemonstrables.lean: redundant_not_derivable; Stoic/Tests.lean: S016_not_derivable",
+    "difficulty": 3,
+    "status": "reviewed",
+    "notes": "Cued variant of T1-010 (same prompt with the source named), paired for the cue effect measured in F1."
+  },
+  {
+    "id": "T1-011",
+    "track": "stoic_logic",
+    "prompt": "\"If it is day, it is day; it is day; therefore it is day.\" Would the Stoics count this as a valid syllogism, or is it too circular to count?",
+    "gold_answer": "The Stoics counted it as valid. It has the form of the first indemonstrable (if the first, the second; the first; therefore the second), with the antecedent and consequent happening to be the same proposition. The later sources call arguments of this shape 'duplicated' (diphoroumenoi), and Cicero reports that Chrysippus could not refuse 'If it shines, it shines; but it does shine; therefore it does shine', since the connection compels assent to the conclusion once the premises are granted. Circularity is a defect of usefulness, not of validity: the argument proves nothing new, but it cannot have true premises and a false conclusion.",
+    "rubric": [
+      "States that the argument is valid",
+      "Identifies it as a first indemonstrable (or a 'duplicated' argument reducible to one)",
+      "Distinguishes being uninformative or circular from being invalid",
+      "Does not claim the Stoics rejected it as a fallacy"
+    ],
+    "exact": {
+      "indemonstrable": 1,
+      "verdict": "valid"
+    },
+    "sources": [
+      {
+        "cite": "Cicero, Academica II (Lucullus) 96 (tr. Yonge 1856): 'If it shines, it shines; but it does shine, therefore it does shine'",
+        "status": "ledger",
+        "note": "Ledger S009. Corpus chunk df555ec8-e886-440d-9d99-b7376a22b63a. Locator assigned from content; the Cicero chunks carry none."
+      },
+      {
+        "cite": "Zeller, The Stoics, Epicureans and Sceptics, ch. V n. 239 (tr. Reichel): the 'duplicated' and 'indifferently concluding' arguments, citing Alexander",
+        "status": "verified",
+        "evidence": "rag_corpus:8e7bb081-9d8b-481f-b3ac-57183751efa5",
+        "note": "Zeller reports Alexander of Aphrodisias; Alexander's own text is not in the corpus."
+      }
+    ],
+    "ledger_ref": "S009",
+    "difficulty": 2,
+    "status": "reviewed"
+  },
+  {
+    "id": "T1-012",
+    "track": "stoic_logic",
+    "prompt": "\"It is day; therefore it is light.\" Antipater of Tarsus is said to have accepted arguments like this, with only one premise. Was that the standard Stoic view?",
+    "gold_answer": "No, it was Antipater's departure from it, and it was disputed. The standard Stoic account of an argument requires at least two premises and a conclusion, so 'It is day; therefore it is light' is incomplete on that view: the conditional 'If it is day, it is light' has been left unstated, and once it is supplied the argument is an ordinary first indemonstrable. Sextus reports that some rejected single-premise arguments while Antipater did not, and uses the disagreement against the dialecticians. Zeller judged the innovation 'of very doubtful worth'. So the honest answer is that single-premise arguments were a minority position inside the school, attested mainly through Sextus and Alexander.",
+    "rubric": [
+      "States that single-premise arguments were Antipater's position, not the general Stoic doctrine, and that it was disputed",
+      "Explains that the standard account requires at least two premises (the conditional being left unstated here)",
+      "Notes that the evidence comes through later reports (Sextus, Alexander) rather than Antipater's own words",
+      "Does not present single-premise arguments as accepted Stoic logic without qualification"
+    ],
+    "sources": [
+      {
+        "cite": "Sextus Empiricus, Outlines of Pyrrhonism II 167 (tr. Bury 1933): 'they deserve no more credence than does Antipater who does not reject such arguments'",
+        "status": "verified",
+        "evidence": "research_sources:937d0561-1290-422a-a887-81a8678dbfcc at PH II 167 (a proofread page); passes research_source_contains with attribution and locator"
+      },
+      {
+        "cite": "Zeller, The Stoics, Epicureans and Sceptics, ch. V text and n. 245 (tr. Reichel): Antipater's single-premise inferences, with the examples 'It is day, therefore it is light' and 'You breathe, therefore you live'",
+        "status": "verified",
+        "evidence": "rag_corpus:8026da9e-bbf9-4a39-b1e7-d2ca5604b7ca; rag_corpus:73ca2320-47fc-4eed-b9b0-fc8ad0d060e4"
+      }
+    ],
+    "ledger_ref": "S014",
+    "difficulty": 3,
+    "status": "reviewed",
+    "notes": "Ledger S014 carries the verdict 'disputed'. The item asks about the status of the doctrine, not whether the argument is valid, so no exact verdict is set."
   }
 ]

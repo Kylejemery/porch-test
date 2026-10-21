@@ -29,7 +29,7 @@
     "ledger_ref": "S018",
     "lean_ref": "Stoic/Tests.lean: Sorites chain (three links) valid",
     "difficulty": 2,
-    "status": "draft",
+    "status": "reviewed",
     "notes": "Revised October 14, 2026 after calibration round 1: step form per DL VII 82 (denied conjunctions), no claim that Chrysippus solved it (Bobzien 2002, p. 218 n. 7), and the cutoff question presented as disputed. Criterion 4 now also covers epistemicism."
   },
   {
@@ -55,7 +55,7 @@
     "ledger_ref": "S019",
     "lean_ref": null,
     "difficulty": 2,
-    "status": "draft"
+    "status": "reviewed"
   },
   {
     "id": "T2-003",
@@ -82,6 +82,203 @@
     "ledger_ref": null,
     "lean_ref": null,
     "difficulty": 1,
-    "status": "draft"
+    "status": "reviewed"
+  },
+  {
+    "id": "T2-004",
+    "track": "sophisms",
+    "prompt": "How did the Stoic logicians define a sophism, and what kinds did they distinguish?",
+    "gold_answer": "Sextus reports the dialecticians' definition: a sophism is a plausible argument cunningly framed to induce acceptance of its conclusion, where that conclusion is either false, or resembles something false, or is non-evident, or is otherwise unacceptable. He gives an example of each kind. The false: 'Nobody offers one a predicate to drink; but to drink absinth is a predicate; therefore nobody offers one absinth to drink.' The resembling-false: an argument concluding that it is not absurd for a doctor, as a doctor, to murder. The non-evident: an argument whose premises change truth value as it is asked, concluding that the stars are even in number. The unacceptable: solecistic arguments whose conclusions are ungrammatical. The dialecticians also offered a solution for each kind. Sextus is a hostile witness, and he reports this to argue that dialectic is useless for exposing sophisms.",
+    "rubric": [
+      "Gives the definition: a plausible argument contrived to make one accept a conclusion that is false, resembles the false, is non-evident, or is unacceptable",
+      "Names at least two of the four kinds",
+      "Gives a correct example for at least one kind",
+      "Attributes the report to Sextus Empiricus, or otherwise notes that it comes from a hostile source rather than a Stoic handbook"
+    ],
+    "sources": [
+      {
+        "cite": "Sextus Empiricus, Outlines of Pyrrhonism II 229 to 231 (tr. Bury 1933)",
+        "status": "verified",
+        "evidence": "research_sources:937d0561-1290-422a-a887-81a8678dbfcc at PH II 229 to 231; passes research_source_contains with attribution and locator",
+        "note": "Outside the proofread pages; the definition and the four examples were checked against the stored text."
+      }
+    ],
+    "difficulty": 2,
+    "status": "reviewed"
+  },
+  {
+    "id": "T2-005",
+    "track": "sophisms",
+    "prompt": "\"Nobody offers one a predicate to drink; but 'to drink absinth' is a predicate; therefore nobody offers one absinth to drink.\" How did the Stoics solve this?",
+    "gold_answer": "By pointing out that one thing is established by the premises and another inferred in the conclusion. The premises establish that a predicate is not drunk and that 'to drink absinth' is a predicate. What follows is that nobody drinks the predicate 'to drink absinth', which is true. The conclusion drawn instead is that nobody drinks absinth, the thing, which is false and does not follow. The sophism trades on the Stoic distinction between a sayable (lekton), here a predicate, and the bodily thing the words refer to. Sextus lists it as a sophism of the first kind, one whose conclusion is false.",
+    "rubric": [
+      "Locates the fault in the slide from the predicate (a sayable) to the thing (absinth)",
+      "States what the premises do license: nobody drinks the predicate 'to drink absinth'",
+      "Places the error in the inference to the conclusion, not in the premises",
+      "Does not say the premises are false"
+    ],
+    "sources": [
+      {
+        "cite": "Sextus Empiricus, Outlines of Pyrrhonism II 230 and 232 (tr. Bury 1933)",
+        "status": "verified",
+        "evidence": "research_sources:937d0561-1290-422a-a887-81a8678dbfcc at PH II 230 and 232; passes research_source_contains with attribution and locator",
+        "note": "Outside the proofread pages."
+      },
+      {
+        "cite": "Diogenes Laertius VII 63 to 64 (tr. Hicks 1925): predicates as defective sayables",
+        "status": "verified",
+        "evidence": "rag_corpus:c572fc1b-0fbb-4c1e-8f46-37b5ac420b62"
+      }
+    ],
+    "difficulty": 3,
+    "status": "reviewed"
+  },
+  {
+    "id": "T2-006",
+    "track": "sophisms",
+    "prompt": "\"If anyone is here, he is not in Rhodes; but there is someone here; therefore there is not anyone in Rhodes.\" This looks like a first indemonstrable. Is it?",
+    "gold_answer": "No. Diogenes Laertius lists it among the insoluble arguments under the name 'the Nobody', and defines it by its structure: a major premise made of an indefinite clause ('if anyone is here') and a definite one ('he is not in Rhodes'), then a minor premise and a conclusion. It has the surface shape of 'if the first, the second; the first; therefore the second', but the conclusion is not the consequent of the major premise. What the premises license is that the particular person who is here is not in Rhodes; the conclusion asserts that no one at all is in Rhodes. The move from an indefinite 'anyone' to a universal 'not anyone' is the sophistry, and it cannot be captured by propositional forms, which is why it counts as a sophism rather than an invalid syllogism of a known mood.",
+    "rubric": [
+      "States that it is not a valid first indemonstrable",
+      "Identifies the shift from the indefinite ('anyone', 'someone') to the universal ('not anyone') as the fault, or the mismatch between the consequent and the conclusion",
+      "Notes that the Stoics listed it among the insolubles (sophisms) rather than treating it as a syllogism",
+      "Does not accept the conclusion as following"
+    ],
+    "exact": {
+      "verdict": "invalid"
+    },
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 82 (tr. Hicks 1925): the Nobody argument",
+        "status": "ledger",
+        "note": "Ledger S019. Corpus chunk e624f24d-83d0-4efd-98d3-19457ace3554."
+      },
+      {
+        "cite": "Susanne Bobzien, Chrysippus and the Epistemic Theory of Vagueness (2002), pp. 220 to 221: the Stoics allowed sophisms to contain sentences to which no proposition corresponds",
+        "status": "verified",
+        "evidence": "research_sources:a4130c36-02a0-4878-8cbe-8ed451683a1c at p. 221",
+        "note": "Used only for the general point that Stoic sophism analysis goes beyond propositional form."
+      }
+    ],
+    "ledger_ref": "S019",
+    "difficulty": 3,
+    "status": "reviewed"
+  },
+  {
+    "id": "T2-006b",
+    "track": "sophisms",
+    "prompt": "Diogenes Laertius lists this at VII 82 as the Nobody argument. \"If anyone is here, he is not in Rhodes; but there is someone here; therefore there is not anyone in Rhodes.\" This looks like a first indemonstrable. Is it?",
+    "gold_answer": "No. Diogenes Laertius lists it among the insoluble arguments under the name 'the Nobody', and defines it by its structure: a major premise made of an indefinite clause ('if anyone is here') and a definite one ('he is not in Rhodes'), then a minor premise and a conclusion. It has the surface shape of 'if the first, the second; the first; therefore the second', but the conclusion is not the consequent of the major premise. What the premises license is that the particular person who is here is not in Rhodes; the conclusion asserts that no one at all is in Rhodes. The move from an indefinite 'anyone' to a universal 'not anyone' is the sophistry, and it cannot be captured by propositional forms, which is why it counts as a sophism rather than an invalid syllogism of a known mood.",
+    "rubric": [
+      "States that it is not a valid first indemonstrable",
+      "Identifies the shift from the indefinite ('anyone', 'someone') to the universal ('not anyone') as the fault, or the mismatch between the consequent and the conclusion",
+      "Notes that the Stoics listed it among the insolubles (sophisms) rather than treating it as a syllogism",
+      "Does not accept the conclusion as following"
+    ],
+    "exact": {
+      "verdict": "invalid"
+    },
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 82 (tr. Hicks 1925): the Nobody argument",
+        "status": "ledger",
+        "note": "Ledger S019. Corpus chunk e624f24d-83d0-4efd-98d3-19457ace3554."
+      }
+    ],
+    "ledger_ref": "S019",
+    "difficulty": 3,
+    "status": "reviewed",
+    "notes": "Cued variant of T2-006, paired for the cue effect."
+  },
+  {
+    "id": "T2-007",
+    "track": "sophisms",
+    "prompt": "\"It is not the case both that I have asked you a question first and that the stars are not even in number; but I have asked you a question first; therefore the stars are even in number.\" What is the trick, and how did the Stoics answer it?",
+    "gold_answer": "Sextus lists this as a sophism whose conclusion is non-evident. Its form is a third indemonstrable, so the trick is not in the form but in the premises, which change truth value as the argument is put. Before any question has been asked, the negated conjunction is true, because its first conjunct ('I have asked you a question first') is false. But once that negated conjunction has been asked, the minor premise 'I have asked you a question first' becomes true, and at that moment the negated conjunction becomes false. The two premises are never true together, so the conclusion is never licensed. The dialecticians' solution, as Sextus reports it, is exactly this: the premises do not co-exist. Diogenes notes that the Stoics recognised propositions that change from true to false.",
+    "rubric": [
+      "Identifies the form as a third indemonstrable (or otherwise states that the form is valid)",
+      "Explains that the premises change truth value with the act of asking, so they are never true at the same time",
+      "States that the conclusion is therefore not established",
+      "Does not accept that the stars are even or treat the argument as sound"
+    ],
+    "sources": [
+      {
+        "cite": "Sextus Empiricus, Outlines of Pyrrhonism II 231 and 234 (tr. Bury 1933)",
+        "status": "verified",
+        "evidence": "research_sources:937d0561-1290-422a-a887-81a8678dbfcc at PH II 231 and 234; passes research_source_contains with attribution and locator",
+        "note": "Outside the proofread pages."
+      },
+      {
+        "cite": "Diogenes Laertius VII 76 (tr. Hicks 1925): 'grades of transition from true to false'",
+        "status": "verified",
+        "evidence": "rag_corpus:0b12119b-5019-4600-98b9-20bc2cc1139a"
+      }
+    ],
+    "difficulty": 3,
+    "status": "reviewed"
+  },
+  {
+    "id": "T2-008",
+    "track": "sophisms",
+    "prompt": "When a Stoic was led step by step through an argument toward an absurd conclusion, what did the school advise doing? Isn't that just refusing to follow the logic?",
+    "gold_answer": "The advice was to halt and suspend assent while the argument is still being put, rather than wait for the absurdity and then assent to it. Sextus reports that the followers of Chrysippus say that when the Sorites is being propounded one should halt while the argument is still proceeding, to avoid falling into absurdity, and he gives the image of a road leading to a chasm: we avoid the road because of the chasm, and likewise avoid the argument because of the absurdity. It is not a refusal to reason, for two reasons. First, in the question-and-answer game of ancient dialectic the respondent could only answer yes or no, so falling silent was the only move left when a fallacy was being introduced; the respondent was then expected to step outside the game and explain where the argument went wrong. Second, the Stoics held that a valid argument with a false conclusion must have a false premise, so an absurd conclusion is itself evidence that something earlier was wrong, even before one can say what.",
+    "rubric": [
+      "Reports the advice to halt and withhold assent while the argument proceeds",
+      "Gives the reason: to avoid assenting to an evident absurdity (the road and chasm image, or Cicero's charioteer, is acceptable)",
+      "Explains why it is not mere stubbornness: the yes-or-no format of dialectical questioning, or the point that an absurd conclusion shows a false premise",
+      "Does not present the Stoics as rejecting logic or refusing to engage with arguments"
+    ],
+    "sources": [
+      {
+        "cite": "Sextus Empiricus, Outlines of Pyrrhonism II 252 to 253 (tr. Bury 1933)",
+        "status": "verified",
+        "evidence": "research_sources:937d0561-1290-422a-a887-81a8678dbfcc at PH II 252 to 253; passes research_source_contains with attribution and locator",
+        "note": "Outside the proofread pages. The PH II 251 marker is missing from the stored text; 252 and 253 are present."
+      },
+      {
+        "cite": "Sextus Empiricus, Outlines of Pyrrhonism II 248 to 249 (tr. Bury 1933): an argument with a false conclusion is either not conclusive or has a false premise",
+        "status": "verified",
+        "evidence": "research_sources:937d0561-1290-422a-a887-81a8678dbfcc at PH II 248 to 249"
+      },
+      {
+        "cite": "Susanne Bobzien, Chrysippus and the Epistemic Theory of Vagueness (2002), p. 229: falling silent as a strategy in the dialectical game, where only yes and no are permitted",
+        "status": "verified",
+        "evidence": "research_sources:a4130c36-02a0-4878-8cbe-8ed451683a1c at p. 229"
+      },
+      {
+        "cite": "Cicero, Academica II 93 to 94 (tr. Yonge 1856): Chrysippus rests before reaching the doubtful cases",
+        "status": "ledger",
+        "note": "Ledger S018."
+      }
+    ],
+    "difficulty": 2,
+    "status": "reviewed"
+  },
+  {
+    "id": "T2-009",
+    "track": "sophisms",
+    "prompt": "\"If someone is in Athens, that one is not in Megara; now man is in Athens; hence man is not in Megara.\" The premises look true and the conclusion looks false. How would a Stoic diagnose it?",
+    "gold_answer": "The premises are not both true in the required sense. 'Man is in Athens' uses the generic term 'man', and the Stoics held that generic impressions such as 'Man is Greek' are neither true nor false: the genus is not of the kind its species are. So the second premise expresses no proposition at all, and the argument has not got two true premises, however it looks. Bobzien proposes this as the most probable Stoic solution, on the evidence that the Stoics allowed sophisms to contain sentences to which no proposition corresponds; it is a reconstruction rather than a reported verdict. A careful answer therefore says what the Stoic doctrine of generic impressions supports, and labels the application to this sophism as modern inference.",
+    "rubric": [
+      "Locates the fault in the generic term 'man' in the second premise",
+      "Connects it to the Stoic view that generic impressions are neither true nor false (no proposition corresponds)",
+      "Labels the specific solution as a scholarly reconstruction rather than an attested Stoic verdict",
+      "Does not say the second premise is simply false, or that the argument is a valid syllogism with true premises"
+    ],
+    "sources": [
+      {
+        "cite": "Susanne Bobzien, Chrysippus and the Epistemic Theory of Vagueness (2002), pp. 220 to 221: the sophism and its probable solution",
+        "status": "verified",
+        "evidence": "research_sources:a4130c36-02a0-4878-8cbe-8ed451683a1c at pp. 220 to 221"
+      },
+      {
+        "cite": "Sextus Empiricus, Against the Logicians I (= M VII) 244 to 246 (tr. Bury 1935): impressions that are neither true nor false",
+        "status": "verified",
+        "note": "Bury: Neither true nor false are the generic presentations ... the generic Man is neither a Greek ... nor yet a barbarian. Outside the proofread pages; OCR shows minor errors (gencra, trne).",
+        "evidence": "research_sources:ca2d7557-ef76-49c7-a3d7-bee6c0b78b32 at M VII 244 to 246"
+      }
+    ],
+    "difficulty": 3,
+    "status": "reviewed"
   }
 ]

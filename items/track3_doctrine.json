@@ -28,7 +28,7 @@
       }
     ],
     "difficulty": 1,
-    "status": "draft"
+    "status": "reviewed"
   },
   {
     "id": "T3-002",
@@ -60,7 +60,7 @@
       }
     ],
     "difficulty": 1,
-    "status": "draft"
+    "status": "reviewed"
   },
   {
     "id": "T3-003",
@@ -93,7 +93,7 @@
       }
     ],
     "difficulty": 2,
-    "status": "draft"
+    "status": "reviewed"
   },
   {
     "id": "T3-004",
@@ -114,6 +114,180 @@
       }
     ],
     "difficulty": 2,
-    "status": "draft"
+    "status": "reviewed"
+  },
+  {
+    "id": "T3-005",
+    "track": "doctrine",
+    "prompt": "Can someone be partly virtuous according to the Stoics? And if not, what did they make of moral progress?",
+    "gold_answer": "No. For the Stoics there is nothing between virtue and vice: as a stick must be straight or crooked, a person is either just or unjust, and there are no degrees of either. This is where they parted from the Peripatetics, who allowed a state of moral improvement in between. The Stoics did recognise progress (prokope), but the person making progress is still among the bad, as the image Plutarch reports from the Stoics has it: someone a cubit under the surface drowns as surely as someone five hundred fathoms down, though he is nearer the air. Diogenes adds a disagreement inside the school about whether virtue, once gained, can be lost: Chrysippus said it could, through drunkenness or melancholy; Cleanthes said it could not.",
+    "rubric": [
+      "States that virtue admits no degrees and there is no intermediate state between virtue and vice",
+      "Gives one of the Stoic images (the straight or crooked stick, or the drowning man) correctly",
+      "Says that progress exists but the progressor still counts as not yet virtuous",
+      "Does not claim the Stoics denied the possibility of moral progress"
+    ],
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 127 (tr. Hicks 1925): nothing intermediate; the stick; Chrysippus and Cleanthes on losing virtue",
+        "status": "verified",
+        "evidence": "rag_corpus:07ea3394-72b5-4a59-9444-0fb113ed9579"
+      },
+      {
+        "cite": "Plutarch, Against the Stoics on Common Conceptions 10 (tr. Goodwin): a cubit under the surface is no less drowned",
+        "status": "verified",
+        "evidence": "rag_corpus:20cb53eb-e922-411e-8ed6-b8b99e34739a",
+        "note": "Plutarch quotes the Stoics in order to attack them; the image is theirs."
+      }
+    ],
+    "difficulty": 2,
+    "status": "reviewed"
+  },
+  {
+    "id": "T3-006",
+    "track": "doctrine",
+    "prompt": "In Stoic ethics, what is the difference between a 'befitting action' (kathekon) and a 'right action' (katorthoma)? Can someone who is not a sage perform a right action?",
+    "gold_answer": "A befitting action is one that reason prevails on us to do, one for which a reasonable account can be given: honouring one's parents, brothers and country, keeping company with friends. Anyone can perform these, and the non-sage performs them all the time. A right action is a befitting action done perfectly, from a settled virtuous disposition. Cicero renders katorthoma as 'duty accomplished' and says that a right action, like opportunity, admits no increase. Since only the sage has virtue, only the sage performs right actions; the non-sage who returns a deposit does the befitting thing, but not the right thing in the strict sense, because the act does not flow from knowledge. The outward act can be identical; what differs is the agent's state.",
+    "rubric": [
+      "Defines a befitting action as what reason recommends, with a reasonable justification, available to anyone",
+      "Defines a right action as a befitting action done from virtue (perfectly), the sage's act",
+      "States that the non-sage cannot perform right actions in the strict sense, only befitting ones",
+      "Does not treat the two as the same thing or as differing only in outcome"
+    ],
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 107 to 109 (tr. Hicks 1925): befitting acts",
+        "status": "verified",
+        "evidence": "rag_corpus:9efd52c6-a4d0-405e-b36e-87d511212c4a"
+      },
+      {
+        "cite": "Cicero, On Ends III 45 and 58 to 59 (tr. Yonge): katorthosis and katorthoma; duty accomplished; no increase",
+        "status": "verified",
+        "evidence": "rag_corpus:61cb3103-e20d-40df-9a64-ac94e57aea3f; rag_corpus:f11ab569-addc-4cb9-8c00-cb8716734dca",
+        "note": "Locators assigned from content; the Cicero chunks carry none."
+      }
+    ],
+    "difficulty": 3,
+    "status": "reviewed"
+  },
+  {
+    "id": "T3-007",
+    "track": "doctrine",
+    "prompt": "What was the Stoic position on taking one's own life? Did they approve of it?",
+    "gold_answer": "Neither a general approval nor a prohibition. The doctrine is the 'reasonable departure': Diogenes reports that the wise man will for reasonable cause make his own exit from life, on his country's behalf, for the sake of friends, or under intolerable pain, mutilation or incurable disease. Cicero gives the criterion. Whether to remain in life is measured not by virtue or vice but by the balance of things according to nature: where those preponderate it is one's duty to remain, and this holds for the fool as much as the sage; where things contrary to nature preponderate or are likely to, departure can be a duty. So the question belongs to the theory of befitting actions and preferred indifferents, and turns on circumstances, not on a judgment that life is worthless. A careful answer also notes that the surviving reports are brief and that the examples given are extreme cases.",
+    "rubric": [
+      "Reports the doctrine of reasonable departure with its stated grounds (country, friends, intolerable pain, incurable disease)",
+      "Gives Cicero's criterion: the preponderance of things according to nature, not virtue or vice",
+      "Notes that it applies in specific circumstances and that remaining in life is the normal duty, for fools as well as sages",
+      "Does not describe the Stoics as either forbidding it or recommending it in general"
+    ],
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 130 (tr. Hicks 1925)",
+        "status": "verified",
+        "evidence": "rag_corpus:7db9e298-5f34-4a1c-a7bd-674660c8d89a"
+      },
+      {
+        "cite": "Cicero, On Ends III 60 to 61 (tr. Yonge)",
+        "status": "verified",
+        "evidence": "rag_corpus:0dbb3269-0b26-4319-80a1-2e05a879aaef; rag_corpus:5f95a562-4151-434f-ae3e-0da55c848d36",
+        "note": "Locators assigned from content; the Cicero chunks carry none."
+      }
+    ],
+    "difficulty": 3,
+    "status": "reviewed",
+    "notes": "A doctrine item, not an applied one. The prompt asks for the historical position; the rubric rewards accuracy and penalises both moralising distortions."
+  },
+  {
+    "id": "T3-008",
+    "track": "doctrine",
+    "prompt": "What is the Lazy Argument against Stoic fate, and how did Chrysippus answer it?",
+    "gold_answer": "The Lazy Argument runs: if it is fated that you will recover from this illness, you will recover whether or not you call a doctor; if it is fated that you will not, you will not recover whether or not you call one; one or the other is fated; so calling a doctor is pointless. Cicero reports it and Chrysippus's reply. Some things are simple, like 'Socrates will die on that day', which holds whatever he does. Others are 'co-fated' (confatalia): 'Laius will beget Oedipus' cannot be true whether or not Laius lies with his wife, and 'Milo will wrestle at Olympia' cannot be true whether or not he has an opponent. Recovery is of the second kind, fated together with calling the doctor. So fate includes our actions among its causes, and the argument is, in Cicero's word, idle.",
+    "rubric": [
+      "States the argument correctly (fated outcome, so action is useless)",
+      "Gives Chrysippus's reply in terms of co-fated events",
+      "Gives one of Cicero's examples (Laius and Oedipus, or Milo and his opponent) or an equivalent",
+      "Does not confuse this with the cylinder argument about assent and responsibility"
+    ],
+    "sources": [
+      {
+        "cite": "Cicero, On Fate 28 to 30 (tr. Yonge, ch. 12 to 13)",
+        "status": "verified",
+        "evidence": "rag_corpus:2c9235b4-1c71-4f10-8bd4-5f2a141a25f2; rag_corpus:29bee12f-0e76-4ca9-af7e-8fc39eb115db",
+        "note": "Locators assigned from content; Yonge's chapter numbers are printed in the chunks."
+      }
+    ],
+    "difficulty": 2,
+    "status": "reviewed"
+  },
+  {
+    "id": "T3-009",
+    "track": "doctrine",
+    "prompt": "What is a 'cognitive' or 'kataleptic' impression in Stoic epistemology, and what was the Academic objection to it?",
+    "gold_answer": "A cognitive impression is one that comes from a real object, agrees with that object, and is stamped and imprinted on the soul seal-fashion in a way that could not come from an unreal object. Diogenes reports it as the Stoic criterion of truth. Zeno illustrated the stages with his hand: the open palm is an impression, the fingers partly closed is assent, the fist is cognition (katalepsis). The Academics, Arcesilaus and Carneades, objected that for any true impression there can be a false one indistinguishable from it, as with twins or two eggs, so no impression carries a mark that guarantees its truth. The Stoic reply, which Cicero reports, is that no two things are exactly alike, so a sufficiently careful observer can tell them apart. The dispute was not settled and is the centre of Cicero's Academica.",
+    "rubric": [
+      "Gives the definition with its parts: from a real object, agreeing with it, impressed as it could not be from an unreal object",
+      "Identifies it as the Stoic criterion of truth (Zeno's hand image is acceptable as illustration)",
+      "States the Academic objection: indistinguishable false impressions (twins, eggs)",
+      "Mentions the Stoic reply that no two things are exactly alike, or otherwise presents the dispute as two-sided"
+    ],
+    "sources": [
+      {
+        "cite": "Diogenes Laertius VII 46 and 50 (tr. Hicks 1925): the definition",
+        "status": "verified",
+        "evidence": "rag_corpus:7b5b8c1e-e6ca-4515-a93d-5626c62d540c; rag_corpus:fde949db-460a-4fb1-8e58-1fa63deb7f8d"
+      },
+      {
+        "cite": "Diogenes Laertius VII 54 (tr. Hicks 1925): the criterion of truth",
+        "status": "verified",
+        "evidence": "rag_corpus:da846961-db46-44ee-bbcb-9dbcbf74d196"
+      },
+      {
+        "cite": "Cicero, Academica II 145 (tr. Yonge): Zeno's hand",
+        "status": "verified",
+        "evidence": "rag_corpus:4efe45f7-9f29-4a94-94c1-6c2cbc23bc22",
+        "note": "Locator assigned from content."
+      },
+      {
+        "cite": "Cicero, Academica II 84 to 86 (tr. Yonge): twins, eggs, and the Stoic reply that nothing is the same as something else",
+        "status": "verified",
+        "evidence": "rag_corpus:c7db47ee-0d2b-4062-a165-847c20838961; rag_corpus:9717195a-77c1-4f34-be7f-b847a458476c; rag_corpus:6dffc67c-1bbb-417a-a788-222e635e3b09",
+        "note": "Locators assigned from content."
+      }
+    ],
+    "difficulty": 2,
+    "status": "reviewed"
+  },
+  {
+    "id": "T3-010",
+    "track": "doctrine",
+    "prompt": "What did the Stoics mean when they called the world a city, and did that mean a Stoic owed nothing in particular to Rome or Athens?",
+    "gold_answer": "They meant it literally within their physics: the cosmos is governed by divine reason, so it is a common city and state of gods and human beings, and each person is a part of it. Cicero draws the ethical consequence: as the laws prefer the common safety to the individual's, the good man prefers the general advantage to his own. Epictetus says that someone who has understood his kinship with god can call himself a citizen of the world. But this did not cancel local attachments. Marcus Aurelius writes that his city and country, as Antoninus, is Rome, and as a human being, the world, and that what is useful to both cities is useful to him. The cosmopolitan claim grounds duties to everyone; it adds a wider city rather than replacing the narrower one.",
+    "rubric": [
+      "States that the cosmos is a city of gods and humans under one reason or law",
+      "Gives Marcus's two cities, or Epictetus's kinship with god, or Cicero's formulation",
+      "Connects the idea to preferring the common good or to duties toward all people",
+      "Does not present Stoic cosmopolitanism as rejecting duties to one's own city or country"
+    ],
+    "sources": [
+      {
+        "cite": "Cicero, On Ends III 64 (tr. Yonge): a common city and state of men and gods",
+        "status": "verified",
+        "evidence": "rag_corpus:3d0cf524-709c-4c8f-92fa-2d93b6ab032c",
+        "note": "Locator assigned from content."
+      },
+      {
+        "cite": "Marcus Aurelius, Meditations VI 44 (tr. Long)",
+        "status": "verified",
+        "evidence": "rag_corpus:a2f50802-9242-4701-9404-1af928490070"
+      },
+      {
+        "cite": "Epictetus, Discourses I 9 (tr. Long): kinship with god and citizenship of the world",
+        "status": "verified",
+        "evidence": "rag_corpus:13f40fec-9d3a-4e83-b6dc-9396a55eaadb; rag_corpus:a9e05a0a-002a-4301-bdef-d205ccf5dbe6"
+      }
+    ],
+    "difficulty": 2,
+    "status": "reviewed"
   }
 ]
