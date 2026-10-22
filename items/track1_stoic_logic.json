@@ -198,14 +198,15 @@
       },
       {
         "cite": "Susanne Bobzien, 'Logic', in The Cambridge History of Hellenistic Philosophy (1999), section on arguments valid in the specific sense (subsyllogistic arguments), pp. 151-152",
-        "status": "to_verify",
-        "note": "Scanned PDF in Papers folder (Logic_Prt2); not yet loaded into research_sources. Backs criterion 3 and the term 'subsyllogistic'."
+        "status": "verified",
+        "evidence": "research_sources:5702ed1c-2505-43c5-954a-6a1278020927 at p. 151-152",
+        "note": "Backs criterion 3 and the term 'subsyllogistic'."
       }
     ],
     "ledger_ref": "S008",
     "lean_ref": "Stoic/Tests.lean: S008_not_derivable; Stoic/Sugihara.lean",
     "difficulty": 3,
-    "status": "draft"
+    "status": "reviewed"
   },
   {
     "id": "T1-008b",
