@@ -2,15 +2,22 @@
 
     py -3.14 scripts/calibration.py export
     py -3.14 scripts/calibration.py score
+    py -3.14 scripts/calibration.py export --round 2 --log logs/A.eval --log logs/B.eval
+    py -3.14 scripts/calibration.py score --round 2
 
 `export` reads the cross-track log and writes one row per rubric criterion to
-calibration/round1_grading.xlsx, with the item order shuffled and no model
+calibration/roundN_grading.xlsx, with the item order shuffled and no model
 name or judge information. The judge's scores go to a separate key file,
-calibration/round1_judge_key.csv.
+calibration/roundN_judge_key.csv.
+
+Round 1 exports every criterion of one log. From round 2 on, `export` takes
+one or more logs (one per model under test) and samples whole answers per
+track, alternating between logs, until each track has at least MIN_TRACK_N
+criteria. The key also records which model and epoch each row came from.
 
 `score` joins the filled-in sheet to the key on row_id and writes agreement
 statistics (exact agreement, Cohen's kappa, quadratic-weighted kappa) overall
-and per track, plus every disagreement, to calibration/round1_report.md.
+and per track, plus every disagreement, to calibration/roundN_report.md.
 """
 
 from __future__ import annotations
@@ -25,12 +32,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 LOG_GLOB = "*goZfAWgGjzQf7UL6T5eZRa.eval"
 OUT_DIR = ROOT / "calibration"
-SHEET = OUT_DIR / "round1_grading.xlsx"
-KEY = OUT_DIR / "round1_judge_key.csv"
-REPORT = OUT_DIR / "round1_report.md"
 MIN_TRACK_N = 20
 README = OUT_DIR / "README.md"
 SEED = 20261012
+SEEDS = {1: SEED, 2: 20261022}
+
+
+def paths(rnd: int) -> tuple[Path, Path, Path]:
+    """Sheet, judge key and report for a calibration round."""
+    return (OUT_DIR / f"round{rnd}_grading.xlsx",
+            OUT_DIR / f"round{rnd}_judge_key.csv",
+            OUT_DIR / f"round{rnd}_report.md")
 
 COLUMNS = [
     "row_id", "item_id", "track", "question", "gold_answer", "model_answer",
@@ -42,18 +54,18 @@ WIDTHS = {
     "kyle_score": 11, "kyle_note": 40,
 }
 
-README_TEXT = """# Calibration, round 1
+README_TEXT = """# Calibration, round {n}
 
 Blind check of the judge against Kyle's own scores.
 
-1. Open `round1_grading.xlsx`. Each row is one rubric criterion for one answer.
+1. Open `round{n}_grading.xlsx`. Each row is one rubric criterion for one answer.
 2. Score each criterion 0, 1 or 2 in `kyle_score`, using RUBRIC_SPEC.md section 4.
    Add a note in `kyle_note` if useful.
 3. Judge the answer's final position. A clearly marked self-correction is not a
    contradiction; leaving the matter unresolved is.
-4. Do not open `round1_judge_key.csv` until you have scored every row.
+4. Do not open `round{n}_judge_key.csv` until you have scored every row.
 
-When done, run `py -3.14 scripts/calibration.py score` to write `round1_report.md`.
+When done, run `py -3.14 scripts/calibration.py score{flag}` to write `round{n}_report.md`.
 """
 
 
@@ -64,20 +76,66 @@ def find_log() -> Path:
     return logs[-1]
 
 
-def export() -> None:
+def sample_answers(logs: list, rnd: int) -> list[tuple]:
+    """Pick whole answers per track, alternating between logs, until each
+    track has at least MIN_TRACK_N criteria. Items not yet picked are
+    preferred, so the sample spreads across items before repeating one.
+    Answers whose judge output did not parse are left out and reported."""
+    rng = random.Random(SEEDS.get(rnd, rnd))
+    queues: dict[str, list[list]] = defaultdict(lambda: [[] for _ in logs])
+    skipped = []
+    for li, log in enumerate(logs):
+        for s in log.samples or []:
+            if (s.scores["rubric_judge"].metadata or {}).get("parse_failed"):
+                skipped.append(f"{log.eval.model} {s.id} epoch {s.epoch}")
+                continue
+            queues[s.metadata["track"]][li].append((log, s))
+    for qs in queues.values():
+        for q in qs:
+            rng.shuffle(q)
+
+    picked: list[tuple] = []
+    for track in sorted(queues):
+        qs, used, n, turn = queues[track], set(), 0, 0
+        while n < MIN_TRACK_N and any(qs):
+            q = qs[turn % len(qs)]
+            turn += 1
+            if not q:
+                continue
+            i = next((k for k, (_, s) in enumerate(q) if s.id not in used), 0)
+            log, s = q.pop(i)
+            used.add(s.id)
+            n += len(s.metadata["rubric"])
+            picked.append((log, s))
+        if n < MIN_TRACK_N:
+            print(f"Warning: {track} has only {n} criteria available")
+    rng.shuffle(picked)
+    for line in skipped:
+        print(f"Left out, judge output unparsed: {line}")
+    return picked
+
+
+def export(rnd: int, log_paths: list[str]) -> None:
     from inspect_ai.log import read_eval_log
     from openpyxl import Workbook
     from openpyxl.styles import Alignment, Font
     from openpyxl.utils import get_column_letter
     from openpyxl.worksheet.datavalidation import DataValidation
 
-    log = read_eval_log(str(find_log()))
-    samples = list(log.samples or [])
-    random.Random(SEED).shuffle(samples)
+    sheet, key_path, _ = paths(rnd)
+    if rnd == 1:
+        log = read_eval_log(str(find_log()))
+        samples = list(log.samples or [])
+        random.Random(SEED).shuffle(samples)
+        answers = [(log, s) for s in samples]
+    else:
+        if not log_paths:
+            sys.exit("Round 2 and later need --log for each model under test.")
+        answers = sample_answers([read_eval_log(p) for p in log_paths], rnd)
 
     rows: list[list] = []
     key: list[dict] = []
-    for s in samples:
+    for log, s in answers:
         score = s.scores["rubric_judge"]
         md = score.metadata or {}
         if md.get("parse_failed"):
@@ -89,11 +147,14 @@ def export() -> None:
                 row_id, s.id, s.metadata["track"], s.input, s.target,
                 s.output.completion, n, text, None, None,
             ])
-            key.append({
+            entry = {
                 "row_id": row_id,
                 "judge_score": judged[n]["score"],
                 "judge_reason": judged[n].get("reason", ""),
-            })
+            }
+            if rnd > 1:
+                entry |= {"model": log.eval.model, "epoch": s.epoch}
+            key.append(entry)
 
     OUT_DIR.mkdir(exist_ok=True)
 
@@ -120,16 +181,17 @@ def export() -> None:
     )
     ws.add_data_validation(dv)
     dv.add(f"{score_col}2:{score_col}{len(rows) + 1}")
-    wb.save(SHEET)
+    wb.save(sheet)
 
-    with KEY.open("w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=["row_id", "judge_score", "judge_reason"])
+    with key_path.open("w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=list(key[0]))
         w.writeheader()
         w.writerows(key)
 
-    README.write_text(README_TEXT, encoding="utf-8")
-    print(f"Wrote {len(rows)} rows from {len(samples)} samples to {SHEET}")
-    print(f"Judge key: {KEY}")
+    flag = "" if rnd == 1 else f" --round {rnd}"
+    README.write_text(README_TEXT.format(n=rnd, flag=flag), encoding="utf-8")
+    print(f"Wrote {len(rows)} rows from {len(answers)} samples to {sheet}")
+    print(f"Judge key: {key_path}")
 
 
 def _ac1(pairs: list[tuple[int, int]], q: int = 3) -> float:
@@ -159,10 +221,11 @@ def _stats(pairs: list[tuple[int, int]]) -> tuple[str, str, str, str]:
     return f"{agree:.1%}", kappa(None), kappa("quadratic"), f"{_ac1(pairs):.3f}"
 
 
-def score() -> None:
+def score(rnd: int) -> None:
     from openpyxl import load_workbook
 
-    ws = load_workbook(SHEET, read_only=True).active
+    sheet, key_path, report = paths(rnd)
+    ws = load_workbook(sheet, read_only=True).active
     it = ws.iter_rows(values_only=True)
     header = list(next(it))
     kyle = {}
@@ -180,7 +243,7 @@ def score() -> None:
             sys.exit(f"row {rid}: kyle_score {s} is not 0, 1 or 2")
         kyle[rid] = r | {"kyle_score": s}
 
-    with KEY.open(encoding="utf-8") as f:
+    with key_path.open(encoding="utf-8") as f:
         judge = {int(r["row_id"]): r for r in csv.DictReader(f)}
 
     joined = []
@@ -193,7 +256,7 @@ def score() -> None:
         by_track[r["track"]].append((r["kyle_score"], r["judge_score"]))
     overall = [p for ps in by_track.values() for p in ps]
 
-    lines = ["# Calibration, round 1: report", ""]
+    lines = [f"# Calibration, round {rnd}: report", ""]
     lines.append(f"Rows scored: {len(joined)} of {len(joined) + len(blank)}.")
     if blank:
         lines.append(f"Unscored rows, left out: {', '.join(map(str, blank))}.")
@@ -226,15 +289,17 @@ def score() -> None:
     else:
         lines.append("None.")
 
-    REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"Wrote {REPORT}")
+    report.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(f"Wrote {report}")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("command", choices=["export", "score"])
+    parser.add_argument("--round", type=int, default=1, dest="rnd")
+    parser.add_argument("--log", action="append", default=[], help="eval log (round 2 on); repeat per model")
     args = parser.parse_args()
-    export() if args.command == "export" else score()
+    export(args.rnd, args.log) if args.command == "export" else score(args.rnd)
 
 
 if __name__ == "__main__":

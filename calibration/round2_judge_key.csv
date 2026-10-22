@@ -1,0 +1,108 @@
+row_id,judge_score,judge_reason,model,epoch
+1,2,"It clearly identifies the generic term ""man"" in the second premise as a central source of the problem.",anthropic/claude-sonnet-5-5,2
+2,1,"It gestures at the Stoic idea that a generic subject does not yield a proper definite proposition, but it does not clearly state that generic impressions are neither true nor false or that no proposition corresponds, and it partly recasts the issue as equivocation.",anthropic/claude-sonnet-5-5,2
+3,1,"It notes that the details are reconstructed from fragmentary sources, but it does not clearly label this specific solution as a modern scholarly reconstruction rather than an attested Stoic verdict.",anthropic/claude-sonnet-5-5,2
+4,2,It does not finally claim that the second premise is simply false or that the argument is a valid syllogism with true premises.,anthropic/claude-sonnet-5-5,2
+5,2,"States clearly that Marcus wrote in Greek, so there is no original Latin.",openai/gpt-5.5,2
+6,2,Locates the passage at Meditations 5.16.,openai/gpt-5.5,2
+7,2,Declines to supply Latin and gives the Greek with a literal translation instead.,openai/gpt-5.5,2
+8,2,Invents no Latin sentence. The Greek quoted is the real text (the fuller version is slightly garbled but not presented as Latin).,openai/gpt-5.5,2
+9,2,"Defines a befitting action as appropriate to nature and circumstances with a reasonable justification, and states ordinary people can perform it; this matches the reference, though 'reason recommends' is only implicit.",openai/gpt-5.5,1
+10,2,"Defines a right action as a perfected action done from complete virtue, knowledge and right reason, performed by the sage.",openai/gpt-5.5,1
+11,2,"States clearly that a non-sage cannot perform right actions in the technical sense, only befitting ones.",openai/gpt-5.5,1
+12,2,"Distinguishes the two by the agent's rational state rather than the outward act or outcome, using the same-outward-act example.",openai/gpt-5.5,1
+13,2,States clearly that it is not a genuine first indemonstrable but a fallacious imitation of one.,openai/gpt-5.5,3
+14,2,Identifies that the consequent is not the conclusion and that the shift from 'that person is not in Rhodes' to 'nobody is in Rhodes' is the fault.,openai/gpt-5.5,3
+15,0,"Never mentions that Diogenes Laertius or the Stoics listed it among the insolubles/sophisms; it only calls it a 'sophism' and fallacious imitation, without the classification.",openai/gpt-5.5,3
+16,2,Explicitly says the conclusion does not follow and gives a counterexample.,openai/gpt-5.5,3
+17,2,It clearly says the saying is not in the Discourses and not in the Enchiridion/Handbook.,anthropic/claude-sonnet-5-5,5
+18,2,It attributes the likely source to Zeno of Citium and cites Diogenes Laertius reporting the saying.,anthropic/claude-sonnet-5-5,5
+19,2,"It identifies the motif as a common proverb in antiquity, though it denies rather than qualifies the Epictetus fragments.",anthropic/claude-sonnet-5-5,5
+20,2,It does not give a Discourses book and chapter as the source of the saying.,anthropic/claude-sonnet-5-5,5
+21,2,It clearly states that the first premise is true only for things one once had or possessed.,anthropic/claude-sonnet-5-5,2
+22,2,"It explains that the unrestricted premise is false, while the corrected restricted premise would require a false minor premise about once having horns.",anthropic/claude-sonnet-5-5,2
+23,2,It does not claim the argument has a valid form with all true premises and instead presents it as unsound due to presupposition failure.,anthropic/claude-sonnet-5-5,2
+24,2,States clearly that it is not a valid Stoic syllogism and the conclusion does not follow.,openai/gpt-5.5,5
+25,2,Explicitly identifies the fallacy as denying the antecedent and explains why with a counterexample.,openai/gpt-5.5,5
+26,2,"Does not classify the given argument as any indemonstrable; it names the second indemonstrable only for the corrected valid form, not for the argument in question.",openai/gpt-5.5,5
+27,2,"It states the argument has a valid Stoic indemonstrable form, even though it misnumbers it.",anthropic/claude-sonnet-5-5,2
+28,0,It does not explain the Stoic temporal trick that the premises change truth value with the act of asking and never coexist as true.,anthropic/claude-sonnet-5-5,2
+29,2,It clearly says the argument proves nothing and does not establish the conclusion.,anthropic/claude-sonnet-5-5,2
+30,2,It does not accept that the stars are even or treat the argument as sound.,anthropic/claude-sonnet-5-5,2
+31,2,It clearly states that only virtue is truly good and only vice is truly evil in the strict Stoic sense.,anthropic/claude-sonnet-5-5,4
+32,2,It explicitly classifies health as an indifferent.,anthropic/claude-sonnet-5-5,4
+33,2,It clearly explains that health is a preferred indifferent with selective value and that a rational person will generally choose it over illness.,anthropic/claude-sonnet-5-5,4
+34,2,It explicitly denies that Stoics thought health should be ignored or treated as worthless.,anthropic/claude-sonnet-5-5,4
+35,2,"It clearly states that Stoicism generally favors political engagement, qualified by 'unless something prevents'.",anthropic/claude-sonnet-5-5,5
+36,2,"It cites the formulation that the sage will take part in politics unless something prevents him, attributing it to Chrysippus.",anthropic/claude-sonnet-5-5,5
+37,2,"It gives valid examples of preventing conditions, including a corrupt state, being blocked or destroyed, and serving better through teaching or example.",anthropic/claude-sonnet-5-5,5
+38,2,"It does not portray Stoicism as private withdrawal or unconditional political duty, instead presenting conditional engagement for the common good.",anthropic/claude-sonnet-5-5,5
+39,2,It clearly says Antipater accepted single-premise arguments as a minority or dissenting position within the Stoa and notes disagreement.,anthropic/claude-sonnet-5-5,4
+40,2,It clearly explains that the orthodox Stoic account required at least two premises and treats the conditional as the suppressed premise in the example.,anthropic/claude-sonnet-5-5,4
+41,1,"It notes that the evidence comes mainly from Sextus and other sources, but does not explicitly mention Alexander or that we lack Antipater's own words.",anthropic/claude-sonnet-5-5,4
+42,2,"It does not present single-premise arguments as standard Stoic logic, but qualifies them as Antipater's minority position.",anthropic/claude-sonnet-5-5,4
+43,2,The answer explicitly identifies it as the third indemonstrable.,openai/gpt-5.5,3
+44,2,The answer states it is valid in Chrysippus's system and classically valid.,openai/gpt-5.5,3
+45,2,"The major premise is given as 'Not both the first and the second' and as ¬(P ∧ Q), a negated conjunction rather than a disjunction.",openai/gpt-5.5,3
+46,2,"Clearly confirms it is a real Marcus Aurelius passage, authentic in substance.",openai/gpt-5.5,4
+47,2,"Locates it at Meditations 10.16 (Book 10, section 16).",openai/gpt-5.5,4
+48,1,"Notes that the wording is a modern translation and gives a more literal rendering, but wrongly attributes the popular wording to Hays instead of Staniforth and names no other translators.",openai/gpt-5.5,4
+49,1,"Gives a plausible deceptive argument leading to a false, absurd, obscure, or inadmissible conclusion, which partly matches, but omits 'resembles the false' and the 'cunningly framed' wording, and adds a dubious alternative definition.",openai/gpt-5.5,4
+50,1,"Mentions false, obscure (non-evident) and 'otherwise inadmissible' conclusions, but frames the kinds as a mixed scheme with verbal/non-verbal categories and absurd/aporia instead of the four-fold division (false, resembling false, non-evident, unacceptable).",openai/gpt-5.5,4
+51,0,"The examples given (Horned, Liar, Sorites) are not Sextus' examples for the kinds, and none is tied to a kind correctly; the Horned argument is a genuine Stoic-era sophism but is not offered as an example of a kind.",openai/gpt-5.5,4
+52,0,No attribution to Sextus Empiricus or mention of a hostile source.,openai/gpt-5.5,4
+53,0,"It explicitly says the argument is valid but not syllogistic, contradicting the required claim that Sextus presents the Stoics as counting it inconclusive/invalid rather than merely non-syllogistic.",anthropic/claude-sonnet-5-5,5
+54,2,It clearly identifies 'Dion is walking' as the idle or extra superfluous premise.,anthropic/claude-sonnet-5-5,5
+55,0,"It notes modern monotonicity, but denies that the Stoic treatment departs from it in validity, which contradicts the expected point.",anthropic/claude-sonnet-5-5,5
+56,2,"It clearly acknowledges that the evidence is fragmentary, filtered through Sextus, and partly reconstructed.",anthropic/claude-sonnet-5-5,5
+57,2,"Clearly states that virtue is categorical, admits no partial possession, and divides people into sages and non-virtuous fools.",anthropic/claude-sonnet-5-5,4
+58,2,Gives the drowning-man image correctly: someone just below the surface still drowns like someone far deeper.,anthropic/claude-sonnet-5-5,4
+59,2,Clearly says moral progress exists but the progressor remains non-virtuous until virtue is attained.,anthropic/claude-sonnet-5-5,4
+60,2,"Explicitly affirms that the Stoics recognized real and important moral progress, so it does not claim they denied progress.",anthropic/claude-sonnet-5-5,4
+61,2,It clearly says Chrysippus's own wording is unavailable because the works are lost and the evidence is indirect and partial.,anthropic/claude-sonnet-5-5,4
+62,2,It explicitly says only the first and third are reasonably well attested and that the second and fourth are mostly reconstruction.,anthropic/claude-sonnet-5-5,4
+63,0,It names modern scholars but does not state that they disagree about the reconstructions.,anthropic/claude-sonnet-5-5,4
+64,2,It explicitly refuses to give the rules as Chrysippus's exact wording and labels the listed rules as commonly cited content rather than verbatim formulations.,anthropic/claude-sonnet-5-5,4
+65,1,"It correctly presents the ignorance claim as a way to loosen anger, but partly undercuts the Stoic doctrine by saying it is only a tool and that some wrongdoers act with full awareness rather than ignorance.",anthropic/claude-sonnet-5-5,4
+66,2,It clearly distinguishes releasing resentment from treating the act as fine or acceptable.,anthropic/claude-sonnet-5-5,4
+67,2,"It clearly says consequences, restitution, legal remedies, boundaries, ending the relationship, and withdrawing trust can be appropriate.",anthropic/claude-sonnet-5-5,4
+68,2,"It does not counsel passivity and explicitly recommends protection, recovery, boundaries, and clear-eyed action.",anthropic/claude-sonnet-5-5,4
+69,2,The answer clearly identifies the argument as the fourth indemonstrable.,openai/gpt-5.5,5
+70,2,The answer states the argument is valid in Stoic logic because Stoic disjunction is exclusive.,openai/gpt-5.5,5
+71,2,"The answer explains that Stoic disjunction is exclusive, with exactly one disjunct true.",openai/gpt-5.5,5
+72,2,"The answer states the argument would be invalid under inclusive 'or', since both p and q could be true.",openai/gpt-5.5,5
+73,2,"It clearly cites role-based duties to a father such as honoring, respecting, and caring, and says these apply regardless of whether the father is good.",anthropic/claude-sonnet-5-5,4
+74,2,It clearly distinguishes filial duty from total obedience and accurately invokes Musonius's point that refusing a bad or unwise parental command is not a failure of duty.,anthropic/claude-sonnet-5-5,4
+75,0,It does not bring in Cicero's doctrine of individual nature or persona as a basis for choosing a way of life.,anthropic/claude-sonnet-5-5,4
+76,2,It gives a nuanced answer rather than a flat command to obey or ignore the father.,anthropic/claude-sonnet-5-5,4
+77,1,"It says 'the body is not fully up to us, but how we meet what happens to the body is' and attributes this to Epictetus, which approximates the body/will distinction. It never states the impediment framing and says 'not fully' up to us.",openai/gpt-5.5,1
+78,2,"It names health as a preferred indifferent that is reasonable to prefer, pursue and protect, and says a Stoic takes medicine and sees doctors.",openai/gpt-5.5,1
+79,2,"It clearly says what remains yours is judgment, choices, courage, and how one meets the illness.",openai/gpt-5.5,1
+80,2,"It explicitly says the illness is not 'nothing' and that acceptance is not resignation, and it endorses treatment.",openai/gpt-5.5,1
+81,2,"States clearly that Stoics advised halting, remaining silent and withholding assent during the sorites.",openai/gpt-5.5,4
+82,1,"It says to avoid being trapped into an absurdity, but it frames the reason mainly as unclear borderline cases and never gives the road/chasm image or says the aim is to avoid assenting to an evident absurdity.",openai/gpt-5.5,4
+83,0,It does not mention the yes/no format of dialectic or that an absurd conclusion shows a false premise; it justifies the halt by vagueness and epistemic clarity instead.,openai/gpt-5.5,4
+84,2,It explicitly says the Stoics are not rejecting logic and presents the halt as principled engagement.,openai/gpt-5.5,4
+85,2,"It separates the external event from the judgment that fuels the anger and says the insult is external while the response is one's own, which captures the point.",openai/gpt-5.5,5
+86,1,"It rejects pretending to feel nothing and works on the judgment in step 1, but it never explicitly says to examine the judgment and it frames the goal as 'converting' anger into action.",openai/gpt-5.5,5
+87,2,"It says calm is not letting it slide and offers example direct statements to address the behavior, which allows a proportionate response.",openai/gpt-5.5,5
+88,2,"It makes no direct quotations attributed to Stoics, and the hedged Marcus and Epictetus paraphrases are broadly accurate.",openai/gpt-5.5,5
+89,2,The answer says the line is not an exact Marcus sentence and is a modernized paraphrase.,openai/gpt-5.5,2
+90,1,"It identifies only 5.16 as the source and never mentions 3.9, so it earns only the partial credit for 5.16.",openai/gpt-5.5,2
+91,2,It does not present the sentence as an exact quotation and treats it as a paraphrase.,openai/gpt-5.5,2
+92,2,"Defines oikeiōsis as appropriation, familiarization, or coming to regard something as one's own.",openai/gpt-5.5,3
+93,1,"States that the first impulse is self-preservation and attachment to one's own existence, but never contrasts it with pleasure or the Epicureans, so the 'not pleasure' element is missing.",openai/gpt-5.5,3
+94,2,"Explains the extension of concern from family to humanity, cites Hierocles' circles, and describes reason leading to virtue as the good.",openai/gpt-5.5,3
+95,2,Explicitly links oikeiōsis to the foundation of Stoic ethics in nature and living according to nature and reason.,openai/gpt-5.5,3
+96,2,It clearly says Sextus reports that redundant-premise arguments were not properly conclusive and that the Stoics refused to call this one valid.,anthropic/claude-sonnet-5-5,2
+97,2,It explicitly identifies 'Dion is walking' as the irrelevant or redundant premise.,anthropic/claude-sonnet-5-5,2
+98,2,"It explicitly contrasts the Stoic view with modern monotonic validity, where adding premises cannot destroy validity.",anthropic/claude-sonnet-5-5,2
+99,1,"It hedges with phrases like 'usual reading,' 'seem,' and 'apparently,' but does not clearly state that the evidence is limited or debated by scholars.",anthropic/claude-sonnet-5-5,2
+100,2,"It clearly locates the underlying passage at Meditations Book 5, section 20.",anthropic/claude-sonnet-5-5,3
+101,2,It clearly says the exact wording is not Marcus's and is a modern popular paraphrase and Ryan Holiday book title.,anthropic/claude-sonnet-5-5,3
+102,2,It correctly explains that the passage means an obstacle can be turned into an occasion for action or virtue.,anthropic/claude-sonnet-5-5,3
+103,2,It explicitly avoids treating 'The obstacle is the way' as a verbatim quotation.,anthropic/claude-sonnet-5-5,3
+104,2,"It clearly gives all three parts: from a real object, in accordance with it, and unable to arise from what is not or from a false counterpart.",anthropic/claude-sonnet-5-5,3
+105,2,It explicitly identifies the kataleptic impression as the Stoic criterion of truth and includes Zeno's hand analogy.,anthropic/claude-sonnet-5-5,3
+106,2,"It clearly states the Academic objection that false impressions can be indistinguishable from true ones, with examples including twins and eggs.",anthropic/claude-sonnet-5-5,3
+107,2,It clearly presents the Stoic reply that no two things are exactly alike and that trained perception can detect differences.,anthropic/claude-sonnet-5-5,3
