@@ -9,4 +9,4 @@ Blind check of the judge against Kyle's own scores.
    contradiction; leaving the matter unresolved is.
 4. Do not open `round2_judge_key.csv` until you have scored every row.
 
-When done, run `py -3.14 scripts/calibration.py score --round 2` to write `round2_report.md`.
+When done, run `py -3.14 scripts/calibration.py score --round 2 --log logs/2026-10-22T18-20-20-00-00_porch-test_Ujpm8hEomWPNMATkvswo8M.eval --log logs/2026-10-22T18-20-15-00-00_porch-test_dDAPek6CAmw64DUPE49ShF.eval` to write `round2_report.md`.

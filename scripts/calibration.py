@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import math
 import random
 import sys
 from collections import defaultdict
@@ -86,7 +87,7 @@ def sample_answers(logs: list, rnd: int) -> list[tuple]:
     skipped = []
     for li, log in enumerate(logs):
         for s in log.samples or []:
-            if (s.scores["rubric_judge"].metadata or {}).get("parse_failed"):
+            if is_unscored(s):
                 skipped.append(f"{log.eval.model} {s.id} epoch {s.epoch}")
                 continue
             queues[s.metadata["track"]][li].append((log, s))
@@ -188,7 +189,7 @@ def export(rnd: int, log_paths: list[str]) -> None:
         w.writeheader()
         w.writerows(key)
 
-    flag = "" if rnd == 1 else f" --round {rnd}"
+    flag = "" if rnd == 1 else f" --round {rnd}" + "".join(f" --log {Path(p).as_posix()}" for p in log_paths)
     README.write_text(README_TEXT.format(n=rnd, flag=flag), encoding="utf-8")
     print(f"Wrote {len(rows)} rows from {len(answers)} samples to {sheet}")
     print(f"Judge key: {key_path}")
@@ -221,7 +222,27 @@ def _stats(pairs: list[tuple[int, int]]) -> tuple[str, str, str, str]:
     return f"{agree:.1%}", kappa(None), kappa("quadratic"), f"{_ac1(pairs):.3f}"
 
 
-def score(rnd: int) -> None:
+def is_unscored(s) -> bool:
+    """A sample the judge did not score: marked unscored (NaN) by the current
+    scorer, or parse_failed (scored 0) by the scorer before it retried."""
+    sc = s.scores["rubric_judge"]
+    return bool((sc.metadata or {}).get("parse_failed")) or (
+        isinstance(sc.value, float) and math.isnan(sc.value))
+
+
+def unscored_line(rnd: int, log_paths: list[str]) -> str:
+    from inspect_ai.log import read_eval_log
+
+    if rnd == 1 and not log_paths:
+        log_paths = [str(find_log())]
+    if not log_paths:
+        return "Unscored samples in the source logs: not counted (pass --log for each source log)."
+    samples = [s for p in log_paths for s in read_eval_log(p).samples or []]
+    n = sum(is_unscored(s) for s in samples)
+    return f"Unscored samples in the source logs, left out of the sheet: {n} of {len(samples)}."
+
+
+def score(rnd: int, log_paths: list[str]) -> None:
     from openpyxl import load_workbook
 
     sheet, key_path, report = paths(rnd)
@@ -258,6 +279,7 @@ def score(rnd: int) -> None:
 
     lines = [f"# Calibration, round {rnd}: report", ""]
     lines.append(f"Rows scored: {len(joined)} of {len(joined) + len(blank)}.")
+    lines.append(unscored_line(rnd, log_paths))
     if blank:
         lines.append(f"Unscored rows, left out: {', '.join(map(str, blank))}.")
     lines += ["", "## Agreement", "",
@@ -299,7 +321,7 @@ def main() -> None:
     parser.add_argument("--round", type=int, default=1, dest="rnd")
     parser.add_argument("--log", action="append", default=[], help="eval log (round 2 on); repeat per model")
     args = parser.parse_args()
-    export(args.rnd, args.log) if args.command == "export" else score(args.rnd)
+    export(args.rnd, args.log) if args.command == "export" else score(args.rnd, args.log)
 
 
 if __name__ == "__main__":

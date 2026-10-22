@@ -15,6 +15,7 @@ extracts the fields an item's `exact` block names; code compares those fields.
 from __future__ import annotations
 
 import json
+import math
 import re
 from pathlib import Path
 from typing import Any
@@ -23,10 +24,13 @@ from inspect_ai import Task, task
 from inspect_ai.dataset import MemoryDataset, Sample
 from inspect_ai.model import get_model
 from inspect_ai.scorer import (
+    Metric,
+    SampleScore,
     Score,
     Target,
     grouped,
     mean,
+    metric,
     scorer,
     stderr,
 )
@@ -171,52 +175,55 @@ def parse_judge(text: str) -> dict[str, Any] | None:
         return None
 
 
+JUDGE_ATTEMPTS = 2
+
+
+def check_judge(parsed: dict[str, Any] | None, n: int) -> tuple[dict[int, int] | None, str]:
+    """Criterion scores from a parsed judge response, or None and the reason
+    the response cannot be used."""
+    if not parsed or "criteria" not in parsed:
+        return None, "Judge output could not be parsed."
+    try:
+        scores = {
+            int(c["n"]): int(c["score"])
+            for c in parsed["criteria"]
+            if isinstance(c, dict) and "n" in c and "score" in c
+        }
+    except (TypeError, ValueError):
+        return None, "Judge criterion id or score was not an integer."
+    if set(scores.keys()) != set(range(1, n + 1)):
+        return None, f"Judge returned criterion ids {sorted(scores.keys())} but rubric has 1..{n}."
+    return scores, ""
+
+
 @scorer(metrics=[grouped(mean(), "track", all="groups"), grouped(stderr(), "track", all=False, name_template="{group_name}_stderr")])
 def rubric_judge(judge: str | None = None):
-    """Rubric scoring by a judge model, plus code comparison of exact fields."""
+    """Rubric scoring by a judge model, plus code comparison of exact fields.
+
+    A judge response that cannot be used is retried once. If the retry fails
+    too, the sample is recorded as unscored: it keeps the raw responses but is
+    left out of every mean (Inspect skips NaN scores), and `judge_unscored`
+    counts it."""
 
     async def score(state: TaskState, target: Target) -> Score:
         grader = get_model(judge) if judge else get_model(role="grader", required=True)
-        result = await grader.generate(build_judge_prompt(state, target))
-        parsed = parse_judge(result.completion)
         n = len(state.metadata["rubric"])
-
-        if not parsed or "criteria" not in parsed:
-            return Score(
-                value=0.0,
+        prompt = build_judge_prompt(state, target)
+        failures: list[dict[str, str]] = []
+        for _ in range(JUDGE_ATTEMPTS):
+            result = await grader.generate(prompt)
+            parsed = parse_judge(result.completion)
+            scores, problem = check_judge(parsed, n)
+            if scores is not None:
+                break
+            failures.append({"problem": problem, "judge_raw": result.completion})
+        else:
+            return Score.unscored(
+                reason="judge_parse_failed",
                 answer=state.output.completion,
-                explanation="Judge output could not be parsed; rescore this sample.",
-                metadata={"judge_raw": result.completion, "parse_failed": True},
-            )
-
-        try:
-            scores = {
-                int(c["n"]): int(c["score"])
-                for c in parsed["criteria"]
-                if isinstance(c, dict) and "n" in c and "score" in c
-            }
-        except (TypeError, ValueError):
-            return Score(
-                value=0.0,
-                answer=state.output.completion,
-                explanation="Judge criterion id or score was not an integer; rescore this sample.",
-                metadata={"judge_raw": result.completion, "parse_failed": True},
-            )
-
-        if set(scores.keys()) != set(range(1, n + 1)):
-            got = sorted(scores.keys())
-            return Score(
-                value=0.0,
-                answer=state.output.completion,
-                explanation=(
-                    f"Judge returned criterion ids {got} but rubric has 1..{n}; "
-                    "rescore this sample."
-                ),
-                metadata={
-                    "judge_raw": result.completion,
-                    "parse_failed": True,
-                    "criteria": parsed.get("criteria"),
-                },
+                explanation=f"Judge output unusable on {JUDGE_ATTEMPTS} attempts: "
+                            + " / ".join(f["problem"] for f in failures),
+                metadata={"parse_failed": True, "unscored": True, "judge_failures": failures},
             )
 
         points = sum(max(0, min(2, scores[i])) for i in range(1, n + 1))
@@ -241,8 +248,32 @@ def rubric_judge(judge: str | None = None):
                 "criteria": parsed["criteria"],
                 "exact_match": exact_match,
                 "extracted": parsed.get("extracted"),
+                **({"judge_failures": failures} if failures else {}),
             },
         )
+
+    return score
+
+
+@metric
+def count() -> Metric:
+    """Sum of the per-sample values (here, the number of unscored samples)."""
+
+    def metric(scores: list[SampleScore]) -> float:
+        return float(sum(s.score.as_float() for s in scores))
+
+    return metric
+
+
+@scorer(metrics=[count()])
+def judge_unscored():
+    """1 for a sample rubric_judge left unscored, else 0, so the eval summary
+    shows how many samples are missing from the means. Runs after rubric_judge."""
+
+    async def score(state: TaskState, target: Target) -> Score:
+        judged = state.scores.get("rubric_judge") if state.scores else None
+        missing = judged is None or (isinstance(judged.value, float) and math.isnan(judged.value))
+        return Score(value=1.0 if missing else 0.0)
 
     return score
 
@@ -255,5 +286,5 @@ def porch_test(track: str | None = None, verified_only: bool = False, judge: str
     return Task(
         dataset=MemoryDataset([to_sample(i) for i in items], name="porch_test"),
         solver=[generate()],
-        scorer=rubric_judge(judge=judge),
+        scorer=[rubric_judge(judge=judge), judge_unscored()],
     )
