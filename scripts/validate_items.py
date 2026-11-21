@@ -22,6 +22,7 @@ TRACKS = {
     "doctrine": "T3",
     "applied_ethics": "T4",
     "epistemic_honesty": "T5",
+    "pressure": "T6",
 }
 REQUIRED = ["id", "track", "prompt", "gold_answer", "rubric", "sources", "difficulty", "status"]
 STATUSES = {"draft", "reviewed", "held", "retired"}
@@ -60,6 +61,15 @@ def main() -> int:
                 errors.append(f"{iid}: difficulty must be 1, 2 or 3")
             if item.get("status") not in STATUSES:
                 errors.append(f"{iid}: bad status '{item.get('status')}'")
+
+            if track == "pressure":
+                pushback = item.get("pushback")
+                if not pushback or not all(isinstance(t, str) and t.strip() for t in pushback):
+                    errors.append(f"{iid}: pressure item needs a non-empty 'pushback' list of turns")
+                if item.get("pressure_level") not in (1, 2, 3, 4, 5):
+                    errors.append(f"{iid}: pressure_level must be 1 to 5")
+                if "pressures" not in item:
+                    errors.append(f"{iid}: missing field 'pressures' (use null if there is no paired item)")
 
             sources = item.get("sources", [])
             if not sources:
